@@ -1,38 +1,354 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <script src="js/script.js"></script>
-  <title>My GitHub Page</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <header>
-    <h1>Welcome to my GitHub page!</h1>
-  </header>
-  <nav>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-  <main>
-    <section id="about">
-      <h2>About</h2>
-      <p>Learn more about me and my work.</p>
-    </section>
-    <section id="projects">
-      <h2>Projects</h2>
-      <p>View some of my recent projects.</p>
-    </section>
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Get in touch with me.</p>
-    </section>
-  </main>
-  <footer>
-    <p>Copyright 2021</p>
-  </footer>
-  <script src="js/script.js"></script>
-</body>
-</html>
+<div class="container-fluid d-block card border-0 px-0 py-5" style="margin-top: -58px;">
+<div class="container text-justify px-0" style="letter-spacing: .25px; font-size: 10pt;">
+<div class="row">
+  <div class="col-md-4 order-md-2 mb-md-0 mb-3">
+  <!--------- SIDE STATS -------------------------------------------------------->
+  <div class="card d-block modal-open h-100">
+    <div class="card-header bg-faded">
+        <!-------------- CHARACTER NAME ----------------------------------------->
+        <h1 class="text-center text-uppercase mb-0" style="font-weight:300; letter-spacing:1px;">
+          Name</h1>
+    </div>
+    <div class="card-block">
+    <!---------------- FOCAL IMAGE -- WILL SCALE ACROSS SCREEN SIZES ---------->
+    <div style="background-image:url(IMG_URL);
+    background-size:cover;background-position:center 0;background-repeat:no-repeat;min-height:300px;" class="rounded mb-3">
+    </div>
+ 
+    <div class="justify-content-between">
+      <span class="text-uppercase text-muted" style="font-weight: 300; letter-spacing: .5px;">
+        Called</span>
+      <span>content</span>
+    </div>
+    <hr class="my-2 faded">
+ 
+    <div class="justify-content-between">
+      <span class="text-uppercase text-muted" style="font-weight: 300; letter-spacing: .5px;">
+        Gender</span>
+      <span>Content</span>
+    </div>
+    <hr class="my-2 faded">
+ 
+    <div class="justify-content-between">
+      <span class="text-uppercase text-muted" style="font-weight: 300; letter-spacing: .5px;">
+        Age</span>
+      <span>Content</span>
+    </div>
+    <hr class="my-2 faded">
+ 
+    <div class="justify-content-between">
+      <span class="text-uppercase text-muted" style="font-weight: 300; letter-spacing: .5px;">
+        Role</span>
+      <span>(what they do)</span>
+    </div>
+    <hr class="my-2 faded">
+ 
+    <div class="justify-content-between">
+      <span class="text-uppercase text-muted" style="font-weight: 300; letter-spacing: .5px;">HTML</span>
+      <!-- CODING CREDIT -- LEAVE THIS -------------->
+      <span>@Pinky</span>
+    </div>
+    <hr class="my-2 faded">
+ 
+    <div class="row no-gutters align-items-center">
+      <div class="col-auto text-uppercase text-muted" style="font-weight: 300; letter-spacing: .5px;">Theme
+      </div><div class="col px-2"></div>
+      <div class="col-auto text-primary">
+        Song Name <i class="fas fa-play fa-fw"></i>
+ 
+		<!--- INSTRUCTIONS: fill in the "ID_HERE" with a youtube video id, it will be a random assortment of letters found at the end of video url (example: pmanD_s7G3U) -- be sure to leave the ?modestbranding=1 --------->
+        <iframe src="https://www.youtube.com/embed/ID_HERE?modestbranding=1"
+          style="position:absolute; top: 0; bottom:0; left:0; right:0; opacity: .001" class="h-100 w-100" frameborder="0"></iframe>
+      </div>
+    </div>
+ 
+    <!------------ SIDEBLOCK NAV BUTTONS --------------------------------------->
+    <div>
+ 
+    </div></div>
+  </div>
+  </div>
+  <!------------ CONTENT BLOCK --------------------------------------->
+  <div class="col-md-8 order-md-1">
+  <div class="card modal-open">
+    <div class="card-header bg-faded">
+        <!--------------------------- NAVIGATION BUTTONS -------------------------------------->
+        <ul class="nav nav-tabs card-header-tabs nav-justified text-uppercase" style="letter-spacing:1px;">
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#ONE">About</a></li>
+ 
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#TWO">Details</a></li>
+ 
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#THREE">Story</a></li>
+ 
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#FOUR">Links</a></li>
+        </ul>
+    </div>
+    <div class="tab-content">
+    <!--------------------------- SECTION ONE --- ABOUT ----------------------------------->
+    <div class="tab-pane active show px-4 pt-4 pb-md-1 pb-4" style="height: 565px; overflow:auto;" id="ONE">
+        <!--------------- TOP ADJECTIVES ------------------------------->
+        <h4 class="text-center text-uppercase mb-3" style="font-weight:300; letter-spacing:1px;">
+          Adjective • Adjective • Adjective</h4>
+ 
+        <div class="card d-block rounded-0 p-2 mb-3 border-right-0 border-left-0">
+        <p class="text-center text-muted mb-0"><i>"Write a quote or tagline here"  </i></p>
+        </div>
+ 
+        <!-- optional page doll -- just erase if you dont wanna use the image -- you can adjust the height -->
+        <img src="IMG_URL" 
+        class="float-md-right pl-md-2 mb-md-0 mb-3 d-block mx-auto card border-0" style="max-height: 400px; z-index: 10;">
+ 
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet massa blandit, fermentum enim a, scelerisque velit. Integer interdum urna ac dui sollicitudin sollicitudin. In feugiat posuere nulla, eget lobortis ante. Aliquam magna libero, dictum sit amet scelerisque ac, scelerisque tincidunt magna. Nulla et consectetur diam. Aliquam ipsum mi, tristique sed vestibulum ac, aliquet eget magna. Aliquam quis fringilla erat. Morbi sollicitudin id lorem eu efficitur. Mauris varius id magna vitae ullamcorper. In gravida libero consectetur, lobortis nisl sit amet, pellentesque ligula. Suspendisse tincidunt feugiat posuere. Duis dui erat, accumsan a aliquam eu, efficitur a tortor. Nunc molestie, leo in commodo aliquam, tellus augue tempor velit, non placerat ex sem non nisi.</p>
+ 
+        <p class="text-uppercase text-muted" style="font-weight: 300; letter-spacing: .5px; font-size: 11pt;">
+          <i class="fal fa-list-alt fa-fw" /> Notes</p>
+        <ul class="mb-0">
+          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+          <li>Suspendisse sit amet massa blandit, fermentum enim a, scelerisque velit.</li>
+          <li>Integer interdum urna ac dui sollicitudin sollicitudin.</li>
+          <li>In feugiat posuere nulla, eget lobortis ante. Aliquam magna libero, dictum sit amet scelerisque ac, scelerisque tincidunt magna.</li>
+        </ul>
+    </div>
+    <!--------------------------- SECTION TWO -- DETAILS ------------------------------------>
+    <div class="tab-pane px-4 pt-4 pb-md-0 pb-4" style="height:565px; overflow:auto;" id="TWO">
+      <p class="text-uppercase text-muted mb-1" style="font-weight: 300; letter-spacing: .5px; font-size: 11pt;">
+          <i class="fal fa-sliders fa-fw" /> Character</p>
+      <!-- slider stats -- change width % to move the bar -- the HIGHER the % the more RIGHT the bar will go -->
+      <div class="row">
+        <div class="col-lg-6 mb-3">
+          <div class="justify-content-between">
+            <span class="text-lowercase" style="letter-spacing: .5px;">Friendly</span>
+            <span class="text-lowercase" style="letter-spacing: .5px;">Reserved</span>
+          </div>
+          <div class="progress rounded-0">
+            <div class="progress-bar" style="height: 7px; background: transparent; width: 50%;"></div>
+            <div class="bg-primary rounded p-1 ml-n1"></div>
+          </div>
+        </div>
+ 
+        <div class="col-lg-6 mb-3">
+          <div class="justify-content-between">
+            <span class="text-lowercase" style="letter-spacing: .5px;">Polite</span>
+            <span class="text-lowercase" style="letter-spacing: .5px;">Blunt</span>
+          </div>
+          <div class="progress rounded-0">
+            <div class="progress-bar" style="height: 7px; background: transparent; width: 50%;"></div>
+            <div class="bg-primary rounded p-1 ml-n1"></div>
+          </div>
+        </div>
+ 
+        <div class="col-lg-6 mb-3">
+          <div class="justify-content-between">
+            <span class="text-lowercase" style="letter-spacing: .5px;">Clever</span>
+            <span class="text-lowercase" style="letter-spacing: .5px;">Foolish</span>
+          </div>
+          <div class="progress rounded-0">
+            <div class="progress-bar" style="height: 7px; background: transparent; width: 50%;"></div>
+            <div class="bg-primary rounded p-1 ml-n1"></div>
+          </div>
+        </div>
+ 
+        <div class="col-lg-6 mb-3">
+          <div class="justify-content-between">
+            <span class="text-lowercase" style="letter-spacing: .5px;">Sensitive</span>
+            <span class="text-lowercase" style="letter-spacing: .5px;">Tough</span>
+          </div>
+          <div class="progress rounded-0">
+            <div class="progress-bar" style="height: 7px; background: transparent; width: 50%;"></div>
+            <div class="bg-primary rounded p-1 ml-n1"></div>
+          </div>
+        </div>
+ 
+        <div class="col-lg-6 mb-3">
+          <div class="justify-content-between">
+            <span class="text-lowercase" style="letter-spacing: .5px;">Brave</span>
+            <span class="text-lowercase" style="letter-spacing: .5px;">Timid</span>
+          </div>
+          <div class="progress rounded-0">
+            <div class="progress-bar" style="height: 7px; background: transparent; width: 50%;"></div>
+            <div class="bg-primary rounded p-1 ml-n1"></div>
+          </div>
+        </div>
+ 
+        <div class="col-lg-6 mb-3">
+          <div class="justify-content-between">
+            <span class="text-lowercase" style="letter-spacing: .5px;">Sincere</span>
+            <span class="text-lowercase" style="letter-spacing: .5px;">Deceptive</span>
+          </div>
+          <div class="progress rounded-0">
+            <div class="progress-bar" style="height: 7px; background: transparent; width: 50%;"></div>
+            <div class="bg-primary rounded p-1 ml-n1"></div>
+          </div>
+        </div>
+ 
+        <div class="col-lg-6 mb-3">
+          <div class="justify-content-between">
+            <span class="text-lowercase" style="letter-spacing: .5px;">Diligent</span>
+            <span class="text-lowercase" style="letter-spacing: .5px;">Lazy</span>
+          </div>
+          <div class="progress rounded-0">
+            <div class="progress-bar" style="height: 7px; background: transparent; width: 50%;"></div>
+            <div class="bg-primary rounded p-1 ml-n1"></div>
+          </div>
+        </div>
+ 
+        <div class="col-lg-6 mb-3">
+          <div class="justify-content-between">
+            <span class="text-lowercase" style="letter-spacing: .5px;">Humorous</span>
+            <span class="text-lowercase" style="letter-spacing: .5px;">Serious</span>
+          </div>
+          <div class="progress rounded-0">
+            <div class="progress-bar" style="height: 7px; background: transparent; width: 50%;"></div>
+            <div class="bg-primary rounded p-1 ml-n1"></div>
+          </div>
+        </div>
+ 
+      </div>
+ 
+      <div class="row">
+        <div class="col-md-6 mb-2">
+          <p class="text-uppercase text-muted" style="font-weight: 300; letter-spacing: .5px; font-size: 11pt;">
+          <i class="fal fa-heartbeat fa-fw" /> Likes</p>
+          <ul class="mb-0">
+            <li>One.</li>
+            <li>Two.</li>
+            <li>Three.</li>
+            <li>Four.</li>
+          </ul>
+        </div>
+        <div class="col-md-6 mb-2">
+          <p class="text-uppercase text-muted" style="font-weight: 300; letter-spacing: .5px; font-size: 11pt;">
+          <i class="fal fa-ban fa-fw" /> Dislikes</p>
+          <ul class="mb-0">
+            <li>One.</li>
+            <li>Two.</li>
+            <li>Three.</li>
+            <li>Four.</li>
+          </ul>
+        </div>
+      </div>
+ 
+      <p class="text-uppercase text-muted mb-1" style="font-weight: 300; letter-spacing: .5px; font-size: 11pt;">
+          <i class="fal fa-images fa-fw" /> Moodboard</p>
+      <div class="row no-gutters mx-n2">
+        <div class="col-md-3 col-6 px-2 mb-3">
+          <div style="background-image: url('https://f2.toyhou.se/file/f2-toyhou-se/images/35367489_0xdbJo1S1BBQZIy.png');
+          background-size:cover; background-position:center; min-height: 175px;" class="rounded"></div>
+        </div>
+        <div class="col-md-3 col-6 px-2 mb-3">
+          <div style="background-image: url('https://f2.toyhou.se/file/f2-toyhou-se/images/35367489_0xdbJo1S1BBQZIy.png');
+          background-size:cover; background-position:center; min-height: 175px;" class="rounded"></div>
+        </div>
+        <div class="col-md-3 col-6 px-2 mb-3">
+          <div style="background-image: url('https://f2.toyhou.se/file/f2-toyhou-se/images/35367489_0xdbJo1S1BBQZIy.png');
+          background-size:cover; background-position:center; min-height: 175px;" class="rounded"></div>
+        </div>
+        <div class="col-md-3 col-6 px-2 mb-3">
+          <div style="background-image: url('https://f2.toyhou.se/file/f2-toyhou-se/images/35367489_0xdbJo1S1BBQZIy.png');
+          background-size:cover; background-position:center; min-height: 175px;" class="rounded"></div>
+        </div>
+      </div>
+ 
+    </div>
+    <!--------------------------- SECTION THREE -- STORY ------------------------------------>
+    <div class="tab-pane p-4" style="height:565px; overflow:auto;" id="THREE">
+      <!-- optional page doll -- just erase if you dont wanna use the image -- you can adjust the height -->
+      <img src="IMG_URL"
+      class="float-md-right ml-md-2 mb-md-0 mb-3 rounded d-block mx-auto" style="max-height: 450px;">
+ 
+        <p class="text-uppercase text-muted mb-1" style="font-weight: 300; letter-spacing: .5px; font-size: 11pt;">
+          <i class="fal fa-bookmark fa-fw" /> Subheader</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas facilisis ex quis enim condimentum, vulputate elementum lacus viverra. Donec non dui id augue pellentesque aliquam et eget felis. Aliquam erat volutpat. Nulla nulla augue, vehicula id volutpat nec, auctor et ipsum. Phasellus pretium non libero eu ultricies. Proin et est vitae metus interdum ullamcorper vel sit amet augue. Integer et diam eu massa faucibus molestie non vitae metus. Donec cursus lectus eros, in vestibulum sapien porta et. Aliquam ac est lorem. Etiam pulvinar laoreet augue, et faucibus ligula ornare quis. Pellentesque sed leo tincidunt, consectetur dui in, tincidunt nunc.</p>
+ 
+        <p class="text-uppercase text-muted mb-1" style="font-weight: 300; letter-spacing: .5px; font-size: 11pt;">
+          <i class="fal fa-bookmark fa-fw" /> Subheader</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas facilisis ex quis enim condimentum, vulputate elementum lacus viverra. Donec non dui id augue pellentesque aliquam et eget felis. Aliquam erat volutpat. Nulla nulla augue, vehicula id volutpat nec, auctor et ipsum. Phasellus pretium non libero eu ultricies. Proin et est vitae metus interdum ullamcorper vel sit amet augue. Integer et diam eu massa faucibus molestie non vitae metus. Donec cursus lectus eros, in vestibulum sapien porta et. Aliquam ac est lorem. Etiam pulvinar laoreet augue, et faucibus ligula ornare quis. Pellentesque sed leo tincidunt, consectetur dui in, tincidunt nunc.</p>
+ 
+        <p class="text-uppercase text-muted mb-1" style="font-weight: 300; letter-spacing: .5px; font-size: 11pt;">
+          <i class="fal fa-bookmark fa-fw" /> Subheader</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas facilisis ex quis enim condimentum, vulputate elementum lacus viverra. Donec non dui id augue pellentesque aliquam et eget felis. Aliquam erat volutpat. Nulla nulla augue, vehicula id volutpat nec, auctor et ipsum. Phasellus pretium non libero eu ultricies. Proin et est vitae metus interdum ullamcorper vel sit amet augue. Integer et diam eu massa faucibus molestie non vitae metus. Donec cursus lectus eros, in vestibulum sapien porta et. Aliquam ac est lorem. Etiam pulvinar laoreet augue, et faucibus ligula ornare quis. Pellentesque sed leo tincidunt, consectetur dui in, tincidunt nunc.</p>
+    </div>
+    <!--------------------------- SECTION FOUR -- LINKS ------------------------------------>
+    <div class="tab-pane card-block pb-1" style="height:565px; overflow:auto;" id="FOUR">
+        <div class="row">
+ 
+            <!--------------------------- CHARACTER LINK -------------------------------------->
+            <div class="col-12 mb-3">
+                <img src="IMG_URL" 
+                style="max-height:150px;" class="rounded float-sm-left mr-sm-2 d-block mx-auto" />
+ 
+                <div class="justify-content-between align-items-center">
+                  <h4 class="my-2 text-sm-left text-center text-uppercase" style="font-weight:300; letter-spacing:.5px">
+                  <!-- character name -- link to character here --->
+                  <a href="LINK_HERE" class="text-muted">
+                    Character Name
+                  </a></h4>
+                  <span>
+                    <!-- relationship strenght -- add class 'faded' to dull the heart -->
+                    <i class="fas fa-heart fa-fw" />
+                    <i class="fas fa-heart fa-fw" />
+                    <i class="fas fa-heart fa-fw" />
+                    <i class="fas fa-heart fa-fw" />
+                    <i class="fas fa-heart fa-fw" />
+                  </span>
+                </div><hr class="mt-0 mb-2 hidden-md-up">
+ 
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet massa blandit, fermentum enim a, scelerisque velit. Integer interdum urna ac dui sollicitudin sollicitudin. In feugiat posuere nulla, eget lobortis ante. </p>
+            </div>
+ 
+            <!--------------------------- CHARACTER LINK -------------------------------------->
+            <div class="col-12 mb-3">
+                <img src="IMG_URL" 
+                style="max-height:150px;" class="rounded float-sm-left mr-sm-2 d-block mx-auto" />
+ 
+                <div class="justify-content-between align-items-center">
+                  <h4 class="my-2 text-sm-left text-center text-uppercase" style="font-weight:300; letter-spacing:.5px">
+                  <!-- character name -- link to character here --->
+                  <a href="LINK_HERE" class="text-muted">
+                    Character Name
+                  </a></h4>
+                  <span>
+                    <!-- relationship strenght -- add class 'faded' to dull the heart -->
+                    <i class="fas fa-heart fa-fw" />
+                    <i class="fas fa-heart fa-fw" />
+                    <i class="fas fa-heart fa-fw" />
+                    <i class="fas fa-heart fa-fw faded" />
+                    <i class="fas fa-heart fa-fw faded" />
+                  </span>
+                </div><hr class="mt-0 mb-2 hidden-md-up">
+ 
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet massa blandit, fermentum enim a, scelerisque velit. Integer interdum urna ac dui sollicitudin sollicitudin. In feugiat posuere nulla, eget lobortis ante. </p>
+            </div>
+ 
+            <!--------------------------- CHARACTER LINK -------------------------------------->
+            <div class="col-12 mb-3">
+                <img src="IMG_URL" 
+                style="max-height:150px;" class="rounded float-sm-left mr-sm-2 d-block mx-auto" />
+ 
+                <div class="justify-content-between align-items-center">
+                  <h4 class="my-2 text-sm-left text-center text-uppercase" style="font-weight:300; letter-spacing:.5px">
+                  <!-- character name -- link to character here --->
+                  <a href="LINK_HERE" class="text-muted">
+                    Character Name
+                  </a></h4>
+                  <span>
+                    <!-- relationship strenght -- add class 'faded' to dull the heart -->
+                    <i class="fas fa-heart fa-fw" />
+                    <i class="fas fa-heart fa-fw" />
+                    <i class="fas fa-heart fa-fw faded" />
+                    <i class="fas fa-heart fa-fw faded" />
+                    <i class="fas fa-heart fa-fw faded" />
+                  </span>
+                </div><hr class="mt-0 mb-2 hidden-md-up">
+ 
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet massa blandit, fermentum enim a, scelerisque velit. Integer interdum urna ac dui sollicitudin sollicitudin. In feugiat posuere nulla, eget lobortis ante. </p>
+            </div>
+ 
+        </div>
+    </div>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
+</div>
