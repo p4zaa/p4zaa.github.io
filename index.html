@@ -1,12 +1,506 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>My GitHub Page</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <h1>Welcome to my GitHub page!</h1>
-  <p>This is a simple page created using HTML, CSS, and JavaScript.</p>
-  <script src="js/script.js"></script>
-</body>
-</html>
+<!-- 
+Code by Hiilumaru! 
+    Colors:
+    border/text: #C656FF
+    Pink: #E7B7FF
+    Yellow: #FFF56C
+    Green: #A3EF00
+    blue: #7AF1FF
+    Purple: #E7B7FF
+    Dark accent: #FF628F
+    
+-->
+<div class="card mx-auto" style="background:#fff; border:5px solid #C656FF; border-radius: 0px; color:#C656FF; font-size:12px; max-width:900px;">
+    <!-- banner -->
+    <div class="m-0" style="height:150px; border-bottom:5px solid ;background-size:cover; background-position:center;
+    
+    background-image:url(BANNER URL);">
+        
+    </div>
+    <div style="background-image:url(BACKGROUND URL)">
+        <!-- Icon - there are two! one for small screens, one for big. You can use the same image for both, or different ones! -->
+        <div class="card d-none d-md-block" style="border-radius:50%; border:5px solid #C656FF; width:200px; height:200px; position:absolute; left:40%; top:50px; background-size:cover;
+            
+            Background-image: url(BIG ICON URL);
+        
+        "></div>
+        <div class="card d-block d-md-none" style="border-radius:50%; border:5px solid #C656FF; width:150px; height:150px; position:absolute; right: 20px; top:20px; background-size:cover; z-index:900;
+            
+            Background-image: url(SMALL ICON URL);
+        
+        "></div>
+            <!-- mobile nav menu -->
+           <ul class="nav d-block d-md-none" style="background:#fff;; height:30px;">
+				<li class="nav-item" style="border-right:3px solid #C656FF;position:absolute;left:0px;">
+					<a class="nav-link" data-toggle="tab" href="#home" style="color:#C656FF; background:linear-gradient(to right,#fff,#FFF56C)">
+						<i class="far fa-house fa-lg"></i>
+					</a>
+				</li>
+				<li class="nav-item" style="border-right:3px solid #C656FF;position:absolute;left:50px">
+					<a class="nav-link" data-toggle="tab" href="#personality" style="color:#C656FF; background:linear-gradient(to right,#fff,#7AF1FF);">
+						<i class="far fa-heart fa-lg"></i>
+					</a>
+				</li>
+				<li class="nav-item" style="border-right:3px solid #C656FF;position:absolute;left:100px">
+					<a class="nav-link" data-toggle="tab" href="#stats" style="color:#C656FF; background:linear-gradient(to right,#fff,#E7B7FF)">
+						<i class="fa fa-sparkles fa-lg"></i>
+					</a>
+				</li>
+				<li class="nav-item" style="border-right:3px solid #C656FF;position:absolute;left:150px;">
+					<a class="nav-link" data-toggle="tab" href="#design" style="color:#C656FF; background:linear-gradient(to right,#fff,#A3EF00)">
+						<i class="far fa-palette fa-lg"></i>
+					</a>
+				</li>
+				<li class="nav-item" style="border-right:3px solid #C656FF;position:absolute;left:200px;">
+					<a class="nav-link" data-toggle="tab" href="#lore" style="color:#C656FF; background:linear-gradient(to right,#fff,#FFB3C9);">
+						<i class="far fa-book-spells fa-lg"></i>
+					</a>
+				</li>
+				</ul>
+        <div class="row no-gutters">
+            <!-- Sidebar -->
+            
+            <div class="col-md" style="border-right:5px solid; background:#fff;">
+                <ul class="nav flex-column d-none d-md-block">
+				<li class="nav-item p-0" style="border-bottom:3px solid #C656FF;">
+					<a class="nav-link" data-toggle="tab" href="#home" style="color:#C656FF; background:linear-gradient(to right,#fff,#FFF56C);">
+						<i class="far fa-house fa-lg"></i> Home <br>
+					</a>
+				</li>
+				<li class="nav-item" style="border-bottom:3px solid #C656FF; background:linear-gradient(to right,#fff,#7AF1FF);">
+					<a class="nav-link" data-toggle="tab" href="#personality" style="color:#C656FF;">
+						<i class="far fa-heart fa-lg"></i> Personality
+					</a>
+				</li>
+				<li class="nav-item" style="border-bottom:3px solid #C656FF; background:linear-gradient(to right,#fff,#E7B7FF);">
+					<a class="nav-link" data-toggle="tab" href="#stats" style="color:#C656FF;">
+						<i class="fa fa-sparkles fa-lg"></i> Stats & skills
+					</a>
+				</li>
+				<li class="nav-item" style="border-bottom:3px solid #C656FF; background:linear-gradient(to right,#fff,#A3EF00);">
+					<a class="nav-link" data-toggle="tab" href="#design" style="color:#C656FF;">
+						<i class="far fa-palette fa-lg"></i> Design
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" data-toggle="tab" href="#lore" style="color:#C656FF; background:linear-gradient(to right,#fff,#FFB3C9);">
+						<i class="far fa-book-spells fa-lg"></i> Lore
+					</a>
+				</li>
+				</ul>
+				<!-- music player - replace "URL HERE" with a link to an audio file! -->
+				<div class="row no-gutters" style="border-top:5px solid #C656FF;">
+				<div class="col mb-3">
+				<div class="text-center">SONG - artist
+				    <div class="progress mx-auto" style="max-width:200px;border-radius:60px;"><div class="progress-bar progress-bar-striped progress-bar-animated"  style="height:35px;background-color:#A3EF00;"><audio controls="" style="mix-blend-mode: screen;padding:5px; max-width:200px;height:35px;border-radius:60px;opacity:1;">
+				        
+				        <source src="SONG URL">
+				        
+				        </audio></div></div>
+				</div>
+				<div class="text-center">SONG - artist
+				    <div class="progress mx-auto" style="max-width:200px;border-radius:60px;"><div class="progress-bar progress-bar-striped progress-bar-animated"  style="height:35px;background-color:#7AF1FF;"><audio controls="" style="mix-blend-mode: screen;padding:5px; max-width:200px;height:35px;border-radius:60px;opacity:1;">
+				        
+				        <source src="SONG URL">
+				        
+				        </audio></div></div>
+				</div>
+				<div class="text-center">SONG - artist
+				    <div class="progress mx-auto" style="max-width:200px;border-radius:60px;"><div class="progress-bar progress-bar-striped progress-bar-animated"  style="height:35px;background-color:#FF628F;"><audio controls="" style="mix-blend-mode: screen;padding:5px; max-width:200px;height:35px;border-radius:60px;opacity:1;">
+				        
+				        <source src="SONG URL">
+				        
+				        </audio></div></div>
+				</div>
+				</div>
+    				<div class="col">
+        				<div><div class="d-none d-md-block" style="width:100%; height:5px; background:#C656FF"></div>
+        				    <ul class="nav" style="border-bottom:3px solid #C656FF;">
+        		    		<li class="nav-item" style="border-right:3px solid #C656FF; background:linear-gradient(to right,#fff,#FFF56C);">
+        					<a class="nav-link" data-toggle="tab" href="#boundaries" style="color:#C656FF;">
+        						<i class="far fa-check fa-lg"></i>
+        					</a>
+        			    	</li>
+        			    	<li class="nav-item" style="border-right:3px solid #C656FF; background:linear-gradient(to right,#fff,#A3EF00);">
+        					<a class="nav-link" data-toggle="tab" href="#trade" style="color:#C656FF;">
+        						<i class="far fa-hand-holding-dollar fa-lg"></i>
+        					</a>
+        			    	</li>
+        				    <li class="nav-item" style="border-right:5px solid #C656FF; background:linear-gradient(to right,#fff,#E7B7FF);">
+        					<a class="nav-link" data-toggle="tab" href="#worth" style="color:#C656FF;">
+        						<i class="far fa-money-bill-trend-up fa-lg"></i> 
+        					</a>
+        				    </ul>
+        				    <div class="p-2">
+        				        <div class="tab-content" style="height:150px; overflow-y:auto; overflow-x:hidden; font-size:12px;">
+        				            <div class="tab-pane  show active text-center" id="boundaries">
+        				                
+        				            <!-- Boundaries tab - use the font awesome icons to indicate yes (fa-check), VERY YES (fa-heart) no (fa-cancel) or maybe (fa-question) to each thing -->
+        				                <span>Do/don'ts<br></span>
+        				                <div class="row text-left" style="word-break:break-all;">
+        				                    <div class="col-6">
+        				                        <i class="fa fa-check fa-xs" style="color:#A3EF00;"></i> Dreamie folders <br>
+        				                        <i class="fa fa-question fa-xs" style="color:#7AF1FF;"></i> Suggestions <br>
+        				                        <i class="fa fa-cancel fa-xs" style="color:#FF628F;"></i> Ships <br>
+        				                        <i class="fa fa-heart fa-xs" style="color:#E7B7FF;"></i> Friendships <br>
+        				                    </div>
+        				                    <div class="col-6">
+        				                        <i class="fa fa-cancel fa-xs" style="color:#FF628F;"></i> Nsfw <br>
+        				                        <i class="fa fa-cancel fa-xs" style="color:#FF628F;"></i> Gore <br>
+        				                        <i class="fa fa-cancel fa-xs" style="color:#FF628F;"></i> Gift art <br>
+        				                        <i class="fa fa-cancel fa-xs" style="color:#FF628F;"></i> creative liberty <br>
+        				                    </div>
+        				                </div>
+        				            </div>
+        				            <div class="tab-pane text-center" id="trade">
+        				                
+        				            <!-- trade info -->
+        				                <span>Trade info<br></span>
+        				                For sale?: <span style="color:#FF628F">NO</span><br>
+        				                For trade?: <span style="color:#7AF1FF">MAYBE</span><br>
+        				                For offer?: <span style="color:#A3EF00">YES</span><br>
+        				                <div class="text-left" style="color:#FF628F">
+        				                    Pinglist/offer inquiries allowed?<br>
+        				                    ☐ YES  ☐ NO  ☑ WILL BLOCK
+        				                </div>
+        				            </div>
+        				            <div class="tab-pane text-center" id="worth">
+        				                
+        				            <!-- Worth tracker -->
+        				                <span>Worth<br></span>
+        				                <div class="text-left">
+        				                 <span><i class="fas fa-dollar" style="color:#FF628F;"></i> Value</span><br>
+                                            <div class="pl-3">
+                                                <span>$$ - thing</span><br>
+                                                <span>$$ - thing</span><br>
+                                                <span>$$ - thing</span><br>
+                                                <span>$$ - thing</span><br>
+                                            </div>
+        				                </div>
+        				            </div>
+        				            
+        				        </div>
+        				    </div>
+    				    </div>
+    				</div>
+				</div><div class="d-block d-md-none" style="width:100%; height:5px; background:#C656FF"></div>
+            </div>
+            <div class="col-md-8">
+                <div class="text-right m-5" style="font-size:24px; line-height:.6">TITLE GOES HERE</div>
+                <div class="card m-5 p-3" style="background:#fff; border:5px solid #C656FF; border-radius: 0px; color:#C656FF;">
+                     <div class="tab-content" style="max-height:375px;overflow-y:auto; overflow-x:hidden;">
+                         <!-- Home tab -->
+                        <div class="tab-pane show active" id="home">
+                            <div class="row">
+                                <div class="col-6"><span style="background:#A3EF00"> NAME: Name</span><br>
+                                <span style="background:#7AF1FF"> AGE: Age</span><br>
+                                 <span style="background:#FFF56C"> ORIENTATION: Orientation</span><br>
+                                  <span style="background:#E7B7FF"> STATUS: Status</span><br>
+                                </div>
+                                <div class="col-6"><span style="background:#FFF56C"> SPECIES: Species</span><br>
+                                <span style="background:#FFB3C9"> GENDER: Gender</span><br>
+                                 <span style="background:#A3EF00"> PRONOUNS: Pronouns</span><br>
+                                  <span style="background:#7AF1FF"> OCCUPATION: Occupation</span><br>
+                                </div>
+                            </div>
+                            <div class="mx-auto m-2" style="width:80%; height:3px; background-image:url(https://i.imgur.com/dp4vWRw.gif);"></div>
+                            <div class="text-center" style="font-size:18px">Another title ^_^</div>
+                            <span> Write a bio here! this box scrolls when it gets too long so you can write as much or as little as you want! This bio section includes a mini moodboard divider, pixel textured divider above, and you can always add in your own pixels as well! <img src="https://i.imgur.com/4cv6zRv.gif"></span>
+                            <div class="row no-gutters my-3">
+                                <!-- Moodboard -->
+                                <!-- image 1 -->
+                                <div class="col-2 card" style="height:0; width:100%;padding-bottom:20%;border-radius:0px; background-repeat:no-repeat; background-position:center; background-size:cover;
+                                
+                                background-image:url(IMG URL);
+                                
+                                "></div>
+                                <!-- image 2 -->
+                                <div class="col-2 card" style="height:0; width:100%;padding-bottom:20%;border-radius:0px; background-repeat:no-repeat; background-position:center; background-size:cover;
+                                
+                                background-image:url(IMG URL);
+                                
+                                "></div>
+                                <!-- image 3 -->
+                                <div class="col-2 card" style="height:0; width:100%;padding-bottom:20%;border-radius:0px; background-repeat:no-repeat; background-position:center; background-size:cover;
+                                
+                                background-image:url(IMG URL);
+                                
+                                "></div>
+                                <!-- image 4 -->
+                                <div class="col-2 card" style="height:0; width:100%;padding-bottom:20%;border-radius:0px; background-repeat:no-repeat; background-position:center; background-size:cover;
+                                
+                                background-image:url(IMG URL);
+                                
+                                "></div>
+                                <!-- image 5 -->
+                                <div class="col-2 card" style="height:0; width:100%;padding-bottom:20%;border-radius:0px; background-repeat:no-repeat; background-position:center; background-size:cover;
+                                
+                                background-image:url(IMG URL);
+                                
+                                "></div>
+                                <!-- Image 6 -->
+                                <div class="col-2 card" style="height:0; width:100%;padding-bottom:20%;border-radius:0px; background-repeat:no-repeat; background-position:center; background-size:cover;
+                                
+                                background-image:url(IMG URL);
+                                
+                                "></div>
+                            </div>
+                            <span> Write more about the character if you want! or you can delete this.</span>
+                        </div>
+                        <!-- Personality tab -->
+                        <div class="tab-pane text-center" id="personality">
+                            <span style="font-size:18px;">Pesonality</span><br>
+                            <span>Write a little about their personality here! :D</span>
+                            <div class="mx-auto m-2" style="width:80%; height:3px; background-image:url(https://i.imgur.com/dp4vWRw.gif);"></div>
+                            <div class="row">
+                                <div class="col-6 text-left"><span style="background:#FFB3C9"><i class="far fa-heart"></i></span> Like<br>
+                                <span style="background:#FFB3C9"><i class="far fa-heart"></i></span> Like<br>
+                                <span style="background:#FFB3C9"><i class="far fa-heart"></i></span> Like<br>
+                                <span style="background:#FFB3C9"><i class="far fa-heart"></i></span> Like
+                                </div>
+                                <div class="col-6 text-right">Dislike <span style="background:#7AF1FF"><i class="far fa-x"></i></span><br>
+                                Dislike <span style="background:#7AF1FF"><i class="far fa-x"></i></span><br>
+                                Dislike <span style="background:#7AF1FF"><i class="far fa-x"></i></span><br>
+                                Dislike <span style="background:#7AF1FF"><i class="far fa-x"></i></span><br>
+                                </div>
+                            </div>
+                            <!-- Favorites pills -->
+                            <span class="badge badge-pill" style="background:#FFF56C; color:#C656FF"><i class="far fa-burger" style="color: #C656FF;"></i> Food</span>
+                    <span class="badge badge-pill" style="background:#A3EF00; color:#C656FF"><i class="far fa-apple-whole" style="color: #C656FF;"></i> Fruit</span>
+                    <span class="badge badge-pill" style="background:#7AF1FF; color:#C656FF"><i class="far fa-cat" style="color: #C656FF;"></i> Animal</span>
+                    <span class="badge badge-pill" style="background:#FFB3C9; color:#C656FF"><i class="far fa-palette" style="color: #C656FF;"></i> Color</span>
+                    <span class="badge badge-pill" style="background:#E7B7FF; color:#C656FF"><i class="far fa-music-note" style="color: #C656FF;"></i> Song</span>
+                    <span class="badge badge-pill" style="background:#FFF56C; color:#C656FF"><i class="far fa-snowflake" style="color: #C656FF;"></i> Season</span>
+                    <span class="badge badge-pill" style="background:#A3EF00; color:#C656FF"><i class="far fa-flower-tulip" style="color: #C656FF;"></i> Flower</span>
+                    <span class="badge badge-pill" style="background:#7AF1FF; color:#C656FF"><i class="far fa-sun-cloud" style="color: #C656FF;"></i> Weather</span>
+                    <span class="badge badge-pill" style="background:#FFB3C9; color:#C656FF"><i class="far fa-moon-cloud" style="color: #C656FF;"></i> Time of day</span>
+                    <span class="badge badge-pill" style="background:#E7B7FF; color:#C656FF"><i class="far fa-pumpkin" style="color: #C656FF;"></i> Holiday</span>
+                            <div class="mx-auto m-2" style="width:80%; height:3px; background-image:url(https://i.imgur.com/dp4vWRw.gif);"></div>
+                            <!-- Personality values - change the Width:50% to change the position of the icon! -->
+                        <!-- one -->
+                        <div class="float-left"> Optimist</div>
+                        <div class="float-right"> Pessimist</div>
+                        <br>
+                        <div class="mx-auto mb-2 progress-bar progress-bar-striped progress-bar-animated" style="width:90%;background-color:#FFB3C9;">
+                            <div class="progress-bar d-flex progress-bar-striped progress-bar-animated" style="
+                                
+                                width:50%;
+                                
+                                background-color:#FFB3C9;">
+                                <hr class="w-100 my-auto" style="border:none;">
+                                <div class="col-auto p-0" style="width:8px;height:0px;background-color:black; color:#E7B7FF;"><i class="fa fa-star fa-2x" style="position:absolute;top:-5px;left:-8px; text-shadow: 1px 1px 0px #C656FF, -1px 1px 0px #C656FF, 1px -1px 0px #C656FF, -1px -1px 0px #C656FF;"></i></div>
+                            </div>
+                        </div>
+                        <!-- two -->
+                        <div class="float-left"> Hyper</div>
+                        <div class="float-right"> Mellow</div>
+                        <br>
+                        <div class="mx-auto mb-2 progress-bar progress-bar-striped progress-bar-animated" style="width:90%;background-color:#FFF56C;">
+                            <div class="progress-bar d-flex progress-bar-striped progress-bar-animated" style="
+                                
+                                width:50%;
+                                
+                                background-color:#FFF56C;">
+                                <hr class="w-100 my-auto" style="border:none;">
+                                <div class="col-auto p-0" style="width:8px;height:0px;background-color:black; color:#FFB3C9;"><i class="fa fa-star fa-2x" style="position:absolute;top:-5px;left:-8px; text-shadow: 1px 1px 0px #C656FF, -1px 1px 0px #C656FF, 1px -1px 0px #C656FF, -1px -1px 0px #C656FF;"></i></div>
+                            </div>
+                        </div>
+                        <!-- two -->
+                        <div class="float-left"> Patient</div>
+                        <div class="float-right"> Temperamental</div>
+                        <br>
+                        <div class="mx-auto mb-2 progress-bar progress-bar-striped progress-bar-animated" style="width:90%;background-color:#A3EF00;">
+                            <div class="progress-bar d-flex progress-bar-striped progress-bar-animated" style="
+                                
+                                width:50%;
+                                
+                                background-color:#A3EF00;">
+                                <hr class="w-100 my-auto" style="border:none;">
+                                <div class="col-auto p-0" style="width:8px;height:0px;background-color:black; color:#FFF56C;"><i class="fa fa-star fa-2x" style="position:absolute;top:-5px;left:-8px; text-shadow: 1px 1px 0px #C656FF, -1px 1px 0px #C656FF, 1px -1px 0px #C656FF, -1px -1px 0px #C656FF;"></i></div>
+                            </div>
+                        </div>
+                        <!-- two -->
+                        <div class="float-left"> Friendly</div>
+                        <div class="float-right"> Hostile</div>
+                        <br>
+                        <div class="mx-auto mb-2 progress-bar progress-bar-striped progress-bar-animated" style="width:90%;background-color:#7AF1FF;">
+                            <div class="progress-bar d-flex progress-bar-striped progress-bar-animated" style="
+                                
+                                width:50%;
+                                
+                                background-color:#7AF1FF;">
+                                <hr class="w-100 my-auto" style="border:none;">
+                                <div class="col-auto p-0" style="width:8px;height:0px;background-color:black; color:#A3EF00;"><i class="fa fa-star fa-2x" style="position:absolute;top:-5px;left:-8px; text-shadow: 1px 1px 0px #C656FF, -1px 1px 0px #C656FF, 1px -1px 0px #C656FF, -1px -1px 0px #C656FF;"></i></div>
+                            </div>
+                        </div>
+                        <!-- two -->
+                        <div class="float-left"> Chaotic</div>
+                        <div class="float-right"> Reliable</div>
+                        <br>
+                        <div class="mx-auto mb-2 progress-bar progress-bar-striped progress-bar-animated" style="width:90%;background-color:#E7B7FF;">
+                            <div class="progress-bar d-flex progress-bar-striped progress-bar-animated" style="
+                                
+                                width:50%;
+                                
+                                background-color:#E7B7FF;">
+                                <hr class="w-100 my-auto" style="border:none;">
+                                <div class="col-auto p-0" style="width:8px;height:0px;background-color:black; color:#7AF1FF;"><i class="fa fa-star fa-2x" style="position:absolute;top:-5px;left:-8px; text-shadow: 1px 1px 0px #C656FF, -1px 1px 0px #C656FF, 1px -1px 0px #C656FF, -1px -1px 0px #C656FF;"></i></div>
+                            </div>
+                        </div>
+                        </div>
+                        <!-- stats and abilities tab -->
+                        <div class="tab-pane text-center" id="stats">
+                            <span style="font-size:18px;">Stats and Skills</span><br>
+                            <div class="mx-auto m-2" style="width:80%; height:3px; background-image:url(https://i.imgur.com/dp4vWRw.gif);"></div>
+                            <div class="row">
+                                <div class="col">
+                                    <!-- Stat bars! they work the same as the personality bars -->
+                        <div class="float-left"> Strength</div>
+                        <br>
+                        <div class="mx-auto mb-2" style="width:90%;background-color:#C656FF;">
+                            <div class="progress-bar d-flex progress-bar-striped progress-bar-animated" style="
+                                
+                                width:50%;
+                                
+                                background-color:#E7B7FF;">
+                                <hr class="w-100 my-auto" style="border:none;">
+                                <div class="col-auto p-0" style="width:8px;height:0px;background-color:black; color:#E7B7FF;"><i class="fa fa-star fa-2x" style="position:absolute;top:-5px;left:-8px; text-shadow: 1px 1px 0px #C656FF, -1px 1px 0px #C656FF, 1px -1px 0px #C656FF, -1px -1px 0px #C656FF;"></i></div>
+                            </div>
+                        </div>
+                        <!-- two -->
+                        <div class="float-left"> Defense</div>
+                        <br>
+                        <div class="mx-auto mb-2" style="width:90%;background-color:#C656FF;">
+                            <div class="progress-bar d-flex progress-bar-striped progress-bar-animated" style="
+                                
+                                width:50%;
+                                
+                                background-color:#FFB3C9;">
+                                <hr class="w-100 my-auto" style="border:none;">
+                                <div class="col-auto p-0" style="width:8px;height:0px;background-color:black; color:#FFB3C9;"><i class="fa fa-star fa-2x" style="position:absolute;top:-5px;left:-8px; text-shadow: 1px 1px 0px #C656FF, -1px 1px 0px #C656FF, 1px -1px 0px #C656FF, -1px -1px 0px #C656FF;"></i></div>
+                            </div>
+                        </div>
+                        <!-- three -->
+                        <div class="float-left"> Agility</div>
+                        <br>
+                        <div class="mx-auto mb-2" style="width:90%;background-color:#C656FF;">
+                            <div class="progress-bar d-flex progress-bar-striped progress-bar-animated" style="
+                                
+                                width:50%;
+                                
+                                background-color:#FFF56C;">
+                                <hr class="w-100 my-auto" style="border:none;">
+                                <div class="col-auto p-0" style="width:8px;height:0px;background-color:black; color:#FFF56C;"><i class="fa fa-star fa-2x" style="position:absolute;top:-5px;left:-8px; text-shadow: 1px 1px 0px #C656FF, -1px 1px 0px #C656FF, 1px -1px 0px #C656FF, -1px -1px 0px #C656FF;"></i></div>
+                            </div>
+                        </div>
+                        <!-- four -->
+                                </div>
+                                <div class="col">
+                        <div class="float-left"> Speed</div>
+                        <br>
+                        <div class="mx-auto mb-2" style="width:90%;background-color:#C656FF;">
+                            <div class="progress-bar d-flex progress-bar-striped progress-bar-animated" style="
+                                
+                                width:50%;
+                                
+                                background-color:#A3EF00;">
+                                <hr class="w-100 my-auto" style="border:none;">
+                                <div class="col-auto p-0" style="width:8px;height:0px;background-color:black; color:#A3EF00;"><i class="fa fa-star fa-2x" style="position:absolute;top:-5px;left:-8px; text-shadow: 1px 1px 0px #C656FF, -1px 1px 0px #C656FF, 1px -1px 0px #C656FF, -1px -1px 0px #C656FF;"></i></div>
+                            </div>
+                        </div>
+                        <!-- two -->
+                        <!-- five -->
+                        <div class="float-left"> Stamina</div>
+                        <br>
+                        <div class="mx-auto mb-2" style="width:90%;background-color:#C656FF;">
+                            <div class="progress-bar d-flex progress-bar-striped progress-bar-animated" style="
+                                
+                                width:50%;
+                                
+                                background-color:#7AF1FF;">
+                                <hr class="w-100 my-auto" style="border:none;">
+                                <div class="col-auto p-0" style="width:8px;height:0px;background-color:black; color:#7AF1FF;"><i class="fa fa-star fa-2x" style="position:absolute;top:-5px;left:-8px; text-shadow: 1px 1px 0px #C656FF, -1px 1px 0px #C656FF, 1px -1px 0px #C656FF, -1px -1px 0px #C656FF;"></i></div>
+                            </div>
+                        </div>
+                        <!-- two -->
+                        <div class="float-left"> Magic</div>
+                        <br>
+                        <div class="mx-auto mb-2" style="width:90%;background-color:#C656FF;">
+                            <div class="progress-bar d-flex progress-bar-striped progress-bar-animated" style="
+                                
+                                width:50%;
+                                
+                                background-color:#E7B7FF;">
+                                <hr class="w-100 my-auto" style="border:none;">
+                                <div class="col-auto p-0" style="width:8px;height:0px;background-color:black; color:#E7B7FF;"><i class="fa fa-star fa-2x" style="position:absolute;top:-5px;left:-8px; text-shadow: 1px 1px 0px #C656FF, -1px 1px 0px #C656FF, 1px -1px 0px #C656FF, -1px -1px 0px #C656FF;"></i></div>
+                            </div>
+                        </div>
+                                </div>
+                            </div>
+                            <div class="text-left" style="line-height:2;">
+                                <span style="background:#7AF1FF;">An ability -</span> Details about the ability <br>
+                                <span style="background:#FFF56C;">An ability -</span> Or put some skills here <br>
+                                <span style="background:#A3EF00;">An ability -</span> hobbies even? <br>
+                                <span style="background:#E7B7FF;">An ability -</span> idk <br>
+                            </div>
+                        </div>
+                        <!-- design notes -->
+                        <div class="tab-pane text-center" id="design">
+                            <span style="font-size:18px;">Design notes</span><br>
+                            <div class="mx-auto m-2" style="width:80%; height:3px; background-image:url(https://i.imgur.com/dp4vWRw.gif);"></div>
+                            <div class="card float-left mr-2" style="width:50%;height:auto">
+                                
+                                <img src="IMAGE URL">
+                            </div>
+                            <!-- Ref sheet link -->
+                            <a href="REF SHEET URL" style="color: #FF628F; font-size:16px">Ref sheet <i class="fal fa-file-export"></i></a><br>
+                            <!-- Palette - you can hover over each color to see its hex code, or you can use that space to describe where the color is used! -->
+                            <span><i class="fas fa-star fa-xl" style="color:#FFB3C9;" title="#FFB3C9"></i>
+                            <i class="fas fa-star fa-xl" style="color:#FF628F;" title="#FF628F"></i>
+                            <i class="fas fa-star fa-xl" style="color:#FFF56C;" title="#FFF56C"></i>
+                            <i class="fas fa-star fa-xl" style="color:#A3EF00;" title="#A3EF00"></i>
+                            <i class="fas fa-star fa-xl" style="color:#7AF1FF;" title="#7AF1FF"></i>
+                            <i class="fas fa-star fa-xl" style="color:#E7B7FF;" title="#E7B7FF"></i>
+                            <i class="fas fa-star fa-xl" style="color:#FFB3C9;" title="#FFB3C9"></i></span><br><br>
+                            <div class="text-left"><span>Optional -
+                            <br><i class="fal fa-pencil"></i> Optional trait 
+                            <br><i class="fal fa-pencil"></i> Optional trait 
+                            <br><i class="fal fa-pencil"></i> Optional trait 
+                            </span>
+                            </div>
+                            <div class="text-right"><span>Not optional -
+                            <br> Required trait <i class="fal fa-marker"></i>
+                            <br> Required trait <i class="fal fa-marker"></i>
+                            <br> Required trait <i class="fal fa-marker"></i>
+                            </span>
+                            </div>
+                            <a href="URL" style="color: #FF628F; font-size:12px">Closet <i class="fal fa-file-export"></i></a><br>
+                            <a href="URL" style="color: #FF628F; font-size:12px">Alt design <i class="fal fa-file-export"></i></a><br>
+                            <a href="URL" style="color: #FF628F; font-size:12px">Pinterest board <i class="fal fa-file-export"></i></a><br>
+                            
+                            <a href="URL" style="color: #FF628F; font-size:12px">Alt design <i class="fal fa-file-export"></i></a><br>
+                        </div>
+                        <!-- lore -->
+                        <div class="tab-pane" id="lore">
+                            <div class="text-center" style="font-size:18px;">Lore</div><br>
+                            <div class="mx-auto m-2" style="width:80%; height:3px; background-image:url(https://i.imgur.com/dp4vWRw.gif);"></div>
+                            <span>
+                                This is where you can write about your character's backstory/lifestyle/lore or anything! Below are some little style things you can mix and match to make this page layout however you want! <b>bold</b> <i>italic</i> <s>strikethrough</s>
+                            </span><br>
+                            <span style="border-bottom:1px solid #E7B7FF; font-size:14px; font-weight:bold;">
+                                header with an underline
+                            </span><br>
+                            divider v
+                            <div style="border-bottom:3px solid;"></div>
+                            pixel divider v remove mx-auto to make it be on the left
+                            <div class="mx-auto m-2" style="width:80%; height:3px; background-image:url(https://i.imgur.com/dp4vWRw.gif);"></div>
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mx-auto text-center">
+    <a href="https://toyhou.se/Hiilumaru/characters/folder:2492566" style="color:#C656FF"><i class="fa fa-code"></i></a>
+</div>
