@@ -1,0 +1,14 @@
+body {
+  background-color: #ADD8E6; /* light blue */
+}
+
+h1 {
+  color: blue;
+  text-align: center;
+}
+
+p {
+  color: navy;
+  font-size: 16px;
+  text-align: center;
+}
