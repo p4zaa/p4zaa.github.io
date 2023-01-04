@@ -2,6 +2,15 @@
   <head>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+      body {
+        background-color: #FFF8DC;
+      }
+      h1 {
+        font-family: 'Satisfy', cursive;
+        font-size: 48px;
+        text-align: center;
+        text-transform: uppercase;
+      }
       .rainbow {
         background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
         -webkit-background-clip: text;
@@ -9,11 +18,39 @@
         font-family: 'Satisfy', cursive;
         font-size: 48px;
       }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 32px;
+      }
+      .project {
+        background-color: #FFF0E6;
+        border-radius: 8px;
+        margin-bottom: 16px;
+        padding: 16px;
+      }
+      .project-title {
+        font-family: 'Satisfy', cursive;
+        font-size: 32px;
+        margin-bottom: 8px;
+      }
+      .project-description {
+        font-size: 16px;
+        line-height: 24px;
+      }
     </style>
   </head>
   <body>
-    <p class="rainbow">We were born to shine</p>
-  </body>
-</html>
-
-Nothing yet ;ppp
+    <div class="container">
+      <h1 class="rainbow">My GitHub Portfolio</h1>
+      <p>Welcome to my GitHub portfolio! Here are a few of my favorite projects:</p>
+      <div class="project">
+        <h2 class="project-title">Project 1</h2>
+        <p class="project-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
+      </div>
+      <div class="project">
+        <h2 class="project-title">Project 2</h2>
+        <p class="project-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
+      </div>
+      <div class="project">
+        <h2 class="project-title">Project 3</h2>
