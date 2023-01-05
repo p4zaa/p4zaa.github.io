@@ -1,12 +1,22 @@
 <html>
-  <head>
-    <title>Redirecting to GitHub</title>
-    <meta http-equiv="refresh" content="0; URL='https://github.com/p4zaa'" />
-  </head>
   <body>
-    If you are not redirected automatically, follow the <a href="https://github.com/p4zaa">link to GitHub</a>.
+    <p>You will be redirected in <span id="countdown">5</span> seconds.</p>
+    <script>
+      function countdown() {
+        var seconds = document.getElementById("countdown").textContent;
+        seconds--;
+        document.getElementById("countdown").textContent = seconds;
+        if (seconds > 0) {
+          setTimeout(countdown, 1000);
+        } else {
+          window.location.href = "https://github.com/p4zaa";
+        }
+      }
+      countdown();
+    </script>
   </body>
 </html>
+
 
 
 <html>
