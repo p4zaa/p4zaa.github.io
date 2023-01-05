@@ -4,8 +4,17 @@
       @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
       body {
         background-color: #ADD8E6; /* Light blue */
+        /*
+        Here are some other options for easy to read background colors:
+        #FFFFFF (white)
+        #F0F0F0 (light gray)
+        #D3D3D3 (lightest gray)
+        #FFF8DC (cornsilk)
+        #FAFAD2 (light goldenrod yellow)
+        */
       }
       h1 {
+        /* My Github Portfolio*/
         font-family: 'Satisfy', cursive;
         font-size: 48px;
         text-align: center;
@@ -17,6 +26,16 @@
         -webkit-text-fill-color: transparent;
         font-family: 'Satisfy', cursive;
         font-size: 48px;
+      }
+      .black {
+        background-image: linear-gradient(to right, 
+            color-stop(0, #000080), /* Dark blue */
+            color-stop(0.25, #0000FF), /* Medium blue */
+            color-stop(0.5, #00FFFF), /* Light blue */
+            color-stop(0.75, #FFFFFF), /* Very light blue */
+            color-stop(1, #ADD8E6) /* Lightest blue */
+          );
+        font-size: 48px; /* Increase the font size */
       }
       .container {
         max-width: 800px;
@@ -42,7 +61,7 @@
   </head>
   <body>
     <div class="container">
-      <h1 class="rainbow">My GitHub Portfolio</h1>
+      <h1 class="black">My GitHub Portfolio</h1>
       <p>Welcome to my GitHub portfolio! Here are a few of my favorite projects:</p>
       <div class="project">
         <h2 class="project-title">Project 1</h2>
