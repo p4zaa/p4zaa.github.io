@@ -4,13 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ site.baseurl }}/css/menu_bar_style.css">
+    <!--link rel="stylesheet" href="path/to/menu_bar_style.css"-->
     <title>{{ page.title }}</title>
+    <style>
+        body {
+            padding-top: 10px; /* Adjust the padding-top value to match the height of your fixed menu */
+            margin-left: 0px;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000; /* Ensure the menu bar stays on top */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for a floating effect */
+        }
+        main {
+            margin-top: 10px; /* Adjust margin-top to create space below the fixed menu */
+            padding: 20px; /* Optional: Add padding to the main content */
+        }
+    </style>
 </head>
 <body>
     {% include menu_bar.html %}
+    <header>
+
+    </header>
+
     <main>
         {{ content }}
     </main>
+
     <!-- Uncomment if you have a main.js file -->
     <!-- <script src="{{ site.baseurl }}/js/main.js"></script> -->
 </body>

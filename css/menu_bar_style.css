@@ -1,4 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.pixeled-text {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 20px;
+    letter-spacing: 5px;
+}
+
+.menu-bar-text {
+    transform: translate(0%, -50%);
+}
+
 .menu-bar-container {
-    background-color: black;
+    background-color: #000000; /* Example background color */
+    color: #fff; /* Example text color */
+    /*padding: 14px; /* Example padding */
+    font-size: 16px; /* Example font size */
+    text-align: left; /* Example text alignment */
+    align-content: center;
     position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    min-height: 53px;
+    max-height: 53px;
+    padding-left: 20px;
+    padding-right: 0px;
+}
+
+.menu-bar-text {
+    display: inline-block;
+    font-size: 14px; /* Example font size for the text within the menu bar */
+}
+
+.two-cols-grid {
+    display: grid;
+    position: relative;
+    column-gap: 5px;
+    grid-template-columns: 3fr 1fr;
+    justify-items: stretch;
+    /*background-color: chartreuse;*/
+    max-height: fit-content;
+}
+
+.flex-space-between {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 43px;
 }
