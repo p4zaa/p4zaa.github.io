@@ -1,21 +1,61 @@
 <!-- _includes/menu_bar.html -->
-<div class="menu-bar-container">
-    <div class="flex-space-between">
-        <span style="cursor: pointer;">
-            <span class="menu-bar-text" style="margin-right: 15px; font-size: 20px; transform: translate(0%, -30%);">
-                ᕱ ⑅ ᕱ
+<div class="nav-pane">
+    <div class="menu-bar-container">
+        <div class="flex-space-between">
+            <span style="cursor: pointer;">
+                <span class="menu-bar-text" style="margin-right: 15px; font-size: 20px; transform: translate(0%, -20%);">
+                    ᕱ ⑅ ᕱ
+                </span>
+                <span class="pixeled-text menu-bar-text">
+                    little evil wxrks
+                </span>
             </span>
-            <span class="pixeled-text menu-bar-text">
-                little evil wxrks
-            </span>
-        </span>
-        <span>
-            <span class="menu-bar-text" style="margin-right: 20px; font-size: 20px; transform: translate(0%, -30%);">
-                GEGE
-            </span>
-            <span class="pixeled-text menu-bar-text">
-                EZ GOGO
-            </span>
-        </span>
-    </div> 
+            <div class="hamburger-menu" onclick="showHamburgerMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div> 
+    </div>
+    
+    <div class="ham-menu-container" id="ham-menu-container">
+        <div class="menu-content ul-menu">
+            <ul style="list-style-type:none; margin-top: 0px; margin-bottom: 0px; padding-top: 0px;">
+                <li>Home</li>
+                <li>Projects</li>
+                <li>About</li>
+                <li>Long long long long menu</li>
+            </ul>
+        </div>
+    </div>
 </div>
+
+
+<script>
+function showHamburgerMenu() {
+    var ham_menu = document.getElementById('ham-menu-container');
+    if (ham_menu.classList.contains('show')) {
+        ham_menu.classList.remove('show');
+        // Wait for the animation to finish before hiding the element
+        setTimeout(function() {
+            ham_menu.style.display = 'none';
+        }, 300); // Match the duration of the CSS transition
+    } else {
+        ham_menu.style.display = 'flex';
+        setTimeout(function() {
+            ham_menu.classList.add('show');
+        }, 10); // Small timeout to allow the display to apply before adding the class
+    }
+}
+
+document.addEventListener('click', function(event) {
+    var ham_menu = document.getElementById('ham-menu-container');
+    //var button = document.querySelector('hamburger-menu'); // Assuming the toggle button is a direct child
+
+    // Check if the click was outside the menu
+    if (!ham_menu.contains(event.target)) {
+        ham_menu.classList.remove('show');
+    }
+});
+
+</script>
