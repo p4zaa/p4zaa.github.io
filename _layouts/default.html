@@ -30,28 +30,17 @@
         
     </header>
 
-    <!--main>
-        <div class="content-grid">
-            {{ content }}
-        </div>
-    </main-->
     <main>
         <div class="content-grid">
-            <!--main>
+            <div class="left-side-container">
                 {{ content }}
-            </main-->
-        
-                <div class="left-side-container">
-                    {{ content }}
+            </div>
+            <div class="right-side-container">
+                <div class="toc-content">
+                    <h2>Table of Contents</h2>
+                    {% include toc.html html=content %}
                 </div>
-                <div class="right-side-container">
-                    <div class="toc-content">
-                        <h2>Table of Contents</h2>
-                        {% include toc.html html=content %}
-                    </div>
-                </div>
-            
-
+            </div>
         </div>
     </main>
 
