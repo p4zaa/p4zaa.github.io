@@ -9,7 +9,7 @@
 }
 
 .menu-bar-text {
-    transform: translate(0%, -40%);
+    transform: translate(0%, -25%);
 }
 
 .nav-pane {
@@ -31,13 +31,8 @@
     font-size: 16px; /* Example font size */
     text-align: left; /* Example text alignment */
     align-content: center;
-    width: 100%;
     z-index: 1000;
     position: relative;
-
-    /*position: fixed;
-    top: 0;
-    z-index: 1000;*/
     min-height: 53px;
     max-height: 53px;
     padding-left: 20px;
@@ -62,11 +57,12 @@
 .flex-space-between {
     display: flex;
     justify-content: space-between;
-    margin-right: 43px;
+    margin-right: 20px;
 }
 
 .ham-menu-container {
     display: none; 
+    font-size: 14px;
     position: relative;
     margin-left: auto;
     justify-content: right;
@@ -111,7 +107,7 @@
 }
 
 .ul-menu ul li:hover {
-    background-color: pink;
+    background-color: aqua;
     color: black;
     border-radius: 10px;
     cursor: pointer;

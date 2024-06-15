@@ -1,3 +1,20 @@
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  auto_ids: true
+  toc_levels: 1..6
+  toc_footers: "<p style='text-align: right;'>Table of contents generated with <a href='https://jekyllrb.com/'>Jekyll</a></p>"
+
+plugins:
+  - jekyll-toc
+
+toc:
+  min_level: 1 # default: 1
+  max_level: 2 # default: 6
+  no_toc_section_class:
+    - no_toc_section
+
 exclude:
   - .vscode/
   - .github/

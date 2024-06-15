@@ -1,0 +1,95 @@
+---
+layout: default
+title: Elements Ref Sheet
+toc: true
+---
+
+<h1 class="no_toc">Elements style reference :></h1>
+
+<h2 id="callout">Callout</h2>
+<div class="callout">
+    <span>
+        <i class="fa-solid fa-circle-exclamation fa-xl" style="color: #B197FC;"></i>
+    </span>
+    Hi This is Callout </br>
+    Good game well play
+</div>
+<div class="callout" style="background-color: orange; width: fit-content; border-color: orangered;">
+    <span>
+        <i class="fa-solid fa-circle-radiation fa-xl"></i>
+    </span>
+    <span style="font-weight: bold;">Behold!</span></br>
+    This is callout with</br>
+    <code>width: fit-content;</code></br>
+    <code>border-color: orangered;</code>
+</div>
+
+<h2 id="highlight">Highlight</h2>
+Gain insights into your <span class="highlight">team's performance</span> and <span class="highlight">progress</span>.
+
+<h2 id="code">Code</h2>
+Use <code>preprocess()</code> function to preprocess your <code>dataframe</code>.
+
+<h2 id="codeblock">Code-block</h2>
+<div class="code-block">
+<pre>
+x = 'hello world!'
+print(x)
+# hello world!
+</pre>
+</div>
+
+Sample long code text
+<div class="code-block">
+<pre>
+Error: there is no registered task type 'zsh'. Did you miss installing an extension that provides a corresponding task provider?
+</pre>
+</div>
+
+<h2 id="table">Table</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Feature</th>
+            <th>Pandas</th>
+            <th>Polars</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Library Origin</td>
+            <td>Python</td>
+            <td>Rust</td>
+        </tr>
+        <tr>
+            <td>Performance</td>
+            <td>Slower, can be improved with Dask or Modin</td>
+            <td>Faster, optimized for parallel processing</td>
+        </tr>
+        <tr>
+            <td>Memory Usage</td>
+            <td>Higher, due to internal data representation</td>
+            <td>Lower, more memory efficient</td>
+        </tr>
+        <tr>
+            <td>Handling Large Datasets</td>
+            <td>Not optimal without external libraries</td>
+            <td>Designed for large datasets</td>
+        </tr>
+        <tr>
+            <td>Lazy Evaluation</td>
+            <td>Not supported</td>
+            <td>Supported, can improve performance</td>
+        </tr>
+        <tr>
+            <td>Multi-threading</td>
+            <td>Limited support</td>
+            <td>Excellent support, built-in multi-threading</td>
+        </tr>
+        <tr>
+            <td>Typical Use Cases</td>
+            <td>General-purpose data manipulation and analysis</td>
+            <td>High-performance data processing, especially large datasets</td>
+        </tr>
+    </tbody>
+</table>

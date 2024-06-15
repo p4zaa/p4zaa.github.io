@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ site.baseurl }}/css/menu_bar_style.css">
     <link rel="stylesheet" href="{{ site.baseurl }}/css/page_style.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/block_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <!--link rel="stylesheet" href="path/to/menu_bar_style.css"-->
     <title>{{ page.title }}</title>
     <style>
@@ -19,23 +21,41 @@
             z-index: 1000; /* Ensure the menu bar stays on top */
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for a floating effect */
         }
-        main {
-            margin-top: 10px; /* Adjust margin-top to create space below the fixed menu */
-            padding: 20px; /* Optional: Add padding to the main content */
-        }
     </style>
 </head>
 <body>
     {% include menu_bar.html %}
+    
     <header>
-
+        
     </header>
 
+    <!--main>
+        <div class="content-grid">
+            {{ content }}
+        </div>
+    </main-->
     <main>
-        {{ content }}
+        <div class="content-grid">
+            <!--main>
+                {{ content }}
+            </main-->
+        
+                <div class="left-side-container">
+                    {{ content }}
+                </div>
+                <div class="right-side-container">
+                    <div class="toc-content">
+                        <h2>Table of Contents</h2>
+                        {% toc %}
+                    </div>
+                </div>
+            
+
+        </div>
     </main>
 
     <!-- Uncomment if you have a main.js file -->
-    <!-- <script src="{{ site.baseurl }}/js/main.js"></script> -->
+    <script src="{{ site.baseurl }}/js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,96 @@
+
+/* Callout Element */
+.callout {
+    display: block;
+    line-height: 25px;
+    padding: 10px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: blueviolet;
+    background-color: aqua;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.img-block {
+    text-align: center;
+}
+
+/*Hightlight*/
+.highlight {
+    background-color: yellow;
+    border-radius: 5px;
+}
+
+/* Table Element */
+table {
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    padding-bottom: 100px; /* Add padding at the bottom */
+}
+
+th,
+td {
+    padding: 10px;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: left;
+    white-space: normal; /* Prevent wrapping in one line */
+    overflow: hidden; /* Hide overflowing text */
+    text-overflow: ellipsis; /* Show ellipsis for overflow */
+    max-height: 3.6em; /* Equivalent to two lines of text with line height of 1.8em */
+    /*max-width: 200px; /* Set the maximum width */
+    line-height: 1.8em;
+}
+
+
+th {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+    background-color: #e5e5e5;
+}
+
+/* Code-block Element */
+.code-block {
+    font-family: Consolas,"courier new";
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 5px;
+    color: whitesmoke;
+    border: 1px solid rgb(0, 0, 0);
+    background-color: rgb(77, 77, 77);
+    margin-top: 8px;
+    margin-bottom: 8px;
+    overflow-y: auto;
+}
+
+pre {
+    margin: 0;
+    line-height: 25px;
+  }
+  
+
+code {
+    font-family: Consolas,"courier new";
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    background-color: #00000020;
+    padding: 2px;
+    border-radius: 5px;
+}
+
+code:hover {
+    background-color: #00000033;
+}

@@ -1,3 +1,76 @@
+body {
+    background-color: beige;
+    font-family: Arial, sans-serif;
+    font-size: 18px; /* You can adjust the font size to your preference */
+    line-height: 1.6; /* This improves readability by increasing the space between lines */
+    color: #333; /* A dark color for the text to contrast well with the beige background */
+    margin: 20px; /* Adding some margin around the body can also improve the layout */
+}
+
+h2 {
+    margin-bottom: 5px;
+}
+
 li {
     padding: 10px 10px 10px 10px;
+}
+
+img {
+    max-width: 80%; 
+    height: auto;
+}
+
+main {
+    margin-top: 10px; /* Adjust margin-top to create space below the fixed menu */
+    display: flex;
+    position: relative;
+    justify-content: center;
+    padding-top: 20px;
+    /*background-color: aqua;*/
+}
+
+.content-grid {
+    display: flex;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.left-side-container {
+    display: block;
+    width: 800px;
+    text-wrap: pretty;
+    overflow-wrap: break-word;
+    /*background-color: rgb(183, 241, 255);*/
+}
+
+.right-side-container {
+    top: 20px;
+    float: right;
+    margin-left: 10px; 
+    width: 300px;
+    /*background-color: rgb(199, 199, 199);*/
+}
+
+.toc-content {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 10%;
+    margin-top: 100px;
+    background-color: rgb(203, 162, 209);
+    border-radius: 20px;
+    padding: 10px;
+    max-height: calc(100vh - 40px); /* Adjust based on your layout */
+}
+
+@media (max-width: 1150px) {
+    .content-grid
+    .right-side-container {
+        display: none;
+    }
+    .left-side-container {
+        width: auto;
+    }
 }
