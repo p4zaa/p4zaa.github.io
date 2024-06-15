@@ -4,17 +4,10 @@ title: Elements Ref Sheet
 toc: true
 ---
 
-<h1 class="no_toc">Elements style reference :></h1>
+<h1 class="no_toc">Elements Reference Sheet ❤️</h1>
 
 <h2 id="callout">Callout</h2>
-<div class="callout">
-    <span>
-        <i class="fa-solid fa-circle-exclamation fa-xl" style="color: #B197FC;"></i>
-    </span>
-    Hi This is Callout </br>
-    Good game well play
-</div>
-<div class="callout" style="background-color: orange; width: fit-content; border-color: orangered;">
+<div class="callout orange">
     <span>
         <i class="fa-solid fa-circle-radiation fa-xl"></i>
     </span>
@@ -23,8 +16,16 @@ toc: true
     <code>width: fit-content;</code></br>
     <code>border-color: orangered;</code>
 </div>
+<div class="callout full-width">
+    <span>
+        <i class="fa-solid fa-circle-exclamation fa-xl" style="color: #B197FC;"></i>
+    </span>
+    Hi This is Callout </br>
+    Good game well play
+</div>
 
 <h2 id="quote-block">Quote Block</h2>
+
 <div class="quote">
 <i class="fa-solid fa-quote-left"></i>
 Never have your wallet with you onstage. It's bad luck. You shouldn't play the piano with money in your pocket. Play like you need the money. - Tom Waits
@@ -37,10 +38,27 @@ Never have your wallet with you onstage. It's bad luck. You shouldn't play the p
     <i class="fa-solid fa-quote-right"></i>
 </div>
 
-<div class="quote red">
+<div class="quote full-width">
+    <i class="fa-solid fa-quote-left"></i>
+    Whaaaa~ quote with <code>full-width</code> will set style to <code>width: auto;</code>
+    <i class="fa-solid fa-quote-right"></i>
+</div>
+
+<div class="quote red full-width">
     <i class="fa-solid fa-quote-left"></i>
     What?
     <i class="fa-solid fa-quote-right"></i>
+</div>
+
+<div class="quote green">
+    <i class="fa-solid fa-quote-left"></i>
+    A Code block inside a quote block o.O
+    <i class="fa-solid fa-quote-right"></i>
+<div class="code-block">&lt;div class="quote green"&gt;
+    &lt;i class=&quot;fa-solid fa-quote-left&quot;&gt;&lt;/i&gt;
+    A Code block inside a quote block o.O
+    &lt;i class=&quot;fa-solid fa-quote-right&quot;&gt;&lt;/i&gt;
+&lt;/div&gt;</div>
 </div>
 
 <h2 id="highlight">Highlight</h2>

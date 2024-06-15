@@ -3,6 +3,7 @@
 .callout {
     display: block;
     line-height: 25px;
+    width: fit-content;
     padding: 10px;
     border-radius: 10px;
     border-style: solid;
@@ -11,6 +12,15 @@
     background-color: aqua;
     margin-top: 8px;
     margin-bottom: 8px;
+}
+
+.callout.full-width {
+    width: auto;
+}
+
+.callout.orange {
+    background-color: orange; 
+    border-color: orangered;
 }
 
 /* Quote Element */
@@ -27,6 +37,10 @@
     width: fit-content;
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+.quote.full-width {
+    width: auto;
 }
 
 .quote.green {
@@ -105,6 +119,8 @@ tbody tr:hover {
     overflow-y: auto;
     overflow-x: auto;
     white-space: pre-wrap;
+    word-break:keep-all;
+    overflow-wrap:break-word;
 }
 
 pre {
@@ -112,7 +128,6 @@ pre {
     line-height: 25px;
     overflow: auto;
 }
-  
 
 code {
     font-family: Consolas,"courier new";
