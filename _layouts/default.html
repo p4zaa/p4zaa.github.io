@@ -9,11 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <!--link rel="stylesheet" href="path/to/menu_bar_style.css"-->
     <title>{{ page.title }}</title>
-    <style>
-        body {
-            padding-top: 10px; /* Adjust the padding-top value to match the height of your fixed menu */
-            margin-left: 0px;
-        }
+    <!--style>
         header {
             position: fixed;
             top: 0;
@@ -21,14 +17,10 @@
             z-index: 1000; /* Ensure the menu bar stays on top */
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for a floating effect */
         }
-    </style>
+    </style-->
 </head>
 <body>
     {% include menu_bar.html %}
-    
-    <header>
-        
-    </header>
 
     <main>
         <div class="content-grid">

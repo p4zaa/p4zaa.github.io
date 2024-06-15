@@ -5,6 +5,8 @@ body {
     line-height: 1.6; /* This improves readability by increasing the space between lines */
     color: #333; /* A dark color for the text to contrast well with the beige background */
     margin: 20px; /* Adding some margin around the body can also improve the layout */
+    padding-top: 10px; /* Adjust the padding-top value to match the height of your fixed menu */
+    margin-left: 0px;
 }
 
 h2 {
@@ -36,6 +38,7 @@ main {
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
+    padding-left: 5%;
 }
 
 .left-side-container {
@@ -70,7 +73,9 @@ main {
     .right-side-container {
         display: none;
     }
+    
     .left-side-container {
         width: auto;
+        max-width: 800px;
     }
 }

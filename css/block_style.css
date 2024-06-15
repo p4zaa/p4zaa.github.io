@@ -13,6 +13,34 @@
     margin-bottom: 8px;
 }
 
+/* Quote Element */
+.quote {
+    display: block;
+    border-left-color: #007BFF;
+    border-left-width: 5px;
+    border-left-style: solid;
+    background-color: rgb(223, 240, 255);
+    padding: 20px;
+    border-radius: 5px 8px 8px 5px;
+    color: #007BFF;
+    white-space: normal;
+    width: fit-content;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.quote.green {
+    border-left-color: green;
+    background-color: rgb(187, 249, 176);
+    color: green;
+}
+
+.quote.red {
+    border-left-color: red;
+    background-color: rgb(255, 197, 197);
+    color: rgb(191, 0, 0);
+}
+
 .img-block {
     text-align: center;
 }
@@ -35,10 +63,10 @@ table {
 
 th,
 td {
-    padding: 10px;
-    padding-top: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 1%;
+    padding-top: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
     text-align: left;
     white-space: normal; /* Prevent wrapping in one line */
     overflow: hidden; /* Hide overflowing text */
@@ -68,18 +96,22 @@ tbody tr:hover {
     font-size: 14px;
     padding: 10px;
     border-radius: 5px;
+    /*max-height: 500px;*/
     color: whitesmoke;
     border: 1px solid rgb(0, 0, 0);
     background-color: rgb(77, 77, 77);
     margin-top: 8px;
     margin-bottom: 8px;
     overflow-y: auto;
+    overflow-x: auto;
+    white-space: pre-wrap;
 }
 
 pre {
     margin: 0;
     line-height: 25px;
-  }
+    overflow: auto;
+}
   
 
 code {

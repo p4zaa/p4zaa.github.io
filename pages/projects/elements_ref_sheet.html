@@ -24,27 +24,27 @@ toc: true
     <code>border-color: orangered;</code>
 </div>
 
+<h2 id="quote-block">Quote Block</h2>
+<div class="quote">
+<i class="fa-solid fa-quote-left"></i>
+Never have your wallet with you onstage. It's bad luck. You shouldn't play the piano with money in your pocket. Play like you need the money. - Tom Waits
+<i class="fa-solid fa-quote-right"></i>
+</div>
+
+<div class="quote green">
+    <i class="fa-solid fa-quote-left"></i>
+    In the tapestry of life, every thread counts. Embrace uncertainty and let kindness guide your way.
+    <i class="fa-solid fa-quote-right"></i>
+</div>
+
+<div class="quote red">
+    <i class="fa-solid fa-quote-left"></i>
+    What?
+    <i class="fa-solid fa-quote-right"></i>
+</div>
+
 <h2 id="highlight">Highlight</h2>
 Gain insights into your <span class="highlight">team's performance</span> and <span class="highlight">progress</span>.
-
-<h2 id="code">Code</h2>
-Use <code>preprocess()</code> function to preprocess your <code>dataframe</code>.
-
-<h2 id="codeblock">Code-block</h2>
-<div class="code-block">
-<pre>
-x = 'hello world!'
-print(x)
-# hello world!
-</pre>
-</div>
-
-Sample long code text
-<div class="code-block">
-<pre>
-Error: there is no registered task type 'zsh'. Did you miss installing an extension that provides a corresponding task provider?
-</pre>
-</div>
 
 <h2 id="table">Table</h2>
 <table>
@@ -93,3 +93,45 @@ Error: there is no registered task type 'zsh'. Did you miss installing an extens
         </tr>
     </tbody>
 </table>
+
+<h2 id="code">Code</h2>
+Use <code>preprocess()</code> function to preprocess your <code>dataframe</code>.
+
+<h2 id="codeblock">Code-block</h2>
+<div class="code-block">x = 'hello world!'
+print(x)
+# hello world!
+</div>
+
+Sample long code text
+<div class="code-block">Error: there is no registered task type 'zsh'. Did you miss installing an extension that provides a corresponding task provider?
+</div>
+
+<div class="code-block">// GO TO TOP BUTTON FUNCTION
+    let calcScrollValue = () => {
+        //alert('SCROLL!')
+        let scrollProgress = document.getElementById("scroll-progress");
+        let progressValue = document.getElementById("scroll-progress-value");
+        let sidebar_refresh_btn = document.getElementById("sidebar-refresh-page-button");
+        let pos = document.documentElement.scrollTop;
+        let calcHeight =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+        let scrollValue = Math.round((pos * 100) / calcHeight);
+        if (pos > 100) {
+          scrollProgress.style.display = "grid";
+          sidebar_refresh_btn.style.display = 'flex';
+        } else {
+          scrollProgress.style.display = "none";
+          sidebar_refresh_btn.style.display = 'none';
+        }
+        scrollProgress.addEventListener("click", () => {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+          });
+        });
+        scrollProgress.style.background = `conic-gradient(#03cc65 ${scrollValue}%, #d7d7d7 ${scrollValue}%)`;
+    };
+</div>
+

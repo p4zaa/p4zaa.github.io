@@ -95,7 +95,7 @@
 .hamburger-menu {
     display: flex;
     flex-direction: column;
-    transform: translate(0%, 15%);
+    transform: translate(0%, 20%);
     cursor: pointer;
 }
 
@@ -112,3 +112,22 @@
     border-radius: 10px;
     cursor: pointer;
   }
+
+#logoIcon {
+    margin-right: 15px; 
+    font-size: 20px; 
+    transform: translate(0%, -20%);
+}
+
+#miniLogoName {
+    display: none;
+}
+
+@media (max-width: 450px) {
+    #logoName {
+        display: none;
+    }
+    #miniLogoName {
+        display: inline-block;
+    }
+}
