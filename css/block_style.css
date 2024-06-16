@@ -133,7 +133,7 @@
 .color-palette:hover {
     background-color: var(--palette-color);
     border-color: black;
-    transform: scale(1.05); /* Scale up slightly on hover */
+    transform: scale(1.03); /* Scale up slightly on hover */
 }
 
 .color-palette:hover::before {
