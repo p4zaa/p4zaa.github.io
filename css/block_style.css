@@ -67,6 +67,86 @@
     border-radius: 5px;
 }
 
+/*Color Palette*/
+.palette-grid {
+    display: grid;
+    border-radius: 15px; 
+    width: auto;
+    height: auto;
+    gap: 0; 
+    grid-auto-flow: row dense; 
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.color-palette {
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--palette-color);
+    width: 60px;
+    max-width: 80px;
+    min-height: 60px;
+    padding-left: 80px; /* Adjust padding to make space for the color box */
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+    transition: transform 0.1s ease-in-out;
+}
+
+.color-palette::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    width: 40px; /* Size of the square color box */
+    height: 40px;
+    background-color: var(--palette-color); /* Using CSS variable */
+    border-radius: 5px; /* Border radius for the color box */
+}
+
+.color-code {
+    position: absolute;
+    top: 50%;
+    left: 60px; /* Adjust this to position the text correctly */
+    transform: translateY(-50%);
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--palette-color);
+}
+
+.color-palette:hover {
+    background-color: var(--palette-color);
+    border-color: black;
+    transform: scale(1.05); /* Scale up slightly on hover */
+}
+
+.color-palette:hover::before {
+    background-color: white; /* Change background color to white on hover */
+}
+
+.color-palette:hover .color-code {
+    color: rgb(47, 47, 47); /* Change text color on hover */
+}
+
+.color-palette:active {
+    transform: scale(1.0);
+    /*animation: shake 0.3s ease-in-out; /* Apply the shake animation on click */
+}
+
+@keyframes shake {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(-5deg); }
+    75% { transform: rotate(3deg); }
+    100% { transform: rotate(0deg); }
+}
+
 /* Table Element */
 table {
     border-collapse: collapse;

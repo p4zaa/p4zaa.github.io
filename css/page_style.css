@@ -1,5 +1,5 @@
 body {
-    background-color: beige;
+    background-color: #F5F4F0; /*#FAF9F6;*/
     font-family: Arial, sans-serif;
     font-size: 18px; /* You can adjust the font size to your preference */
     line-height: 1.6; /* This improves readability by increasing the space between lines */
@@ -46,6 +46,7 @@ main {
 
 .sub-content-block {
     display: grid;
+    /*background-color: coral;*/
 }
 
 .left-side-container {
@@ -67,7 +68,7 @@ main {
     width: fit-content;
     padding-left: 2%;
     padding-right: 2%;
-    /*background-color: rgb(199, 199, 199);*/
+    /*background-color: rgba(199, 199, 199, 0.461);*/
 }
 
 .toc-content {
