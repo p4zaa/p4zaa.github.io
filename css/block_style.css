@@ -1,9 +1,9 @@
-
 /* Callout Element */
 .callout {
     display: block;
     line-height: 25px;
-    width: fit-content;
+    max-width: fit-content;
+    width: auto;
     padding: 10px;
     border-radius: 10px;
     border-style: solid;
@@ -15,7 +15,7 @@
 }
 
 .callout.full-width {
-    width: auto;
+    max-width: 100vw;
 }
 
 .callout.orange {
@@ -34,13 +34,15 @@
     border-radius: 5px 8px 8px 5px;
     color: #007BFF;
     white-space: normal;
-    width: fit-content;
+    max-width: fit-content;
+    width: auto;
     margin-top: 10px;
     margin-bottom: 10px;
+    overflow: auto;
 }
 
 .quote.full-width {
-    width: auto;
+    max-width: 100vw;
 }
 
 .quote.green {
@@ -83,7 +85,7 @@ td {
     padding-right: 2%;
     text-align: left;
     white-space: normal; /* Prevent wrapping in one line */
-    overflow: hidden; /* Hide overflowing text */
+    overflow: auto; /* Hide overflowing text */
     text-overflow: ellipsis; /* Show ellipsis for overflow */
     max-height: 3.6em; /* Equivalent to two lines of text with line height of 1.8em */
     /*max-width: 200px; /* Set the maximum width */
@@ -116,11 +118,8 @@ tbody tr:hover {
     background-color: rgb(77, 77, 77);
     margin-top: 8px;
     margin-bottom: 8px;
-    overflow-y: auto;
-    overflow-x: auto;
-    white-space: pre-wrap;
-    word-break:keep-all;
-    overflow-wrap:break-word;
+    overflow: auto;
+    white-space: pre;
 }
 
 pre {

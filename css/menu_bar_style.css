@@ -123,11 +123,20 @@
     display: none;
 }
 
-@media (max-width: 450px) {
+@media (max-width: 490px) {
     #logoName {
         display: none;
     }
     #miniLogoName {
         display: inline-block;
+    }
+}
+
+@media (max-width: 235px) {
+    #logoName {
+        display: none;
+    }
+    #miniLogoName {
+        display: none;
     }
 }
