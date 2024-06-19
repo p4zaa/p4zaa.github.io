@@ -198,11 +198,14 @@ tbody tr:hover {
 
 /* Code-block Element */
 .code-block {
+    display: flex;
+    flex-direction: column;
+    position: relative;
     font-family: Consolas,"courier new";
     font-size: 14px;
     padding: 10px;
-    border-radius: 5px;
-    /*max-height: 500px;*/
+    border-radius: 10px;
+    max-height: 500px;
     color: whitesmoke;
     border: 1px solid rgb(0, 0, 0);
     background-color: rgb(77, 77, 77);
@@ -211,6 +214,34 @@ tbody tr:hover {
     overflow: auto;
     white-space: pre;
 }
+
+.code-block.fit {
+    max-width: fit-content;
+}
+
+.code-block::before {
+    content: '🔴 🟡 🟢 ' attr(lang);
+    margin-bottom: 5px;
+    color: rgb(212, 212, 212);
+    font-size: 12px;
+    font-weight: bold;
+    position: sticky;
+    padding: 3px 8px;
+    top: 0px;
+    left: 0px;
+    width: auto;
+    height: 20px;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.336);
+    text-transform: uppercase;
+}
+
+/*
+.code-block:hover::before {
+    content: '🔴 🟡 🟣 ' attr(lang) ' copy';
+    cursor: pointer;
+}
+*/
 
 pre {
     margin: 0;

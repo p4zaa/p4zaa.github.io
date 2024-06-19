@@ -1,0 +1,92 @@
+---
+layout: default
+title: LittleConfig
+toc: true
+---
+<style>
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .box {
+        width: 100px;
+        height: 100px;
+        background-color: lightblue;
+        border: 1px solid #000;
+        transition: background-color 0.3s ease;
+    }
+    .box:hover {
+        background-color: lightcoral;
+    }
+    .box1:hover ~ .box2,
+    .box1:hover ~ .box3,
+    .box1:hover ~ .box4 {
+        background-color: lightgreen;
+    }
+</style>
+
+<h1 class="no_toc">LittleConfig: Revolutionize Your ML Pipeline Configuration</h1>
+<p>Welcome to LittleConfig, the next generation of configuration management tailored for machine learning pipeline development and training. LittleConfig is not just another config YAML file; it’s a powerful tool designed to make your ML projects more efficient and flexible. Here's why LittleConfig stands out:</p>
+<ul>
+    <li><strong>Modular Design:</strong> Specify main config files separately with sub-config files for better organization and clarity.</li>
+    <li><strong>Intuitive Attribute Access:</strong> Access config attributes seamlessly with <code>.attribute</code> notation, making your code cleaner and more readable.</li>
+    <li><strong>Dynamic Overrides:</strong> Override specific attributes on-the-fly without altering the main configuration, enhancing flexibility.</li>
+    <li><strong>Simplicity & Usability:</strong> Designed to be simple and easy to use, enabling quick adoption and integration.</li>
+</ul>
+
+<div class="container">
+    <div class="box box1">Box 1</div>
+    <div class="box box2">Box 2</div>
+    <div class="box box3">Box 3</div>
+    <div class="box box4">Box 4</div>
+</div>
+
+<h2>Why Choose Config-Oriented Approach?</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Advantage</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Modularity</td>
+            <td>Enable modular configuration management, simplifying updates and maintenance across different project components.</td>
+        </tr>
+        <tr>
+            <td>Reusability</td>
+            <td>Reuse configurations across various projects, reducing redundancy and saving time.</td>
+        </tr>
+        <tr>
+            <td>Consistency</td>
+            <td>Ensure consistent setups across different environments, minimizing the risk of configuration errors.</td>
+        </tr>
+        <tr>
+            <td>Separation of Concerns</td>
+            <td>Keep configuration logic separate from application logic for cleaner, more maintainable code.</td>
+        </tr>
+        <tr>
+            <td>Ease of Maintenance</td>
+            <td>Update configurations with ease by modifying config files rather than code.</td>
+        </tr>
+        <tr>
+            <td>Scalability</td>
+            <td>Effortlessly scale your applications with different configurations for development, testing, and production environments.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Getting Started with LittleConfig</h2>
+<p>Using LittleConfig is a breeze. Here's a quick example to get you started:</p>
+<div class="code-block fit" lang="python">little_config = LittleConfig(
+    initial_path = 'path/to/initial_yaml_path',
+    config_path = 'path/to/config_path',
+    config_name = 'sentiment-prediction-model1',
+    overrides = {'mode': 'evaluate'})
+</div>
+
+<div class="code-block fit" lang="python">config = little_config.config</div>
+
+<p>With LittleConfig, you can take your machine learning projects to the next level, making your configurations more organized, maintainable, and adaptable. Experience the power of streamlined configuration management today!</p>

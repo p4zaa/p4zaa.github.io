@@ -11,4 +11,3 @@ document.querySelectorAll('.color-palette').forEach(palette => {
         });
     });
 });
-
