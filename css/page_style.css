@@ -40,7 +40,7 @@ main {
     /*margin-right: auto;*/
     padding-left: 2%;
     padding-right: 2%;
-    overflow: auto;
+    overflow: clip;
     /*background-color: darkgrey;*/
 }
 
@@ -56,7 +56,7 @@ main {
     max-width: 800px;
     text-wrap: pretty;
     overflow-wrap: break-word;
-    overflow: auto;
+    /*overflow: auto;*/
     /*background-color: rgb(183, 241, 255);*/
 }
 

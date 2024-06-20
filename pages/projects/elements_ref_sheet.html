@@ -131,7 +131,7 @@ Gain insights into your <span class="highlight">team's performance</span> and <s
 <div class="color-palette" data-color="#007BFF">
     <span class="color-code">#007BFF</span>
 </div>
-<div class="overflow-block">
+<div class="table-container">
 <table>
     <thead>
         <tr>
@@ -140,6 +140,58 @@ Gain insights into your <span class="highlight">team's performance</span> and <s
             <th>Polars</th>
         </tr>
     </thead>
+    <tbody>
+        <tr>
+            <td>Library Origin</td>
+            <td>Python</td>
+            <td>Rust</td>
+        </tr>
+        <tr>
+            <td>Performance</td>
+            <td>Slower, can be improved with Dask or Modin</td>
+            <td>Faster, optimized for parallel processing</td>
+        </tr>
+        <tr>
+            <td>Memory Usage</td>
+            <td>Higher, due to internal data representation</td>
+            <td>Lower, more memory efficient</td>
+        </tr>
+        <tr>
+            <td>Handling Large Datasets</td>
+            <td>Not optimal without external libraries</td>
+            <td>Designed for large datasets</td>
+        </tr>
+        <tr>
+            <td>Lazy Evaluation</td>
+            <td>Not supported</td>
+            <td>Supported, can improve performance</td>
+        </tr>
+        <tr>
+            <td>Multi-threading</td>
+            <td>Limited support</td>
+            <td>Excellent support, built-in multi-threading</td>
+        </tr>
+        <tr>
+            <td>Typical Use Cases</td>
+            <td>General-purpose data manipulation and analysis</td>
+            <td>High-performance data processing, especially large datasets</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<h2 id="sticky-table">Sticky Header Table</h2>
+<div class="table-container">
+<table class="sticky">
+    <thead>
+        <tr>
+            <th>Feature</th>
+            <th>Pandas</th>
+            <th>Polars</th>
+        </tr>
+    </thead>
+</table>
+<table>
     <tbody>
         <tr>
             <td>Library Origin</td>

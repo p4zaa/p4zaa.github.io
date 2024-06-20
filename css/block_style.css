@@ -157,6 +157,10 @@
     100% { transform: rotate(0deg); }
 }
 
+.table-container {
+    display: inline-block;
+}
+
 /* Table Element */
 table {
     border-collapse: collapse;
@@ -165,6 +169,15 @@ table {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     background-color: #fff;
     padding-bottom: 100px; /* Add padding at the bottom */
+}
+
+table.fixed { table-layout:fixed; }
+
+table.sticky {
+    position: sticky;
+    top: 7%;
+    width: 100%;
+    z-index: 10;
 }
 
 th,
@@ -182,10 +195,10 @@ td {
     line-height: 1.8em;
 }
 
-
 th {
     background-color: #007BFF;
     color: #fff;
+    text-align: left;
 }
 
 tbody tr:nth-child(even) {
