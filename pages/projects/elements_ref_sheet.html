@@ -56,7 +56,7 @@ Never have your wallet with you onstage. It's bad luck. You shouldn't play the p
     <i class="fa-solid fa-quote-left"></i>
     A Code block inside a quote block o.O
     <i class="fa-solid fa-quote-right"></i>
-<div class="code-block" lang="html">&lt;div class="quote green"&gt;
+<div class="codeblock" lang="html">&lt;div class="quote green"&gt;
     &lt;i class=&quot;fa-solid fa-quote-left&quot;&gt;&lt;/i&gt;
     A Code block inside a quote block o.O
     &lt;i class=&quot;fa-solid fa-quote-right&quot;&gt;&lt;/i&gt;
@@ -67,7 +67,7 @@ Never have your wallet with you onstage. It's bad luck. You shouldn't play the p
 Gain insights into your <span class="highlight">team's performance</span> and <span class="highlight">progress</span>.
 
 <h2 id="color-palette">Color Palette</h2>
-<div class="code-block" lang="html">&lt;!-- Color Palette --&gt;
+<div class="codeblock" lang="html">&lt;!-- Color Palette --&gt;
 &lt;div class="color-palette" data-color="#B1FCCF"&gt;
     &lt;span class="color-code"&gt;Mint&lt;/span&gt;
 &lt;/div&gt;
@@ -235,7 +235,7 @@ Gain insights into your <span class="highlight">team's performance</span> and <s
 <h2 id="code">Code</h2>
 Use <code>preprocess()</code> function to preprocess your <code>dataframe</code>.
 
-<h2 id="codeblock">Code-block</h2>
+<h2 id="codeblock">Codeblock</h2>
 <div class="palette-grid auto-fill">
     <div class="color-palette" data-color="#4D4D4D">
         <span class="color-code">#4D4D4D</span>
@@ -245,16 +245,16 @@ Use <code>preprocess()</code> function to preprocess your <code>dataframe</code>
     </div>
 </div>
 
-<div class="code-block fit" lang="python">x = 'hello world!'
+<div class="codeblock fit" lang="python">x = 'hello world!'
 print(x)
 # hello world!
 </div>
 
 Sample long code text
-<div class="code-block" lang="command">Error: there is no registered task type 'zsh'. Did you miss installing an extension that provides a corresponding task provider?
+<div class="codeblock" lang="command">Error: there is no registered task type 'zsh'. Did you miss installing an extension that provides a corresponding task provider?
 </div>
 
-<div class="code-block" lang="javascript">// GO TO TOP BUTTON FUNCTION
+<div class="codeblock" lang="javascript">// GO TO TOP BUTTON FUNCTION
 let calcScrollValue = () => {
     //alert('SCROLL!')
     let scrollProgress = document.getElementById("scroll-progress");
@@ -282,3 +282,111 @@ let calcScrollValue = () => {
 };
 </div>
 
+<h2 id="codeblock-variation">Codeblock <code>pad</code> Variation</h2>
+
+<div class="codeblock fit" lang="html class">codeblock 
+[fit] 
+pad 
+[beige/pink/blue/green/transparent] 
+[gradient/dotpad-pattern/notebook-pattern/wave-pattern]</div>
+
+<div class="palette-grid" style="grid-template-columns: repeat(auto-fit, minmax(340px, 1fr))">
+
+<div class="codeblock fit pad pink dotpad-pattern" lang="config.yaml">
+<div class="color-palette" data-color="#feddd7">
+    <span class="color-code">#feddd7</span>
+</div># config.yaml in init_path
+defaults
+    - model: roberta-model
+    - labels: default-sentiment
+    - database: twitter-database
+</div>
+
+<div class="codeblock fit pad beige notebook-pattern" lang="config.yaml">
+<div class="color-palette" data-color="beige">
+    <span class="color-code">beige</span>
+</div># config.yaml in init_path
+defaults
+    - model: roberta-model
+    - labels: default-sentiment
+    - database: twitter-database
+</div>
+
+<div class="codeblock fit pad green dotpad-pattern" lang="config.yaml">
+<div class="color-palette" data-color="#D9EDBF">
+    <span class="color-code">#D9EDBF</span>
+</div># config.yaml in init_path
+defaults
+    - model: roberta-model
+    - labels: default-sentiment
+    - database: twitter-database
+</div>
+    
+<div class="codeblock fit pad blue wave-pattern" lang="config.yaml">
+<div class="color-palette" data-color="#CAF4FF">
+    <span class="color-code">#CAF4FF</span>
+</div># config.yaml in init_path
+defaults
+    - model: roberta-model
+    - labels: default-sentiment
+    - database: twitter-database
+</div>
+
+<!--div class="codeblock fit pad transparent" lang="config.yaml">
+# config.yaml in init_path
+defaults
+    - model: roberta-model
+    - labels: default-sentiment
+    - database: twitter-database
+</div>
+
+<div class="codeblock fit pad" lang="config.yaml" style="color: white; background-color: red;"># config.yaml in init_path
+defaults
+    - model: roberta-model
+    - labels: default-sentiment
+    - database: twitter-database
+</div-->
+
+<div class="codeblock fit pad transparent" lang="bun bun" style="line-height: normal; font-size: 14px;">⠀⠀⠀⠀⠀⠀⠀⠀⣠⣤⣦⣤⣄⡀⠀⠀⠀⠀⢀⣀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣰⠟⠙⠀⠀⠀⠈⢻⡆⠀⣴⠞⠋⠉⠉⠙⠳⣦⡀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢸⡛⠂⠀⠀⠀⠀⠀⠈⣿⣾⠋⠀⠀⠀⠀⠀⠀⠈⣿⡄⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣽⠁⠀⠀⠀⠀⠀⠀⠀⣽⢇⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⢰⣿⠄⠀⠀⠀⠀⠀⠀⠐⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⢺⡇⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⢨⡟⠀⠀⠀⠀⠀⠀⠀⢸⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠇⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠈⣿⠀⠀⠀⠀⠀⠀⠀⢸⡇⠀⠀⠀⠀⠀⠀⠀⠀⢠⡿⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣿⡆⠀⠀⢀⣀⣀⡀⢸⣇⠀⠀⠀⠀⠀⠀⠀⢀⣾⠃⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣘⡟⠰⠛⠛⠉⠙⠉⠈⠃⠀⠀⠀⠀⠀⠀⢰⣾⡟⠚⢶⣄⠀⠀⠀⠀⠀
+⠀⠀⠀⣤⡾⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⡁⠀⢀⡬⢹⡇⠀⠀⠀⠀
+⠀⠀⣴⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣷⠀⠚⢷⣼⡷⠀⠀⠀⠀
+⠀⣼⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢙⣷⠀⠀⠘⢿⣷⠀⠀⠀
+⢸⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣇⠀⠀⠀⢹⣧⠀⠀
+⣿⢣⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡏⣡⠀⠀⠀⠻⣧⠀
+⣿⡾⡿⠖⠀⠀⠀⠀⠀⠀⠀⠀⢀⣶⣿⣤⠀⠀⠀⠀⠀⠀⠀⣼⡇⠃⠀⠀⠀⠀⢹⣇
+⠹⣧⡀⠀⠀⠰⣦⣸⣶⠄⠀⠀⠸⡿⠿⠇⠀⠀⠀⠀⠀⠀⢢⡿⠅⠀⠀⠀⠀⠀⠀⣿
+⠀⠈⠻⣦⣒⠸⠛⠻⠖⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⠟⠁⠀⠀⠀⠀⣄⠀⠀⣾
+⠀⠀⠀⠈⢙⣷⢶⣤⣀⣀⠀⠀⠀⠀⠀⠀⠀⣀⣤⡶⠟⠁⠀⠀⠀⠀⠀⣼⢏⣠⣾⠟
+⠀⠀⠀⢀⣾⠃⠀⠀⠉⠛⠛⠻⠶⠶⠶⠶⠞⠋⠁⠀⠀⠀⠀⠀⠀⣰⡾⠛⠛⠉⠀⠀
+⠀⠀⠀⠘⣿⠀⠀⠀⠀⠀⢲⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⣠⡾⠏⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠻⣧⡀⠀⠀⣡⣿⠛⠻⠶⣾⠀⠀⠀⠀⠀⠀⠈⢾⡟⠆⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠉⠛⠛⠛⠋⠁⠀⠀⠀⢿⣦⠀⠀⠀⠀⠀⣠⡾⠁⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣶⣤⣀⣦⣴⡟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀
+</div>
+
+<div class="codeblock fit pad dotpad-pattern" lang="kitten" style="line-height: normal; font-size: 14px; color: white; background-color: #EC8F6A;">
+<div class="color-palette" data-color="#EC8F6A">
+    <span class="color-code">#EC8F6A</span>
+</div>⠀⠀⠀⠀⠀⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢿⣧⠀⠀⠀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢸⣿⣇⠀⢸⣿⣿⣦⣤⣄⣀⣴⣿⣷⠀⠀⠀
+⠀⠀⠀⠀⠀⢸⣿⣿⡆⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀
+⠀⠀⠀⠀⢀⣼⣿⣿⣧⣿⣿⣿⣿⡟⣿⣿⣿⠻⣿⠂⡀⠀
+⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣧⣿⣿⣿⣦⣿⣏⠁⠀
+⠀⠀⢰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠏⠀⠀
+⠀⠀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠋⠀⠀⠀
+⠀⢰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡀⠀⠀
+⢠⣾⣿⡿⠋⠀⠈⠙⣿⣿⣿⡿⣿⡿⠿⠟⢿⣿⣿⣷⣄⠀
+⠈⠿⡿⠃⠀⠀⠀⠀⣿⣿⣿⣧⠀⠀⠀⠀⠀⠉⠻⣿⡿⠂
+⠀⠀⠀⠀⠀⠀⠀⠈⢿⡿⠟⠃⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀
+</div>
+
+</div>

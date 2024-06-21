@@ -71,6 +71,7 @@
 .palette-grid {
     display: grid;
     border-radius: 15px; 
+    padding: 5px;
     width: auto;
     height: auto;
     gap: 0; 
@@ -99,7 +100,7 @@
     padding-left: 80px; /* Adjust padding to make space for the color box */
     margin-top: 5px;
     margin-bottom: 5px;
-    margin-left: 5px;
+    margin-left: 0px;
     margin-right: 5px;
     cursor: pointer;
     overflow: hidden;
@@ -124,16 +125,18 @@
     left: 60px; /* Adjust this to position the text correctly */
     transform: translateY(-50%);
     font-family: Arial, sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     line-height: 1rem;
     color: var(--palette-color);
+    text-transform: uppercase;
 }
 
 .color-palette:hover {
     background-color: var(--palette-color);
-    border-color: black;
-    transform: scale(1.03); /* Scale up slightly on hover */
+    border-color: rgb(0, 0, 0);
+    border-style: dashed;
+    transform: scale(1.02); /* Scale up slightly on hover */
 }
 
 .color-palette:hover::before {
@@ -210,7 +213,7 @@ tbody tr:hover {
 }
 
 /* Code-block Element */
-.code-block {
+.codeblock {
     display: flex;
     flex-direction: column;
     position: relative;
@@ -228,11 +231,11 @@ tbody tr:hover {
     white-space: pre;
 }
 
-.code-block.fit {
+.codeblock.fit {
     max-width: fit-content;
 }
 
-.code-block::before {
+.codeblock::before {
     content: '🔴 🟡 🟢 ' attr(lang);
     margin-bottom: 5px;
     color: rgb(212, 212, 212);
@@ -249,8 +252,75 @@ tbody tr:hover {
     text-transform: uppercase;
 }
 
+/* codeblock variation */
+
+.codeblock.pad {
+    font-size: 16px;
+    /*box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.15);*/
+    color: black;
+    border-color: #ffffff;
+    border-width: 5px;
+    height: fit-content;
+    transition: box-shadow 0.3s ease;
+}
+
+.codeblock.pad:hover {
+    box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.codeblock.pad::before {
+    font-size: 14px;
+    text-transform: none;
+    /*overflow: hidden;*/
+}
+
+.codeblock.pad::before {
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+}
+
 /*
-.code-block:hover::before {
+.codeblock.transparent::before,
+.codeblock.green::before,
+.codeblock.blue::before,
+.codeblock.pink::before,
+.codeblock.beige::before {
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+}
+*/
+
+.codeblock.gradient {
+    background-image: linear-gradient(to bottom, white, var(--color));
+} 
+
+.codeblock.beige {
+    background-color: beige;
+    --color: beige;
+}
+
+.codeblock.pink {
+    background-color: rgb(254, 215, 221);
+    --color: rgb(254, 215, 221);
+}
+
+.codeblock.blue {
+    background-color: #CAF4FF;
+    --color: #CAF4FF;
+}
+
+.codeblock.green {
+    background-color: #D9EDBF;
+    --color: #D9EDBF;
+}
+
+.codeblock.transparent {
+    background-color: rgba(0,0,0,0.0);
+    --color: rgba(0,0,0,0.0);    
+}
+
+/*
+.codeblock:hover::before {
     content: '🔴 🟡 🟣 ' attr(lang) ' copy';
     cursor: pointer;
 }
@@ -269,8 +339,29 @@ code {
     background-color: #00000020;
     padding: 2px;
     border-radius: 5px;
+    width: fit-content;
 }
 
 code:hover {
     background-color: #00000033;
+}
+
+/* Pattern */
+.dotpad-pattern {
+    background-image: radial-gradient(rgba(12, 12, 12, 0.088) 2px, transparent 0);
+    background-size: 30px 30px;
+    background-position: -5px -5px;
+}
+
+.notebook-pattern {
+    background-image: linear-gradient(#e1e1e1 0.1em, transparent 0);
+    background-size: 100% 30px;
+}
+
+.wave-pattern {
+    background: linear-gradient(#ffffff 50%, rgba(255,255,255,0) 0) 0 0,
+    radial-gradient(circle closest-side, #FFFFFF 53%, rgba(255,255,255,0) 0) 0 0,
+    radial-gradient(circle closest-side, #FFFFFF 50%, rgba(255,255,255,0) 0) 55px 0 #48B;
+    background-size: 110px 200px;
+    background-repeat: repeat-x;
 }
