@@ -257,6 +257,7 @@ tbody tr:hover {
 
 .codeblock.fit {
     max-width: fit-content;
+    width: auto;
 }
 
 .codeblock::before {
