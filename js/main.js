@@ -4,7 +4,7 @@ document.querySelectorAll('.color-palette').forEach(palette => {
 
     palette.addEventListener('click', () => {
         //const colorCode = palette.querySelector('.color-code').textContent;
-        navigator.clipboard.writeText(color).then(() => {
+        navigator.clipboard.writeText(color.replace('#', '').trim()).then(() => {
             //alert(`Copied the color code: ${color}`);
         }).catch(err => {
             console.error('Failed to copy the text: ', err);

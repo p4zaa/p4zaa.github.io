@@ -1,3 +1,21 @@
+/* Select Dropdown Element */
+select {
+    padding: 10px;
+    border-radius: 10px;
+    height: fit-content;
+    transition: background-color 0.3s ease;
+}
+
+select:hover {
+    background-color: rgb(223, 245, 253);
+}
+
+.fit {
+    width: 100%;
+}
+
+/* Grid Block */
+
 /* Callout Element */
 .callout {
     display: block;
@@ -57,6 +75,12 @@
     color: rgb(191, 0, 0);
 }
 
+.quote.pink {
+    border-left-color: rgb(197, 3, 106);
+    background-color: pink;
+    color: rgb(197, 3, 106);
+}
+
 .img-block {
     text-align: center;
 }
@@ -71,7 +95,7 @@
 .palette-grid {
     display: grid;
     border-radius: 15px; 
-    padding: 5px;
+    padding: 0px;
     width: auto;
     height: auto;
     gap: 0; 
@@ -312,6 +336,12 @@ tbody tr:hover {
 .codeblock.green {
     background-color: #D9EDBF;
     --color: #D9EDBF;
+}
+
+.codeblock.red {
+    color: white;
+    background-color: #EC8F6A;
+    --color: #EC8F6A;
 }
 
 .codeblock.transparent {

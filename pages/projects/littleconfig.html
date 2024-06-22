@@ -3,7 +3,7 @@ layout: default
 title: LittleConfig
 toc: true
 ---
-<style>
+<!--style>
     .container {
         display: flex;
         flex-direction: column;
@@ -24,61 +24,203 @@ toc: true
     .box1:hover ~ .box4 {
         background-color: lightgreen;
     }
-</style>
+</style-->
 
-<h1 class="no_toc">LittleConfig: Revolutionize Your ML Pipeline Configuration</h1>
-<p>Welcome to LittleConfig, the next generation of configuration management tailored for machine learning pipeline development and training. LittleConfig is not just another config YAML file; it’s a powerful tool designed to make your ML projects more efficient and flexible. Here's why LittleConfig stands out:</p>
-<ul>
-    <li><strong>Modular Design:</strong> Specify main config files separately with sub-config files for better organization and clarity.</li>
-    <li><strong>Intuitive Attribute Access:</strong> Access config attributes seamlessly with <code>.attribute</code> notation, making your code cleaner and more readable.</li>
-    <li><strong>Dynamic Overrides:</strong> Override specific attributes on-the-fly without altering the main configuration, enhancing flexibility.</li>
-    <li><strong>Simplicity & Usability:</strong> Designed to be simple and easy to use, enabling quick adoption and integration.</li>
-</ul>
+<h1 class="no_toc">LittleConfig</h1> 
+<h2 class="no_toc">Just Simple Config for ML Pipeline Configuration</h2>
+<p>Welcome to LittleConfig, the next generation of configuration management tailored for machine learning pipeline development and training. LittleConfig is not just another config YAML file; it’s a powerful tool designed to make your ML projects more efficient and flexible.</p>
 
-<div class="container">
+<h2 id="flexibility-interactive">Understand the Flexibility</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); column-gap: 0px;">
+<div style="display: block; margin-right: 15px;">
+    <div class="codeblock fit pad blue wave-pattern" lang="initial_path/config.yaml">
+    <div style="white-space: normal;">
+        <span style="font-weight: bold;">defaults</span>
+        <div style="margin-left: 30px;">
+            <div style="padding: 5px;">
+                <span style="font-weight: bold;">- model:</span>
+                <select class="fit" onchange="onConfigModelChange(this.value)">
+                    <option value="roberta">roberta</option>
+                    <option value="distilbert-base-uncased">bert-model</option>
+                    <option value="albert-base-v2">albert-base-v2</option>
+                </select>
+            </div>
+            <div style="padding: 5px;">
+                <span style="font-weight: bold;">- labels:</span>
+                <select class="fit" onchange="onConfigLabelsChange(this.value)">
+                    <option value="sentiments">sentiments</option>
+                    <option value="ratings">ratings</option>
+                    <option value="complex-sentiments">complex-sentiments</option>
+                </select>
+            </div>
+            <div style=" padding: 5px;">
+                <span style="font-weight: bold;">- database:</span>
+                <select class="fit" onchange="onConfigDatabaseChange(this.value)">
+                    <option value="twitter">twitter</option>
+                    <option value="facebook">facebook</option>
+                    <option value="reddit">reddit</option>
+                </select>
+            </div>
+        </div>
+    </div>
+mode: train
+    
+training_config:
+    epochs: 100
+    val_size: 0.2
+    test_size: 0.1
+</div>
+
+</div>
+
+<div style="border-radius: 10px; border-width: 2px; border-style: dashed; padding: 0px 7px; width: fit-content; background-color: rgba(0, 255, 255, 0.175); border-color: rgb(185, 185, 255);">
+<div style="display: block;">
+<!-- model -->
+<div id="roberta.yaml" class="codeblock fit pad pink dotpad-pattern" lang="reberta.yaml" style="display: flex;"># config_path/model
+name: roberta-base
+tokenizer: 
+    _class: RobertaTokenizer
+    pretrain: roberta-base
+</div>
+
+<div id="distilbert-base-uncased.yaml" class="codeblock fit pad blue dotpad-pattern" lang="distilbert-base-uncased.yaml" style="display: none;"># config_path/model
+name: distilbert-base-uncased
+tokenizer: 
+    _class: AutoTokenizer
+    pretrain: distilbert-base-uncased
+</div>
+
+<div id="albert-base-v2.yaml" class="codeblock fit pad green dotpad-pattern" lang="albert-base-v2.yaml" style="display: none;"># config_path/model
+name: albert-base-v2
+tokenizer: 
+    _class: AutoTokenizer
+    pretrain: albert-base-v2
+</div>
+
+<!-- labels -->
+<div id="sentiments.yaml" class="codeblock fit pad green dotpad-pattern" lang="sentiments.yaml" style="display: flex;"># config_path/labels
+- Positive
+- Neutral
+- Negative
+</div>
+
+<div id="ratings.yaml" class="codeblock fit pad red dotpad-pattern" lang="ratings.yaml" style="display: none;"># config_path/labels
+- 1
+- 2
+- 3
+- 4
+- 5
+</div>
+
+<div id="complex-sentiments.yaml" class="codeblock fit pad blue dotpad-pattern" lang="complex-sentiments.yaml" style="display: none;"># config_path/labels
+- Positive
+- Neutral
+- Negative
+- Questioning
+- Confused
+- Hopeful
+- Fearful
+- Excited
+- Bored
+</div>
+
+<!-- database -->
+<div id="twitter.yaml" class="codeblock fit pad blue dotpad-pattern" lang="twitter.yaml" style="display: flex;"># config_path/database
+URI: twitter_db_uri
+table: Tweets
+</div>
+
+<div id="facebook.yaml" class="codeblock fit pad beige dotpad-pattern" lang="facebook.yaml" style="display: none;"># config_path/database
+URI: facebook_db_uri
+table: Posts
+</div>
+
+<div id="reddit.yaml" class="codeblock fit pad red dotpad-pattern" lang="reddit.yaml" style="display: none;"># config_path/database
+URI: reddit_db_uri
+table: Articles
+</div>
+
+</div>
+</div>
+</div>
+
+<h2 id="offerings">LittleConfig Offerings</h2>
+<div class="quote">
+    <i class="fa-solid fa-folder-tree fa-xl"></i><br>
+    <strong>Modular Design:</strong> Specify main config files separately with sub-config files for better organization and clarity.
+</div>
+
+<div class="quote green">
+    <i class="fa-solid fa-magnifying-glass fa-xl"></i><br>
+    <strong>Intuitive Attribute Access:</strong> Access config attributes seamlessly with <code>.attribute</code> notation, making your code cleaner and more readable.<br>
+<div style="display: flex; gap: 10px;">
+<div class="codeblock fit" lang="python"># Normal yaml config
+labels = config['labels']</div>
+<div class="codeblock fit" lang="python"># LittleConfig
+labels = config.labels</div>
+</div>
+</div>
+
+<div class="quote">
+    <i class="fa-solid fa-file-pen fa-xl"></i><br>
+    <strong>Dynamic Overrides:</strong> Override specific attributes on-the-fly without altering the main configuration, enhancing flexibility.<br>
+<div class="codeblock fit" lang="python"># Overrides
+overrides = {'mode': 'evaluate'}</div>
+</div>
+
+<div class="quote green">
+    <i class="fa-brands fa-pagelines fa-xl"></i><br>
+    <strong>Simplicity & Usability:</strong> Designed to be simple and easy to use, enabling quick adoption and integration.
+</div>
+
+<!--div class="container">
     <div class="box box1">Box 1</div>
     <div class="box box2">Box 2</div>
     <div class="box box3">Box 3</div>
     <div class="box box4">Box 4</div>
-</div>
+</div-->
 
-<h2>Why Choose Config-Oriented Approach?</h2>
-<table>
+<h2 id="config-oriented-advantages">Config-Oriented Approach</h2>
+<div class="table-container">
+<table class="sticky">
     <thead>
         <tr>
             <th>Advantage</th>
             <th>Description</th>
         </tr>
     </thead>
+</table>
+<table>
     <tbody>
         <tr>
-            <td>Modularity</td>
+            <td><strong>Modularity</strong></td>
             <td>Enable modular configuration management, simplifying updates and maintenance across different project components.</td>
         </tr>
         <tr>
-            <td>Reusability</td>
+            <td><strong>Reusability</strong></td>
             <td>Reuse configurations across various projects, reducing redundancy and saving time.</td>
         </tr>
         <tr>
-            <td>Consistency</td>
+            <td><strong>Consistency</strong></td>
             <td>Ensure consistent setups across different environments, minimizing the risk of configuration errors.</td>
         </tr>
         <tr>
-            <td>Separation of Concerns</td>
+            <td><strong>Separation of Concerns</strong></td>
             <td>Keep configuration logic separate from application logic for cleaner, more maintainable code.</td>
         </tr>
         <tr>
-            <td>Ease of Maintenance</td>
+            <td><strong>Ease of Maintenance</strong></td>
             <td>Update configurations with ease by modifying config files rather than code.</td>
         </tr>
         <tr>
-            <td>Scalability</td>
+            <td><strong>Scalability</strong></td>
             <td>Effortlessly scale your applications with different configurations for development, testing, and production environments.</td>
         </tr>
     </tbody>
 </table>
+</div>
 
-<h2>Getting Started with LittleConfig</h2>
+<h2 id="getting-started">Getting Started</h2>
 <p>Using LittleConfig is a breeze. Here's a quick example to get you started:</p>
 <div class="codeblock fit" lang="python">little_config = LittleConfig(
     initial_path = 'path/to/initial_yaml_path',
@@ -90,3 +232,59 @@ toc: true
 <div class="codeblock fit" lang="python">config = little_config.config</div>
 
 <p>With LittleConfig, you can take your machine learning projects to the next level, making your configurations more organized, maintainable, and adaptable. Experience the power of streamlined configuration management today!</p>
+
+<script>
+    function onConfigModelChange(value) {
+        const selected = value + '.yaml';
+
+        const codeblock_ids = [
+            'roberta.yaml',
+            'distilbert-base-uncased.yaml',
+            'albert-base-v2.yaml',
+        ]
+
+        codeblock_ids.forEach(block_id => {
+            if (selected === block_id) {
+                document.getElementById(block_id).style.display = 'flex';
+            } else {
+                document.getElementById(block_id).style.display = 'none';
+            }
+        });
+    }
+
+    function onConfigLabelsChange(value) {
+        const selected = value + '.yaml';
+
+        const codeblock_ids = [
+            'sentiments.yaml',
+            'ratings.yaml',
+            'complex-sentiments.yaml',
+        ]
+
+        codeblock_ids.forEach(block_id => {
+            if (selected === block_id) {
+                document.getElementById(block_id).style.display = 'flex';
+            } else {
+                document.getElementById(block_id).style.display = 'none';
+            }
+        });
+    }
+
+    function onConfigDatabaseChange(value) {
+        const selected = value + '.yaml';
+
+        const codeblock_ids = [
+            'twitter.yaml',
+            'facebook.yaml',
+            'reddit.yaml',
+        ]
+
+        codeblock_ids.forEach(block_id => {
+            if (selected === block_id) {
+                document.getElementById(block_id).style.display = 'flex';
+            } else {
+                document.getElementById(block_id).style.display = 'none';
+            }
+        });
+    }
+</script>
