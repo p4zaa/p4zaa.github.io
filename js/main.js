@@ -11,3 +11,14 @@ document.querySelectorAll('.color-palette').forEach(palette => {
         });
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const toggleHeaders = document.querySelectorAll('.toggle-header');
+    toggleHeaders.forEach(function(header) {
+        header.addEventListener('click', function() {
+            const container = this.parentElement;
+            container.classList.toggle('active');
+            header.classList.toggle('active');
+        });
+    });
+});

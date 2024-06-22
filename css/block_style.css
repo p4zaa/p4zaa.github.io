@@ -14,6 +14,12 @@ select:hover {
     width: 100%;
 }
 
+button {
+    padding: 10px;
+    border-radius: 10px;
+    border-width: 1px;
+}
+
 /* Grid Block */
 
 /* Callout Element */
@@ -88,7 +94,16 @@ select:hover {
 /*Hightlight*/
 .highlight {
     background-color: yellow;
-    border-radius: 5px;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.highlight.white {
+    background-color: white;
+}
+
+.highlight.blue {
+    background-color: aqua;
 }
 
 /*Color Palette*/
@@ -289,12 +304,21 @@ tbody tr:hover {
     transition: box-shadow 0.3s ease;
 }
 
+.codeblock.pad.pre-line {
+    white-space: pre-line;
+    text-wrap: nowrap;
+}
+
 .codeblock.pad:hover {
     box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.15);
 }
 
+.codeblock.pad.no-shadow:hover {
+    box-shadow: none;
+} 
+
 .codeblock.pad::before {
-    font-size: 14px;
+    font-size: 13px;
     text-transform: none;
     /*overflow: hidden;*/
 }
@@ -377,22 +401,137 @@ code:hover {
     background-color: #00000033;
 }
 
-/* Pattern */
-.dotpad-pattern {
-    background-image: radial-gradient(rgba(12, 12, 12, 0.088) 2px, transparent 0);
-    background-size: 30px 30px;
-    background-position: -5px -5px;
+/* Toggle Element */
+
+.toggle-container {
+    width: 100%;
+    margin: 5px auto;
+    color: black;
+    text-align: start;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease, padding 0.5s ease;
 }
 
-.notebook-pattern {
-    background-image: linear-gradient(#e1e1e1 0.1em, transparent 0);
-    background-size: 100% 30px;
+.toggle-header {
+    padding: 10px 50px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 5px 5px 0 0;
+    transition: background-color 0.3s ease;
 }
 
-.wave-pattern {
-    background: linear-gradient(#ffffff 50%, rgba(255,255,255,0) 0) 0 0,
-    radial-gradient(circle closest-side, #FFFFFF 53%, rgba(255,255,255,0) 0) 0 0,
-    radial-gradient(circle closest-side, #FFFFFF 50%, rgba(255,255,255,0) 0) 55px 0 #48B;
-    background-size: 110px 200px;
-    background-repeat: repeat-x;
+.toggle-header::before {
+    content: "\f054";
+    font-size: 22px;
+    font-family: 'Font Awesome\ 5 Free';
+    font-weight: 900;
+    padding: 0px 0px;
+    translate: -28px -4px;
+    /*color: white;*/
+    position: absolute;
 }
+
+.toggle-header.active::before {
+    content: "\f078";
+}
+
+/*
+.toggle-container:hover .toggle-header {
+    background-color: #0056b3;
+}
+*/
+.toggle-header:hover {
+    background-color: #0d6dd3;
+}
+
+.toggle-content {
+    max-height: 0;
+    opacity: 0;
+    overflow: auto;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    padding: 0 15px;
+}
+
+.toggle-container.active .toggle-content {
+    max-height: 650px; /* Adjust based on content height */
+    opacity: 1;
+    padding: 15px;
+}
+
+/* Toggle Variation */
+
+.toggle-header.blue {
+    background-color: aqua;
+    color: black;
+}
+
+.toggle-header.blue:hover {
+    background-color: rgb(0, 225, 255);
+}
+
+.toggle-header.pink {
+    background-color: #feccee;
+    color: black;
+}
+
+.toggle-header.pink:hover {
+    background-color: pink;
+}
+
+.toggle-header.green {
+    background-color: #D9EDBF;
+    color: black;
+}
+
+.toggle-header.green:hover {
+    background-color: #d0e5b6;
+}
+
+/* Radio Input Element */
+
+.radio-inputs {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 0.5rem;
+    background-color: #EEE;
+    box-sizing: border-box;
+    box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+    padding: 0.25rem;
+    width: auto;
+    max-width: 100%;
+    font-size: 15px;
+}
+
+.radio-inputs .radio {
+    flex: 1 1 auto;
+    text-align: center;
+}
+  
+.radio-inputs .radio input {
+    display: none;
+}
+
+.radio-inputs .radio .name {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    border: none;
+    padding: 5px 0;
+    color: rgba(51, 65, 85, 1);
+    transition: all .15s ease-in-out;
+}
+
+.radio-inputs .radio input:checked + .name {
+    background-color: #ffffff;
+    font-weight: bold;
+    color: rgba(51, 65, 85, 1);
+}
+

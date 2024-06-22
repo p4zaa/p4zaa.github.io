@@ -1,0 +1,156 @@
+---
+layout: demo
+title: PredictionPlayground
+toc: true
+---
+<h1 class="no_toc">PredictionPlayground</h1> 
+<h2 class="no_toc">Model's Prediction Tool</h2>
+
+<div name="predictionplayground-interface" style="display: block; background-color: rgb(205, 221, 255); padding: 10px; border-radius: 10px;">
+    <div id="radio-button-container">
+        <div class="radio-inputs" style="display: flex;">
+            <label class="radio">
+                <input type="radio" name="radio" onclick="onTabChange('welcome-tab')" checked>
+                <span class="name">Welcome</span>
+            </label>
+        
+            <label class="radio">
+                <input type="radio" name="radio" onclick="onTabChange('dataset-tab')">
+                <span class="name">Dataset</span>
+            </label>
+        
+            <label class="radio">
+                <input type="radio" name="radio" onclick="onTabChange('preprocess-tab')">
+                <span class="name">Preprocess</span>
+            </label>
+        
+            <label class="radio">
+                <input type="radio" name="radio" onclick="onTabChange('models-tab')">
+                <span class="name">Models</span>
+            </label>
+        
+            <label class="radio">
+                <input type="radio" name="radio" onclick="onTabChange('prediction-tab')">
+                <span class="name">Prediction</span>
+            </label>
+        
+            <label class="radio">
+                <input type="radio" name="radio" onclick="onTabChange('postprocess-tab')">
+                <span class="name">Postprocess</span>
+            </label>
+        
+            <label class="radio">
+                <input type="radio" name="radio" onclick="onTabChange('formats-tab')">
+                <span class="name">Formats</span>
+            </label>
+        
+            <label class="radio">
+                <input type="radio" name="radio" onclick="onTabChange('export-tab')">
+                <span class="name">Export</span>
+            </label>
+        
+            <label class="radio">
+                <input type="radio" name="radio" onclick="onTabChange('settings-tab')">
+                <span class="name">Settings</span>
+            </label>
+        </div>
+    </div>
+
+    <!-- Tab Contents -->
+    <div id="tab-contents">
+
+        <div id="welcome-tab" style="display: block;">
+            <div lang="PredictionPlayground" class="codeblock fit pad transparent no-shadow" style="line-height: 18px; color: black;">_____              _ _      _   _ 
+|  __ \            | (_)    | | (_)
+| |__) | __ ___  __| |_  ___| |_ _  ___  _ __   ________
+|  ___/ '__/ _ \/ _` | |/ __| __| |/ _ \| '_ \  ______
+| |   | | |  __/ (_| | | (__| |_| | (_) | | | | ____
+|_|___|_|  \___|\__,_|_|\___|\__|_|\___/|_| |_| __    _ 
+|  __ \| |                                           | |
+| |__) | | __ _ _   _  __ _ _ __ ___  _   _ _ __   __| |
+|  ___/| |/ _` | | | |/ _` | '__/ _ \| | | | '_ \ / _` |
+| |    | | (_| | |_| | (_| | | | (_) | |_| | | | | (_| |
+|_|    |_|\__,_|\__, |\__, |_|  \___/ \__,_|_| |_|\__,_|
+                __/  | __/ |                            
+                |___/ |___/
+</div>
+        </div>
+    
+        <div id="dataset-tab" style="display: none;">
+            <div class="codeblock fit pad transparent no-shadow" lang="Load Dataset Section">
+
+            </div>
+        </div>
+        
+        <div id="preprocess-tab" style="display: none;">
+            <div class="toggle-container">
+                <div class="toggle-header">Drop Duplicate Samples</div>
+                <div class="toggle-content">
+                    ...
+                </div>
+            </div>
+            <div class="toggle-container">
+                <div class="toggle-header">Vertical Concat Multiple Columns into a Single Column</div>
+                <div class="toggle-content">
+                    ...
+                </div>
+            </div>
+            <div class="toggle-container">
+                <div class="toggle-header">Text Preprocessing</div>
+                <div class="toggle-content">
+                    ...
+                </div>
+            </div>
+        </div>
+    
+        <div id="models-tab" style="display: none;">
+    
+        </div>
+    
+        <div id="prediction-tab" style="display: none;">
+    
+        </div>
+    
+        <div id="postprocess-tab" style="display: none;">
+    
+        </div>
+    
+        <div id="formats-tab" style="display: none;">
+    
+        </div>
+    
+        <div id="export-tab" style="display: none;">
+    
+        </div>
+    
+        <div id="settings-tab" style="display: none;">
+    
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function onTabChange(callback_id) {
+        const codeblock_ids = [
+            'welcome-tab',
+            'dataset-tab',
+            'preprocess-tab',
+            'models-tab',
+            'prediction-tab',
+            'postprocess-tab',
+            'formats-tab',
+            'export-tab',
+            'settings-tab'
+        ];
+
+        codeblock_ids.forEach(block_id => {
+            const element = document.getElementById(block_id);
+            if (callback_id === block_id) {
+                element.style.display = 'block';
+            } else {
+                element.style.display = 'none';
+            }
+        });
+    }
+</script>

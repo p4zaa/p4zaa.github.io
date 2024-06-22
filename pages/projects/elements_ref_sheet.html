@@ -288,7 +288,7 @@ let calcScrollValue = () => {
 [fit] 
 pad 
 [beige/pink/blue/green/transparent] 
-[gradient/dotpad-pattern/notebook-pattern/wave-pattern]
+[gradient/dotpad-pattern/lined-pattern/wave-pattern]
 </div>
 
 <div class="palette-grid" style="grid-template-columns: repeat(auto-fit, minmax(340px, 1fr))">
@@ -303,7 +303,7 @@ defaults
     - database: twitter-database
 </div>
 
-<div class="codeblock fit pad beige notebook-pattern" lang="config.yaml">
+<div class="codeblock fit pad beige lined-pattern" lang="config.yaml">
 <div class="color-palette" data-color="beige">
     <span class="color-code">beige</span>
 </div># config.yaml in init_path
@@ -388,6 +388,176 @@ defaults
 ⢠⣾⣿⡿⠋⠀⠈⠙⣿⣿⣿⡿⣿⡿⠿⠟⢿⣿⣿⣷⣄⠀
 ⠈⠿⡿⠃⠀⠀⠀⠀⣿⣿⣿⣧⠀⠀⠀⠀⠀⠉⠻⣿⡿⠂
 ⠀⠀⠀⠀⠀⠀⠀⠈⢿⡿⠟⠃⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀
+</div>
+
+</div>
+
+<h2 id="toggle-element">Toggle Element</h2>
+<div class="codeblock fit" lang="html">&lt;div class="toggle-container"&gt;
+    &lt;div class="toggle-header"&gt;Toggle Content Header&lt;/div&gt;
+    &lt;div class="toggle-content"&gt;
+        ...
+    &lt;/div&gt;
+&lt;/div&gt;
+</div>
+
+<div class="toggle-container">
+    <div class="toggle-header">Toggle Content Header</div>
+    <div class="toggle-content lined-pattern">
+        <p>This is the first content that will be toggled.</p>
+        <div class="palette-grid auto-fill" style="column-gap: 10px; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); width: auto;">
+            <div class="codeblock fit pad pre-line pink dotpad-pattern" style="line-height: normal; font-size: 14px;" lang="pre-line">
+            ⠀⠀⠀⢀⡴⠶⢶⡀⠀⠀⠀⣠⡴⢦⡀⠀⠀⠀
+            ⠀⠀⠀⡞⠀⠀⠀⢻⠀⠀⣰⠋⠀⠀⢹⡄⠀⠀
+            ⠀⠀⢸⡇⠀⠀⠀⠈⡇⠀⡟⠀⠀⠀⢸⠇⠀⠀
+            ⠀⠀⢸⡇⠀⠀⠀⠀⣇⢸⡇⠀⠀⠀⢸⠃⠀⠀
+            ⠀⠀⠘⡇⠀⠀⠀⠀⡇⢸⠀⠀⠀⠀⡞⠀⠀⠀
+            ⠀⠀⠀⣹⠀⠀⠀⠀⠛⠛⠀⠀⠀⠼⣅⠀⠀⠀
+            ⠀⣠⠞⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢳⡀⠀
+            ⣰⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⡄
+            ⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡇
+            ⣯⠀⠀⢰⡆⠀⠀⠀⠀⠀⠀⠀⣴⠀⠀⠀⢸⠇
+            ⠹⣄⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⣠⠟⠀
+            ⠀⠙⠦⣤⣀⠀⠀⠛⠛⠂⠀⢀⣀⡤⠞⠃⠀⠀
+            ⠀⠀⠀⠀⠉⠉⠉⠛⠛⠉⠉⠉⠁⠀⠀⠀⠀⠀
+            </div>
+    
+            <div class="codeblock fit pad pink dotpad-pattern" style="line-height: normal; font-size: 14px;" lang="pre">
+            ⠀⠀⠀⢀⡴⠶⢶⡀⠀⠀⠀⣠⡴⢦⡀⠀⠀⠀
+            ⠀⠀⠀⡞⠀⠀⠀⢻⠀⠀⣰⠋⠀⠀⢹⡄⠀⠀
+            ⠀⠀⢸⡇⠀⠀⠀⠈⡇⠀⡟⠀⠀⠀⢸⠇⠀⠀
+            ⠀⠀⢸⡇⠀⠀⠀⠀⣇⢸⡇⠀⠀⠀⢸⠃⠀⠀
+            ⠀⠀⠘⡇⠀⠀⠀⠀⡇⢸⠀⠀⠀⠀⡞⠀⠀⠀
+            ⠀⠀⠀⣹⠀⠀⠀⠀⠛⠛⠀⠀⠀⠼⣅⠀⠀⠀
+            ⠀⣠⠞⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢳⡀⠀
+            ⣰⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⡄
+            ⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡇
+            ⣯⠀⠀⢰⡆⠀⠀⠀⠀⠀⠀⠀⣴⠀⠀⠀⢸⠇
+            ⠹⣄⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⣠⠟⠀
+            ⠀⠙⠦⣤⣀⠀⠀⠛⠛⠂⠀⢀⣀⡤⠞⠃⠀⠀
+            ⠀⠀⠀⠀⠉⠉⠉⠛⠛⠉⠉⠉⠁⠀⠀⠀⠀⠀
+            </div>
+        </div>
+
+        <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+        <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+        <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+    </div>
+</div>
+
+<div class="toggle-container">
+    <div class="toggle-header blue notebook-pattern"><span class="highlight">Toggle Content Header</span></div>
+    <div class="toggle-content notebook-pattern" style="padding-left: 100px;">
+        <div class="codeblock pad pre-line blue dotpad-pattern" lang="HTML">class="toggle-content notebook-pattern" style="padding-left: 100px;"</div>
+        <p>This is the first content that will be toggled.</p>
+        <div class="palette-grid auto-fill" style="column-gap: 10px; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); width: auto;">
+            <div class="codeblock fit pad pre-line pink dotpad-pattern" style="line-height: normal; font-size: 14px;" lang="pre-line">
+            ⠀⠀⠀⢀⡴⠶⢶⡀⠀⠀⠀⣠⡴⢦⡀⠀⠀⠀
+            ⠀⠀⠀⡞⠀⠀⠀⢻⠀⠀⣰⠋⠀⠀⢹⡄⠀⠀
+            ⠀⠀⢸⡇⠀⠀⠀⠈⡇⠀⡟⠀⠀⠀⢸⠇⠀⠀
+            ⠀⠀⢸⡇⠀⠀⠀⠀⣇⢸⡇⠀⠀⠀⢸⠃⠀⠀
+            ⠀⠀⠘⡇⠀⠀⠀⠀⡇⢸⠀⠀⠀⠀⡞⠀⠀⠀
+            ⠀⠀⠀⣹⠀⠀⠀⠀⠛⠛⠀⠀⠀⠼⣅⠀⠀⠀
+            ⠀⣠⠞⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢳⡀⠀
+            ⣰⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⡄
+            ⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡇
+            ⣯⠀⠀⢰⡆⠀⠀⠀⠀⠀⠀⠀⣴⠀⠀⠀⢸⠇
+            ⠹⣄⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⣠⠟⠀
+            ⠀⠙⠦⣤⣀⠀⠀⠛⠛⠂⠀⢀⣀⡤⠞⠃⠀⠀
+            ⠀⠀⠀⠀⠉⠉⠉⠛⠛⠉⠉⠉⠁⠀⠀⠀⠀⠀
+            </div>
+    
+            <div class="codeblock fit pad pink dotpad-pattern" style="line-height: normal; font-size: 14px;" lang="pre">
+            ⠀⠀⠀⢀⡴⠶⢶⡀⠀⠀⠀⣠⡴⢦⡀⠀⠀⠀
+            ⠀⠀⠀⡞⠀⠀⠀⢻⠀⠀⣰⠋⠀⠀⢹⡄⠀⠀
+            ⠀⠀⢸⡇⠀⠀⠀⠈⡇⠀⡟⠀⠀⠀⢸⠇⠀⠀
+            ⠀⠀⢸⡇⠀⠀⠀⠀⣇⢸⡇⠀⠀⠀⢸⠃⠀⠀
+            ⠀⠀⠘⡇⠀⠀⠀⠀⡇⢸⠀⠀⠀⠀⡞⠀⠀⠀
+            ⠀⠀⠀⣹⠀⠀⠀⠀⠛⠛⠀⠀⠀⠼⣅⠀⠀⠀
+            ⠀⣠⠞⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢳⡀⠀
+            ⣰⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⡄
+            ⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡇
+            ⣯⠀⠀⢰⡆⠀⠀⠀⠀⠀⠀⠀⣴⠀⠀⠀⢸⠇
+            ⠹⣄⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⣠⠟⠀
+            ⠀⠙⠦⣤⣀⠀⠀⠛⠛⠂⠀⢀⣀⡤⠞⠃⠀⠀
+            ⠀⠀⠀⠀⠉⠉⠉⠛⠛⠉⠉⠉⠁⠀⠀⠀⠀⠀
+            </div>
+        </div>
+
+        <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+        <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+        <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+    </div>
+</div>
+
+<div class="toggle-container">
+    <div class="toggle-header pink">Toggle Content Header</div>
+    <div class="toggle-content notebook-pattern" style="padding-left: 100px;">
+        <div class="codeblock pad pre-line blue dotpad-pattern" lang="HTML">class="toggle-content notebook-pattern" style="padding-left: 100px;"</div>
+        <div class="palette-grid auto-fill" style="column-gap: 10px; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); width: auto;">
+            <div class="codeblock fit pad pre-line pink dotpad-pattern" style="line-height: normal; font-size: 14px;" lang="pre-line">
+            ⠀⠀⠀⢀⡴⠶⢶⡀⠀⠀⠀⣠⡴⢦⡀⠀⠀⠀
+            ⠀⠀⠀⡞⠀⠀⠀⢻⠀⠀⣰⠋⠀⠀⢹⡄⠀⠀
+            ⠀⠀⢸⡇⠀⠀⠀⠈⡇⠀⡟⠀⠀⠀⢸⠇⠀⠀
+            ⠀⠀⢸⡇⠀⠀⠀⠀⣇⢸⡇⠀⠀⠀⢸⠃⠀⠀
+            ⠀⠀⠘⡇⠀⠀⠀⠀⡇⢸⠀⠀⠀⠀⡞⠀⠀⠀
+            ⠀⠀⠀⣹⠀⠀⠀⠀⠛⠛⠀⠀⠀⠼⣅⠀⠀⠀
+            ⠀⣠⠞⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢳⡀⠀
+            ⣰⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⡄
+            ⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡇
+            ⣯⠀⠀⢰⡆⠀⠀⠀⠀⠀⠀⠀⣴⠀⠀⠀⢸⠇
+            ⠹⣄⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⣠⠟⠀
+            ⠀⠙⠦⣤⣀⠀⠀⠛⠛⠂⠀⢀⣀⡤⠞⠃⠀⠀
+            ⠀⠀⠀⠀⠉⠉⠉⠛⠛⠉⠉⠉⠁⠀⠀⠀⠀⠀
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="toggle-container">
+    <div class="toggle-header green">Toggle Content Header</div>
+    <div class="toggle-content pastel-chest-pattern">
+        <div class="palette-grid auto-fill" style="column-gap: 10px; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); width: auto;">
+            <div class="codeblock fit pad pre-line blue dotpad-pattern" style="line-height: normal; font-size: 14px;" lang="pre-line">
+            ⠀⠀⠀⢀⡴⠶⢶⡀⠀⠀⠀⣠⡴⢦⡀⠀⠀⠀
+            ⠀⠀⠀⡞⠀⠀⠀⢻⠀⠀⣰⠋⠀⠀⢹⡄⠀⠀
+            ⠀⠀⢸⡇⠀⠀⠀⠈⡇⠀⡟⠀⠀⠀⢸⠇⠀⠀
+            ⠀⠀⢸⡇⠀⠀⠀⠀⣇⢸⡇⠀⠀⠀⢸⠃⠀⠀
+            ⠀⠀⠘⡇⠀⠀⠀⠀⡇⢸⠀⠀⠀⠀⡞⠀⠀⠀
+            ⠀⠀⠀⣹⠀⠀⠀⠀⠛⠛⠀⠀⠀⠼⣅⠀⠀⠀
+            ⠀⣠⠞⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢳⡀⠀
+            ⣰⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⡄
+            ⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡇
+            ⣯⠀⠀⢰⡆⠀⠀⠀⠀⠀⠀⠀⣴⠀⠀⠀⢸⠇
+            ⠹⣄⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⣠⠟⠀
+            ⠀⠙⠦⣤⣀⠀⠀⠛⠛⠂⠀⢀⣀⡤⠞⠃⠀⠀
+            ⠀⠀⠀⠀⠉⠉⠉⠛⠛⠉⠉⠉⠁⠀⠀⠀⠀⠀
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="toggle-container">
+    <div class="toggle-header blue pool-pattern"><span class="highlight white">Toggle Content Header</span></div>
+    <div class="toggle-content cross-pattern">
+        <div class="palette-grid auto-fill" style="column-gap: 10px; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); width: auto;">
+            <div class="codeblock fit pad pre-line blue dotpad-pattern" style="line-height: normal; font-size: 14px;" lang="pre-line">
+            ⠀⠀⠀⢀⡴⠶⢶⡀⠀⠀⠀⣠⡴⢦⡀⠀⠀⠀
+            ⠀⠀⠀⡞⠀⠀⠀⢻⠀⠀⣰⠋⠀⠀⢹⡄⠀⠀
+            ⠀⠀⢸⡇⠀⠀⠀⠈⡇⠀⡟⠀⠀⠀⢸⠇⠀⠀
+            ⠀⠀⢸⡇⠀⠀⠀⠀⣇⢸⡇⠀⠀⠀⢸⠃⠀⠀
+            ⠀⠀⠘⡇⠀⠀⠀⠀⡇⢸⠀⠀⠀⠀⡞⠀⠀⠀
+            ⠀⠀⠀⣹⠀⠀⠀⠀⠛⠛⠀⠀⠀⠼⣅⠀⠀⠀
+            ⠀⣠⠞⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢳⡀⠀
+            ⣰⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⡄
+            ⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡇
+            ⣯⠀⠀⢰⡆⠀⠀⠀⠀⠀⠀⠀⣴⠀⠀⠀⢸⠇
+            ⠹⣄⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⣠⠟⠀
+            ⠀⠙⠦⣤⣀⠀⠀⠛⠛⠂⠀⢀⣀⡤⠞⠃⠀⠀
+            ⠀⠀⠀⠀⠉⠉⠉⠛⠛⠉⠉⠉⠁⠀⠀⠀⠀⠀
+            </div>
+        </div>
+    </div>
 </div>
 
 </div>
