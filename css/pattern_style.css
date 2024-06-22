@@ -71,7 +71,7 @@
         radial-gradient(farthest-side at 50% 133.33%, var(--_g)) calc(var(--s) / 2)
         0,
         radial-gradient(farthest-side at 133.33% 50%, var(--_g)),
-        radial-gradient(farthest-side at 50% -33.33%, var(--_g)), #67917a; /* second color */
+        radial-gradient(farthest-side at 50% -33.33%, var(--_g)), #67917a00; /* second color */
     background-size: calc(var(--s) / 4.667) var(--s),
         var(--s) calc(var(--s) / 4.667);
 }

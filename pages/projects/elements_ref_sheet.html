@@ -537,25 +537,40 @@ defaults
     </div>
 </div>
 
-<div class="toggle-container">
-    <div class="toggle-header blue pool-pattern"><span class="highlight white">Toggle Content Header</span></div>
+<div class="toggle-container active">
+    <div class="toggle-header blue pool-pattern active"><span class="highlight white">Toggle Content Header</span></div>
     <div class="toggle-content cross-pattern">
-        <div class="palette-grid auto-fill" style="column-gap: 10px; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); width: auto;">
-            <div class="codeblock fit pad pre-line blue dotpad-pattern" style="line-height: normal; font-size: 14px;" lang="pre-line">
-            ⠀⠀⠀⢀⡴⠶⢶⡀⠀⠀⠀⣠⡴⢦⡀⠀⠀⠀
-            ⠀⠀⠀⡞⠀⠀⠀⢻⠀⠀⣰⠋⠀⠀⢹⡄⠀⠀
-            ⠀⠀⢸⡇⠀⠀⠀⠈⡇⠀⡟⠀⠀⠀⢸⠇⠀⠀
-            ⠀⠀⢸⡇⠀⠀⠀⠀⣇⢸⡇⠀⠀⠀⢸⠃⠀⠀
-            ⠀⠀⠘⡇⠀⠀⠀⠀⡇⢸⠀⠀⠀⠀⡞⠀⠀⠀
-            ⠀⠀⠀⣹⠀⠀⠀⠀⠛⠛⠀⠀⠀⠼⣅⠀⠀⠀
-            ⠀⣠⠞⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢳⡀⠀
-            ⣰⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⡄
-            ⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡇
-            ⣯⠀⠀⢰⡆⠀⠀⠀⠀⠀⠀⠀⣴⠀⠀⠀⢸⠇
-            ⠹⣄⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⣠⠟⠀
-            ⠀⠙⠦⣤⣀⠀⠀⠛⠛⠂⠀⢀⣀⡤⠞⠃⠀⠀
-            ⠀⠀⠀⠀⠉⠉⠉⠛⠛⠉⠉⠉⠁⠀⠀⠀⠀⠀
+
+        <div class="callout notepad-pattern" style="background-color: pink; border-color: #EC8F6A;">
+            Add <code>active</code> attribute in <code>toggle-container</code> element for toggle it by default.<br>
+            And <code>active</code> attribute in <code>toggle-header</code> to match arrow direction.
+        </div>
+
+        <div style="display: flex; gap: 10px;">
+            
+            <div class="palette-grid auto-fill" style="column-gap: 10px; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); width: auto;">
+                <div class="codeblock fit pad pre-line blue pool-pattern" style="line-height: normal; font-size: 14px;" lang="pre-line">
+                ⠀⠀⠀⢀⡴⠶⢶⡀⠀⠀⠀⣠⡴⢦⡀⠀⠀⠀
+                ⠀⠀⠀⡞⠀⠀⠀⢻⠀⠀⣰⠋⠀⠀⢹⡄⠀⠀
+                ⠀⠀⢸⡇⠀⠀⠀⠈⡇⠀⡟⠀⠀⠀⢸⠇⠀⠀
+                ⠀⠀⢸⡇⠀⠀⠀⠀⣇⢸⡇⠀⠀⠀⢸⠃⠀⠀
+                ⠀⠀⠘⡇⠀⠀⠀⠀⡇⢸⠀⠀⠀⠀⡞⠀⠀⠀
+                ⠀⠀⠀⣹⠀⠀⠀⠀⠛⠛⠀⠀⠀⠼⣅⠀⠀⠀
+                ⠀⣠⠞⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢳⡀⠀
+                ⣰⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⡄
+                ⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡇
+                ⣯⠀⠀⢰⡆⠀⠀⠀⠀⠀⠀⠀⣴⠀⠀⠀⢸⠇
+                ⠹⣄⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⣠⠟⠀
+                ⠀⠙⠦⣤⣀⠀⠀⠛⠛⠂⠀⢀⣀⡤⠞⠃⠀⠀
+                ⠀⠀⠀⠀⠉⠉⠉⠛⠛⠉⠉⠉⠁⠀⠀⠀⠀⠀
+                </div>
             </div>
+            
+            <div>
+                <div class="codeblock fit pad green pre-line no-shadow dotpad-pattern" lang="HTML">class="toggle-container active"</div>
+                <div class="codeblock fit pad pink pre-line no-shadow dotpad-pattern" lang="HTML">class="toggle-header active"</div>
+            </div>
+
         </div>
     </div>
 </div>

@@ -87,6 +87,12 @@ button {
     color: rgb(197, 3, 106);
 }
 
+.quote.blue {
+    border-left-color: blueviolet;
+    background-color: aqua;
+    color: blueviolet;
+}
+
 .img-block {
     text-align: center;
 }
