@@ -31,34 +31,44 @@ main {
     /*background-color: aqua;*/
 }
 
+.hidden {
+    display: none;
+}
+
 .main-content-block {
-    display: flex;
-    flex-direction: column;
+    /*display: flex;
+    flex-direction: column;*/
     -webkit-box-pack: center;
     justify-content: center;
     /*margin-left: auto;*/
     /*margin-right: auto;*/
-    padding-left: 2%;
-    padding-right: 2%;
+    /*padding-left: 2%;
+    padding-right: 2%;*/
+    padding: 10px;
     overflow: clip;
+
+    width: auto;
+    max-width: 1000px;
+    flex-basis: 1000px;
+    text-wrap: pretty;
+    overflow-wrap: break-word;
+
     /*background-color: darkgrey;*/
 }
 
-.sub-content-block {
+/*.sub-content-block {
     display: grid;
-    /*background-color: coral;*/
-}
+    background-color: coral;
+}*/
 
+/*
 .left-side-container {
     display: block;
-    /*width: 800px;*/
     width: auto;
     max-width: 800px;
     text-wrap: pretty;
     overflow-wrap: break-word;
-    /*overflow: auto;*/
-    /*background-color: rgb(183, 241, 255);*/
-}
+}*/
 
 .right-side-container {
     display: block;
@@ -66,23 +76,32 @@ main {
     float: right;
     margin-left: 10px; 
     width: fit-content;
-    padding-left: 2%;
-    padding-right: 2%;
+    padding: 10px;
     /*background-color: rgba(199, 199, 199, 0.461);*/
 }
 
-.toc-content {
+.sticky-container {
     position: -webkit-sticky; /* Safari */
     position: sticky;
     height: 50vh;
     top: 10%;
     margin-top: 100px;
+    background-color: rgb(246, 255, 0);
+    border-radius: 20px;
+    padding: 10px;
+    width: fit-content;
+    height: fit-content;
+    white-space: nowrap;
+}
+
+.toc-content {
     background-color: aqua;
     border-radius: 20px;
     padding: 10px;
     width: 300px;
     height: fit-content;
-    white-space: nowrap;
+    white-space: normal;
+    word-break: normal;
 }
 
 @media (max-width: 1150px) {  
@@ -94,20 +113,11 @@ main {
 
 @media (max-width: 1000px) {
     main {
-        padding-left: 0%;
-        padding-right: 0%;
+        padding-left: 10px;
+        padding-right: 10px;
     }
-    .toc-content {
+    .right-side-container {
         display: none;
     }
 }
 
-.notepad-pattern {
-    width: 100%;
-    height: 100%;
-    --color: #E1E1E1;
-    background-color: #F3F3F3;
-    background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent),
-        linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent);
-    background-size: 55px 55px;
-}

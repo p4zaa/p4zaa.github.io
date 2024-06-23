@@ -1,11 +1,14 @@
 /* Select Dropdown Element */
+input,
 select {
     padding: 10px;
     border-radius: 10px;
+    border-width: 1px;
     height: fit-content;
     transition: background-color 0.3s ease;
 }
 
+input:hover,
 select:hover {
     background-color: rgb(223, 245, 253);
 }
@@ -18,6 +21,11 @@ button {
     padding: 10px;
     border-radius: 10px;
     border-width: 1px;
+    cursor: pointer;
+}
+
+button.menu {
+    min-width: 100px;
 }
 
 /* Grid Block */
@@ -315,6 +323,11 @@ tbody tr:hover {
     text-wrap: nowrap;
 }
 
+.codeblock.pad.normal {
+    white-space: normal;
+    text-wrap: pretty;
+}
+
 .codeblock.pad:hover {
     box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.15);
 }
@@ -332,6 +345,15 @@ tbody tr:hover {
 .codeblock.pad::before {
     color: rgb(0, 0, 0);
     background-color: rgb(255, 255, 255);
+}
+
+.codeblock.pad.dream-banana::before {
+    background-color: #fbb9ff;
+}
+
+.codeblock.pad.warn-banana::before {
+    background-color: black;
+    color: white;
 }
 
 /*
@@ -373,6 +395,25 @@ tbody tr:hover {
     color: white;
     background-color: #EC8F6A;
     --color: #EC8F6A;
+}
+
+.codeblock.banana {
+    background-color: #FFE135;
+    --color: #FFE135;
+}
+
+.codeblock.dream-banana {
+    color: rgb(0, 0, 0);
+    background-color: #faf44e;
+    border-color: #fbb9ff;
+    --color: #faf44e;
+}
+
+.codeblock.warn-banana {
+    color: rgb(0, 0, 0);
+    background-color: yellow;
+    border-color: black;
+    --color: yellow;
 }
 
 .codeblock.transparent {
@@ -498,6 +539,15 @@ code:hover {
     background-color: #d0e5b6;
 }
 
+.toggle-header.cornflowerblue {
+    background-color: cornflowerblue;
+    color: rgb(255, 255, 255);
+}
+
+.toggle-header.cornflowerblue:hover {
+    background-color: rgb(85, 127, 205);
+}
+
 /* Radio Input Element */
 
 .radio-inputs {
@@ -539,5 +589,70 @@ code:hover {
     background-color: #ffffff;
     font-weight: bold;
     color: rgba(51, 65, 85, 1);
+}
+
+/* Slider Element */
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 27px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 0px;
+    /*background-color: #faf44e;*/
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: calc(100% - 60px); /* Adjusted width to accommodate space for slider value */
+    height: 15px;
+    border-radius: 30px;
+    border-width: 0px;
+    border-style: solid;
+    border-color: #3a7cff;
+    background: linear-gradient(to right, #00ccff00, #3ad8ff);
+    outline: none;
+    opacity: 0.9;
+    transition: opacity 0.2s;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    padding: 0px;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 50px;
+    height: 30px;
+    border-radius: 50px;
+    background: #ffffff;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #3a7cff;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease-in-out;
+}
+
+.slider::-webkit-slider-thumb:hover {
+    border-style: dashed;
+    background-color: #0099ff6e;
+}
+
+.slider-value {
+    position: relative;
+    bottom: 30px;
+    left: calc(100% - 20px); /* Position at the end of the slider track */
+    transform: translate(-50%, 0%);
+    background-color: white;
+    padding: 0px 0px;
+    width: fit-content;
+    min-width: 50px;
+    text-align: center;
+    height: fit-content;
+    border-radius: 50px;
+    border: 1px solid #3a7cff;
+    font-size: 16px;
 }
 

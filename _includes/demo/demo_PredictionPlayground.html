@@ -1,0 +1,405 @@
+<style>
+    .select-container {
+        display: grid;
+        align-items: center;
+        font-size: 16px;
+        text-align: end;
+        grid-template-columns: 1fr 2fr;
+        column-gap: 10px;
+        padding: 5px;
+        margin: 0px;
+        width: 480px;
+    }
+</style>
+
+<!--h1 class="no_toc">[DEMO] PredictionPlayground</h1--> 
+<!--h2 class="no_toc">Model's Prediction Tool</h2-->
+
+<div name="predictionplayground-interface" style="display: block; background-color: rgb(205, 221, 255); padding: 10px; border-radius: 15px; border-width: 2px; border-style: solid; border-color: cornflowerblue; overflow: auto;">
+    <div id="radio-button-container" style="margin-bottom: 10px;">
+        <div class="radio-inputs" style="display: flex;">
+            <label class="radio">
+                <input type="radio" name="radio" onclick="onTabChange('welcome-tab')" checked>
+                <span class="name">Welcome</span>
+            </label>
+        
+            <label class="radio">
+                <input type="radio" name="radio" onclick="onTabChange('dataset-tab')">
+                <span class="name">Dataset</span>
+            </label>
+        
+            <label class="radio">
+                <input type="radio" name="radio" onclick="onTabChange('preprocess-tab')">
+                <span class="name">Preprocess</span>
+            </label>
+        
+            <label class="radio">
+                <input type="radio" name="radio" onclick="onTabChange('models-tab')">
+                <span class="name">Models</span>
+            </label>
+        
+            <label class="radio">
+                <input type="radio" name="radio" onclick="onTabChange('prediction-tab')">
+                <span class="name">Prediction</span>
+            </label>
+        
+            <label class="radio">
+                <input type="radio" name="radio" onclick="onTabChange('postprocess-tab')">
+                <span class="name">Postprocess</span>
+            </label>
+        
+            <label class="radio">
+                <input type="radio" name="radio" onclick="onTabChange('formats-tab')">
+                <span class="name">Formats</span>
+            </label>
+        
+            <label class="radio">
+                <input type="radio" name="radio" onclick="onTabChange('export-tab')">
+                <span class="name">Export</span>
+            </label>
+        
+            <label class="radio">
+                <input type="radio" name="radio" onclick="onTabChange('settings-tab')">
+                <span class="name">Settings</span>
+            </label>
+        </div>
+    </div>
+
+    <!-- Tab Contents -->
+    <div id="tab-contents">
+
+        <div id="welcome-tab" style="display: block;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div lang="PredictionPlayground" class="codeblock fit pad pink gradient no-shadow" style="line-height: 18px; color: black;">_____              _ _      _   _ 
+|  __ \            | (_)    | | (_)
+| |__) | __ ___  __| |_  ___| |_ _  ___  _ __   ________
+|  ___/ '__/ _ \/ _` | |/ __| __| |/ _ \| '_ \  ______
+| |   | | |  __/ (_| | | (__| |_| | (_) | | | | ____
+|_|___|_|  \___|\__,_|_|\___|\__|_|\___/|_| |_| __    _ 
+|  __ \| |                                           | |
+| |__) | | __ _ _   _  __ _ _ __ ___  _   _ _ __   __| |
+|  ___/| |/ _` | | | |/ _` | '__/ _ \| | | | '_ \ / _` |
+| |    | | (_| | |_| | (_| | | | (_) | |_| | | | | (_| |
+|_|    |_|\__,_|\__, |\__, |_|  \___/ \__,_|_| |_|\__,_|
+                __/  | __/ |                            
+                |___/ |___/
+</div>
+                <img src="/assets/images/blu3_flying.gif" alt="blu3" style="width: 25%; height: 25%;">
+            </div>
+        </div>
+    
+        <div id="dataset-tab" style="display: none;">
+            <div class="select-container">
+                Upload File
+                <input type="file" name="avatar" accept=".xlsx,.csv" disabled>
+            </div>
+
+            <div class="select-container">
+                Select Sheet
+                <select>
+                    <option>sheet1</option>
+                    <option>sheet2</option>
+                    <option>sheet3</option>
+                </select>
+            </div>
+
+            <div class="select-container">
+                <div></div>
+                <button>Load Dataset</button>
+            </div>
+        </div>
+        
+        <div id="preprocess-tab" style="display: none;">
+            <div class="toggle-container">
+                <div class="toggle-header cornflowerblue">Drop Duplicate Samples</div>
+                <div class="toggle-content">
+                    <div class="codeblock fit pad pink normal" lang="Procedure">
+                        Drop duplicate samples based on selected key columns.
+                    </div>
+                </div>
+            </div>
+            <div class="toggle-container">
+                <div class="toggle-header cornflowerblue">Vertical Concat Multiple Columns into a Single Column</div>
+                <div class="toggle-content">
+                    <div class="codeblock fit pad green normal" lang="Procedure">
+                        Concatenate multiple columns into a single column.
+                    </div>
+                </div>
+            </div>
+            <div class="toggle-container active">
+                <div class="toggle-header cornflowerblue active">Text Preprocessing</div>
+                <div class="toggle-content">
+                    <div class="select-container">
+                        Select Text Column
+                        <select>
+                            <option>text</option>
+                            <option>id</option>
+                            <option>category</option>
+                            <option>amount</option>
+                            <option>name</option>
+                        </select>
+                    </div>
+                    <div class="select-container">
+                        New Column Title
+                        <input required placeholder="Type your preprocess text column title here." value="preprocess_text"></input>
+                    </div>
+                    <div class="select-container">
+                        <div></div>
+                        <button>Preprocess!</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    
+        <div id="models-tab" style="display: none;">
+            <div class="toggle-container active">
+                <div class="toggle-header cornflowerblue active">Load Models</div>
+                <div class="toggle-content">
+                    <div class="select-container">
+                        Base Model
+                        <select>
+                            <option>bert-based-model</option>
+                        </select>
+                    </div>
+
+                    <div class="select-container">
+                        Shared Drive
+                        <select>
+                            <option>Drive 1</option>
+                            <option>Drive 2</option>
+                            <option>Drive 3</option>
+                        </select>
+                    </div>
+
+                    <div class="select-container">
+                        Project
+                        <select>
+                            <option>Project 1</option>
+                            <option>Project 2</option>
+                            <option>Project 3</option>
+                        </select>
+                    </div>
+
+                    <div class="select-container">
+                        Sub-Project
+                        <select>
+                            <option>Sub-project 1</option>
+                            <option>Sub-project 2</option>
+                            <option>Sub-project 3</option>
+                        </select>
+                    </div>
+
+                    <div class="select-container">
+                        Model Version
+                        <select>
+                            <option>Version 3</option>
+                            <option>Version 2</option>
+                            <option>Version 1</option>
+                        </select>
+                    </div>
+
+                    <div class="select-container">
+                        <div></div>
+                        <button style="background-color: greenyellow; color: black;">Load Model</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="toggle-container">
+                <div class="toggle-header cornflowerblue">Check model unidentified labels</div>
+                <div class="toggle-content">
+                    <div lang="Information" class="codeblock fit pad dream-banana normal" style="width: 500px;">
+                        This part will let the user select label columns and check with the loaded model labels and report any unidentified labels.
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div id="prediction-tab" style="display: none;">
+            <div class="toggle-container active">
+                <div class="toggle-header cornflowerblue active">Model Predictions</div>
+                <div class="toggle-content">
+                    <div class="select-container">
+                        Input Column
+                        <select>
+                            <option>text</option>
+                            <option>post</option>
+                            <option>comment</option>
+                        </select>
+                    </div>
+
+                    <div class="select-container">
+                        Output Column Title
+                        <input required placeholder="Type your output column title here." value=""></input>
+                    </div>
+
+                    <div class="select-container">
+                        Label Separator
+                        <select>
+                            <option>|</option>
+                            <option>_</option>
+                            <option>/</option>
+                        </select>
+                    </div>
+
+                    <div class="select-container">
+                        Threshold
+                    </div>
+
+                    <div class="palette-grid" style="width: 600px; height: fit-content; border-width: 3px; border-style: dashed; border-color: aqua; padding-right: 10px;">
+                        <div class="slider-container">
+                            <input class="slider" type="range" min="0" max="1" step="0.05" value="0.40">
+                        </div>
+                    </div>
+
+                    <div class="select-container">
+                        <div></div>
+                        <button>Perform Prediction!</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    
+        <div id="postprocess-tab" style="display: none;">
+            <div class="toggle-container active">
+                <div class="toggle-header cornflowerblue active">Predict Options</div>
+                <div class="toggle-content">
+                    <div class="select-container" style="text-align: start;">
+                        Top K
+                    </div>
+                    <div class="palette-grid" style="width: 600px; height: fit-content; border-width: 3px; border-style: dashed; border-color: aqua; padding-right: 10px;">
+                        <div class="slider-container">
+                            <input class="slider" type="range" min="0" max="10" step="1" value="0">
+                        </div>
+                    </div>
+
+                    <div class="select-container" style="text-align: start;">
+                        Threshold
+                    </div>
+                    <div class="palette-grid" style="width: 600px; height: fit-content; border-width: 3px; border-style: dashed; border-color: aqua; padding-right: 10px;">
+                        <div class="slider-container">
+                            <input class="slider" type="range" min="0" max="1" step="0.05" value="0.40">
+                        </div>
+                    </div>
+
+                    <div class="select-container" style="grid-template-columns: 1fr 1fr;">
+                        <button>Perform Process</button>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="toggle-container">
+                <div class="toggle-header cornflowerblue">Split output column</div>
+                <div class="toggle-content">
+                    <div class="select-container">
+                        Column
+                        <select>
+                            <option>text</option>
+                            <option>post</option>
+                            <option>comment</option>
+                        </select>
+                    </div>
+
+                    <div class="select-container">
+                        Split column title
+                        <select>
+                            <option>Model Output</option>
+                            <option>Prediction Output</option>
+                            <option>Output</option>
+                        </select>
+                    </div>
+
+                    <div class="select-container">
+                        <button>Undo</button>
+                        <button>Perform Process</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    
+        <div id="formats-tab" style="display: none;">
+            <div class="codeblock fit pad pink normal wave-pattern" lang="Information">
+                Contain multiple output format styles to support downstream task.
+                <ul> Examples:
+                    <li>Map output labels to other provided labels.</li>
+                    <li>Split label output column into separate label columns.</li>
+                    <li>more...</li>
+                </ul>
+            </div>
+        </div>
+    
+        <div id="export-tab" style="display: none;">
+
+            <div class="select-container">
+                Output File Name
+                <input required placeholder="Type file name here." value="prediction_output"></input>
+            </div>
+
+            <div class="select-container">
+                Output File Type
+                <select>
+                    <option>.xlsx</option>
+                    <option>.csv</option>
+                    <option>.xlsx & .csv</option>
+                </select>
+            </div>
+        
+            <div class="select-container">
+                Export File Directory
+                <input required placeholder="Paste your destination directory here." value="path/to/project/folder"></input>
+            </div>
+
+            <div class="select-container">
+                <div></div>
+                <button style="background-color: greenyellow; color: black;">Export</button>
+            </div>
+        </div>
+    
+        <div id="settings-tab" style="display: none;">
+            <div class="select-container" style="grid-template-columns: 1fr 1fr;">
+                <button style="background-color: cornflowerblue; color: white;">Clean Interface</button>
+                <div></div>
+            </div>
+            <div class="select-container" style="grid-template-columns: 1fr 1fr;">
+                <button style="background-color: orange; color: white;">Reset model and dataset</button>
+                <button style="background-color: red; color: white;">DISCONNECT RUNTIME</button>
+            </div>
+        </div>
+    </div>
+    <div class="palette-grid" style="border-width: 1px; border-style: dashed; border-color: rgb(174, 129, 216);"></div>
+    <div class="codeblock pad fit blue normal no-shadow pool-pattern" lang="Friendly Notice 😇">
+        <div>
+            This is the demo of <span class="highlight">PredictionPlayground</span> tool.<br>
+            Not an actual interface and cannot be functioning 💜
+        </div>
+    </div>
+</div>
+
+<script>
+    function onTabChange(callback_id) {
+        const codeblock_ids = [
+            'welcome-tab',
+            'dataset-tab',
+            'preprocess-tab',
+            'models-tab',
+            'prediction-tab',
+            'postprocess-tab',
+            'formats-tab',
+            'export-tab',
+            'settings-tab'
+        ];
+
+        codeblock_ids.forEach(block_id => {
+            const element = document.getElementById(block_id);
+            if (callback_id === block_id) {
+                element.style.display = 'block';
+            } else {
+                element.style.display = 'none';
+            }
+        });
+    }
+</script>

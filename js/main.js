@@ -1,3 +1,17 @@
+function toggleTOC() {
+    var tocContent = document.querySelector('.toc-content');
+    var button = document.getElementById('toggle-toc-button');
+    if (tocContent) {
+        if (tocContent.classList.contains('hidden')) {
+            tocContent.classList.remove('hidden');
+            button.textContent = 'hide';
+        } else {
+            tocContent.classList.add('hidden');
+            button.textContent = 'toc';
+        }
+    }
+}
+
 document.querySelectorAll('.color-palette').forEach(palette => {
     const color = palette.getAttribute('data-color');
     palette.style.setProperty('--palette-color', color);
@@ -20,5 +34,21 @@ document.addEventListener('DOMContentLoaded', function() {
             container.classList.toggle('active');
             header.classList.toggle('active');
         });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    var sliders = document.querySelectorAll('.slider');
+
+    sliders.forEach(function (slider) {
+        var sliderValue = document.createElement('div');
+        sliderValue.className = 'slider-value';
+        slider.parentNode.appendChild(sliderValue); // Append slider value display to slider container
+
+        sliderValue.textContent = slider.value;
+
+        slider.oninput = function () {
+            sliderValue.textContent = this.value;
+        };
     });
 });
