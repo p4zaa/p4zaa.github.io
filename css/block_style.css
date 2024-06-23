@@ -1,3 +1,8 @@
+/* span */
+.no-wrap {
+    text-wrap: nowrap;
+}
+
 /* Select Dropdown Element */
 input,
 select {
@@ -110,14 +115,42 @@ button.menu {
     background-color: yellow;
     border-radius: 8px;
     padding: 5px;
+    transition: box-shadow 0.7s ease-in-out;
 }
 
 .highlight.white {
     background-color: white;
 }
 
+.highlight.pink {
+    background-color: pink;
+    color: black;
+}
+
 .highlight.blue {
     background-color: aqua;
+}
+
+.highlight.banana {
+    background-color: #FFE135;
+}
+
+.highlight.whitesmoke {
+    background-color: whitesmoke;
+}
+
+.aura {
+    box-shadow: 0 0 20px gold;
+    --color: gold;
+}
+
+.blue-aura {
+    box-shadow: 0 0 20px rgb(89, 222, 255);
+    --color: rgb(89, 222, 255)
+}
+
+.highlight:hover.hover-aura {
+    box-shadow: 0 0 80px var(--color);
 }
 
 /*Color Palette*/

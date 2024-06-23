@@ -119,12 +119,38 @@
     transform: translate(0%, -20%);
 }
 
+#largeLogoName {
+    display: none;
+}
+
+#mediumLogoName {
+    display: none;
+}
+
 #miniLogoName {
     display: none;
 }
 
-@media (max-width: 490px) {
+@media (max-width: 800px) {
     #logoName {
+        display: none;
+    }
+    #largeLogoName {
+        display: inline-block;
+    }
+}
+
+@media (max-width: 600px) {
+    #largeLogoName {
+        display: none;
+    }
+    #mediumLogoName {
+        display: inline-block;
+    }
+}
+
+@media (max-width: 380px) {
+    #mediumLogoName {
         display: none;
     }
     #miniLogoName {
@@ -132,10 +158,7 @@
     }
 }
 
-@media (max-width: 235px) {
-    #logoName {
-        display: none;
-    }
+@media (max-width: 210px) {
     #miniLogoName {
         display: none;
     }
