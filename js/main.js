@@ -26,6 +26,20 @@ document.querySelectorAll('.color-palette').forEach(palette => {
     });
 });
 
+
+document.querySelectorAll('.sticker').forEach(sticker => {
+    const x = sticker.getAttribute('x');
+    const y = sticker.getAttribute('y');
+    const size = sticker.getAttribute('size');
+    const rotate = sticker.getAttribute('rotate');
+
+    sticker.style.setProperty('--x', x);
+    sticker.style.setProperty('--y', y);
+    sticker.style.setProperty('--size', size);
+    sticker.style.setProperty('--rotate', rotate);
+});
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const toggleHeaders = document.querySelectorAll('.toggle-header');
     toggleHeaders.forEach(function(header) {
