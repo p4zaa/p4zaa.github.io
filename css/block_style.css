@@ -320,6 +320,7 @@ tbody tr:hover {
 .codeblock.fit {
     max-width: fit-content;
     width: auto;
+    height: fit-content;
 }
 
 .codeblock::before {
@@ -338,84 +339,6 @@ tbody tr:hover {
     background-color: rgba(0, 0, 0, 0.336);
     text-transform: uppercase;
 }
-
-.sticker-container {
-    position: relative;
-    display: flex;
-    width: 100%;
-    /*background-color: #D9EDBF;*/
-}
-
-.sticker-container.auto {
-    width: auto;
-    max-width: 100%;
-    /*background-color: #3ad8ff;*/
-}
-
-.sticker {
-    position: absolute;
-    /*background-color: #0000002e;*/
-    font-size: var(--size, 60px);
-    width: fit-content;
-    height: fit-content;
-    margin: 0px;
-    padding: 0px;
-    left: var(--x);
-    translate: 0px var(--y);
-    transform: rotate(var(--rotate, 0));
-    line-height: normal;
-    text-wrap: nowrap;
-    /*translate: var(--x) var(--y);*/
-    transition: opacity 0.3s ease-in-out;
-    z-index: 0;
-}
-
-.sticker::before {
-    content: attr(element);
-    position: relative;
-    /*background-color: #f7ffca5a;*/
-}
-
-.sticker:hover {
-    opacity: 0.2;
-}
-
-.sticker.relative {
-    position: relative;
-}
-
-.sticker.top-right {
-    text-anchor: middle;
-    left: 80%;
-    translate: 0px 0px;
-    top: -40px;
-    right: 0;
-    /*background-color: #00000033;*/
-}
-
-.sticker.center {
-    position: relative;
-    left: 0%;
-    translate: 0px 0px;
-    justify-items: center;
-    align-items: center;
-}
-
-/*
-.sticker {
-    position: relative;
-    font-size: var(--size, 60px);
-    width: fit-content;
-    height: 10px;
-    margin: 0px;
-    padding: 0px;
-    background-color: #007BFF;
-    left: var(--x);
-    top: var(--y);
-    transition: all 0.5 ease-in-out;
-    z-index: 1;
-}*/
-
 
 /* codeblock variation */
 
@@ -767,3 +690,69 @@ code:hover {
     font-size: 16px;
 }
 
+.sticker-container {
+    position: relative;
+    display: flex;
+    width: fit-content;
+    height: auto;
+    padding: 0px;
+    margin: 0px;
+    /*background-color: #D9EDBF;*/
+}
+
+.sticker-container.full-width {
+    width: 100%;
+    /*background-color: #3ad8ff;*/
+}
+
+.sticker {
+    position: absolute;
+    /*background-color: #0000002e;*/
+    font-size: var(--size, 60px);
+    width: fit-content;
+    height: fit-content;
+    margin: 0px;
+    padding: 0px;
+    left: var(--x);
+    translate: 0px var(--y);
+    transform: rotate(var(--rotate, 0));
+    line-height: normal;
+    text-wrap: nowrap;
+    /*translate: var(--x) var(--y);*/
+    transition: opacity 0.5s ease-in-out, text-shadow 0.3s ease-in-out, background 0.3s, box-shadow 0.3s;
+    z-index: 1;
+}
+
+.sticker::before {
+    content: attr(element);
+    position: relative;
+    /*background-color: #f7ffca5a;*/
+}
+
+.sticker:hover {
+    opacity: 0.2;
+}
+
+.sticker:active {
+    opacity: 0.8;
+    text-shadow: rgba(0, 0, 0, 0.403) 5px 5px 15px;
+}
+
+.sticker.glassbox:active {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.sticker.relative {
+    position: relative;
+}
+
+.sticker.top-right {
+    text-anchor: middle;
+    left: 80%;
+    translate: 0px 0px;
+    top: -40px;
+    right: 0;
+    /*background-color: #00000033;*/
+}
