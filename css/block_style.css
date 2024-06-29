@@ -348,6 +348,7 @@ tbody tr:hover {
     color: black;
     border-color: #ffffff;
     border-width: 5px;
+    border-radius: 15px;
     height: fit-content;
     transition: box-shadow 0.3s ease;
 }
