@@ -1,0 +1,486 @@
+<div class="menu-container" style="margin-bottom: 5px;">
+    <div class="menu-buttons">
+        <div class="button-block left">
+            <button class="menu-button" title="Export file">
+                <i class="fa-solid fa-file-export"></i>
+            </button>
+        </div>
+            
+        <div class="button-block right">
+            <!-- Keyword search form -->
+            <form style="margin-right: 3px;">     
+                <div class="goto-page-container" style="height: 100%; align-content: stretch; margin-bottom: 0px;">
+                    <input class="goto-page-input" style="width: 150px; height: auto; margin-bottom: 0px;" required type="text" placeholder="Search by keyword ...">
+                    <button class="goto-button" style="margin-bottom: 0px;">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+            </form>
+            <button class="menu-button" title="Settings">
+                <i class="fa-solid fa-gear"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="menu-buttons">
+        <div class="button-block left">
+            <select id="rowsPerPage" name="per_page">
+                <option>10 R/P</option>
+                <option>50 R/P</option>
+                <option>100 R/P</option>
+                <option>500 R/P</option>
+            </select>
+
+            <button class="menu-button" title="Contents Table" onclick="onMenuClick('content-table')">
+                <i class="fa-solid fa-list"></i>
+            </button>
+
+            <button class="menu-button" title="Labels Manager" onclick="onMenuClick('label-manager-table')">
+                <i class="fa-solid fa-tags"></i>
+            </button>
+            
+            <button class="menu-button" title="My Projects" onclick="onMenuClick('my-project-table')">
+                <i class="fa-solid fa-folder-tree"></i>
+            </button>
+
+        </div>
+
+        <div class="button-block right">
+
+            <button class="menu-button" title="Sort By" id="sortByButton">
+                <i id="menuSortByIcon" class="fa-solid fa-arrow-down-1-9"></i>
+            </button>
+
+            <!-- Advanced filter button -->
+            <button class="menu-button" title="Advanced Filters" id="advancedFilterButton" onclick="openAdvancedFilterOverlay()">
+                <i class="fa-solid fa-filter"></i>
+            </button>
+
+            <!-- Refresh page button -->
+            <button class="menu-button" title="Reload Page" id="refresh-page-button" onclick="refreshPage()">
+                <i class="fas fa-sync-alt"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="demo-table" id="content-table">
+    <table style="width: 100%;">
+        <thead>
+            <tr>
+                <th style="width: 50px;">#</th>
+                <th>Text</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>
+                    <div style="display: block;">
+                        <div>
+                            I felt good and feel fine today too!
+                        </div>
+                        <div class="grid-container">
+                            <div class="label-container">
+                                positive
+                            </div>
+                            <div class="quick-add-btn" title="+ New Tag">+</div>
+                        </div>
+                    </div>
+                </td>
+                <tr>
+                    <td>2</td>
+                    <td>
+                        <div style="display: block;">
+                            <div>
+                                I take a long sip and feel the cold sensation of the iced capp.
+                            </div>
+                            <div class="grid-container">
+                                <div class="label-container">
+                                    neutral
+                                </div>
+                                <div class="quick-add-btn" title="+ New Tag">+</div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>
+                        <div style="display: block;">
+                            <div>
+                                Although the new product is innovative and user-friendly, its high price and frequent technical issues make it difficult to recommend.
+                            </div>
+                            <div class="grid-container">
+                                <div class="label-container">
+                                    positive
+                                </div>
+                                <div class="label-container">
+                                    negative
+                                </div>
+                                <div class="quick-add-btn" title="+ New Tag">+</div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="demo-table" id="label-manager-table" style="display: none;">
+    <table style="width: 100%;">
+        <thead>
+            <tr>
+                <th style="width: 50px;">#</th>
+                <th>Label</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>positive</td>
+                <td>อารมณ์เชิงบวก</td>
+                <td>sentiment</td>
+                <td>
+                    <button>Edit</button>
+                    <button>Remove</button>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>neutral</td>
+                <td>เป็นกลางทางอารมณ์</td>
+                <td>sentiment</td>
+                <td>
+                    <button>Edit</button>
+                    <button>Remove</button>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>negative</td>
+                <td>อารมณ์เชิงลบ</td>
+                <td>sentiment</td>
+                <td>
+                    <button>Edit</button>
+                    <button>Remove</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="demo-table" id="my-project-table" style="display: none;">
+    <table style="width: 100%;">
+        <thead>
+            <tr>
+                <th style="width: 50px;">#</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th style="width: 160px;">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Twitter Sentiment Analysis</td>
+                <td>Entity-level sentiment analysis on multi-lingual tweets.</td>
+                <td>
+                    <button>Open</button>
+                    <button>Edit</button>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>IMDB Movie Reviews</td>
+                <td>IMDB dataset having 50K movie reviews for natural language processing or Text analytics.</td>
+                <td>
+                    <button id="edit-label-btn">Open</button>
+                    <button id="remove-label-btn">Edit</button>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Emotion Analysis</td>
+                <td>This Emotion Classification Dataset was compiled to support research in the field of NLP and emotion analysis.</td>
+                <td>
+                    <button id="edit-label-btn">Open</button>
+                    <button id="remove-label-btn">Edit</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<script>
+    function onMenuClick(id) {
+        // Hide all elements with class 'demo-table'
+        const demo_tables = document.querySelectorAll('.demo-table');
+        demo_tables.forEach(table => {
+            table.style.display = 'none';
+        });
+
+        // Show the element with the matching id
+        const targetTable = document.getElementById(id);
+        if (targetTable) {
+            targetTable.style.display = 'block';
+        }
+    }
+</script>
+
+<style>
+/* Textarea styles */
+textarea {
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Button styles */
+button {
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Button hover styles */
+button:hover {
+    background-color: #0056b3;
+}
+
+select {
+  border-radius: 8px;
+  padding: 8px 12px;
+  height: auto;
+}
+
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    /*background-color: #007BFF;*/
+}
+
+.menu-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Adjusted to space-between */
+    align-items: center;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    width: 100%; /* Match the width of the table and add left and right padding */
+    padding: 0 0px; /* Add left and right padding */
+    border-radius: 8px;
+    /*background-color: chartreuse;*/
+}
+
+.create-project-button {
+    grid-column: 1;
+    grid-row: 1;
+    margin-bottom: 0px;
+    border-radius: 100px;
+}
+
+/* Additional CSS styles */
+.rows-per-page {
+    display: flex;
+    height: auto;
+    /*min-height: 100%;*/
+}
+
+.rows-per-page select {
+    padding: 8px 12px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px; /* Rounded corners */
+    margin-bottom: 0px;
+    max-width: max-content;
+    height: 100%;
+}
+
+.rows-per-page select:hover {
+    background-color: #0056b3;
+}
+
+.rows-per-page select:focus {
+    outline: none;
+}
+
+.rows-per-page label {
+    margin-right: 10px;
+}
+
+.button-block {
+    display: flex;
+    justify-content: center;
+    /*background-color: pink;*/
+}
+
+.button-block.left {
+    justify-content: left;
+    /*background-color: chocolate;*/
+}
+
+.button-block.right {
+    justify-content: right;
+    /*background-color: #00d9ff;*/
+}
+
+.menu-button {
+    position: relative;
+    font-size: larger;
+    margin-right: 3px;
+    margin-left: 3px;
+    border-radius: 8px;
+    margin-bottom: 0px;
+}
+
+.menu-button[disabled] {
+    background-color: lightgrey; /* Grey color for disabled state */
+    cursor: not-allowed;
+}
+
+.menu-button:hover::after {
+    content: attr(title); /* Show the tooltip text */
+    position: absolute; /* Position the tooltip */
+    font-size: medium;
+    background-color: rgb(198, 198, 253); /* Tooltip background color */
+    color: rgb(30, 0, 255); /* Tooltip text color */
+    padding: 5px; /* Tooltip padding */
+    border-radius: 10px; /* Tooltip border radius */
+    bottom: 110%; /* Position the tooltip above the label container */
+    left: 0%; /* Position the tooltip in the middle of the label container */
+    transform: translateX(-23%); /* Center the tooltip horizontally */
+    white-space: nowrap; /* Prevent line breaks in the tooltip */
+}
+
+/* LEGACY STYLES */
+
+.refresh-goto-buttons {
+    grid-column: 2;
+    grid-row: 2;
+    display: flex;
+    justify-content: right;
+    /*background-color: pink;*/
+}
+
+.refresh-goto-buttons {
+    grid-column: 2;
+    grid-row: 2;
+    display: flex;
+    justify-content: right;
+    /*background-color: pink;*/
+}
+
+.goto-page-container {
+    display: flex;
+    align-items: right; /* Make child elements stretch to match the height */
+    border: 1px solid #ccc; /* Add border for the container */
+    border-radius: 8px; /* Apply border-radius for rounded corners */
+    overflow: hidden; /* Ensure the border doesn't interfere with the input */
+    /*background-color: rgb(129, 193, 227);*/
+}
+
+.goto-page-input {
+    flex: 1; /* Take remaining space in the container */
+    padding: 8px; /* Add padding to the input */
+    border: none; /* Remove default input border */
+    width: 50px;
+    margin: 0px;
+}
+
+.goto-button {
+    padding: 8px 12px; /* Add padding to the button */
+    background-color: #007bff; /* Add background color */
+    color: #fff; /* Change text color to white */
+    border: none; /* Remove default button border */
+    border-radius: 0 5px 5px 0; /* Apply border-radius for rounded corners (only on the right side) */
+    cursor: pointer; /* Change cursor to pointer */
+    margin: 0px;
+}
+
+.content-container {
+    display: grid;
+    grid-template-columns: auto; /* One column */
+    grid-template-rows: auto auto; /* Two rows, first one for text, second for labels */
+    position: relative;
+    overflow: visible;
+}
+
+.text-container {
+    padding: 5px;
+}
+
+.text:link {
+    color: black;
+}
+
+.text:hover {
+    color: rgb(0, 0, 0);
+}
+
+.grid-container {
+    display: flex; /* Use grid display for grid layout */
+    grid-gap: 10px;
+}
+
+.label-container {
+    background-color: rgb(203, 203, 203);
+    color: rgb(78, 78, 78);
+    font-size: 16px;
+    border-radius: 30px;
+    padding: 5px;
+    margin-bottom: 5px; /* Add margin to separate label containers */
+    text-align: center; /* Align text in the center */
+    display: inline-block;
+    margin-block: 3px;
+    min-width: 70px;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.label-container:hover {
+    background-color: rgb(184, 184, 254);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    transform: scale(1.06);
+    animation: randomRotate 0.2s ease-in-out;
+}
+
+.quick-add-btn {
+    background-color: rgba(116, 209, 255, 0);
+    color: grey;
+    border-color: #007BFF;
+    border: 1px;
+    border-style: dashed;
+    font-size: 16px;
+    border-radius: 30px;
+    padding: 5px;
+    margin-bottom: 5px; /* Add margin to separate label containers */
+    text-align: center; /* Align text in the center */
+    display: inline-block;
+    margin-block: 3px;
+    min-width: 70px;
+    max-height: 30px;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+}
+
+.quick-add-btn:hover {
+    border-style: solid;
+    transform: scale(1);
+    cursor: pointer;
+}
+</style>

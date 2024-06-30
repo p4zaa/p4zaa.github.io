@@ -112,3 +112,13 @@ function dragElement(elmnt) {
     document.onmousemove = null;
   }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.mention').forEach(element => {
+        const mentionType = element.getAttribute('mention');
+        const imageUrl = `/css/icons/${mentionType}.png`; // Example path to your image
+
+        // Set CSS variable '--logo-path' on each .mention element
+        element.style.setProperty('--logo-path', `url('${imageUrl}')`);
+    });
+});
