@@ -17,5 +17,30 @@ toc: true
 </div>
 
 <div class="codeblock" lang="GGEZ">bobo
-    gogo
+    // GO TO TOP BUTTON FUNCTION
+    let calcScrollValue = () => {
+        //alert('SCROLL!')
+        let scrollProgress = document.getElementById("scroll-progress");
+        let progressValue = document.getElementById("scroll-progress-value");
+        let sidebar_refresh_btn = document.getElementById("sidebar-refresh-page-button");
+        let pos = document.documentElement.scrollTop;
+        let calcHeight =
+            document.documentElement.scrollHeight -
+            document.documentElement.clientHeight;
+        let scrollValue = Math.round((pos * 100) / calcHeight);
+        if (pos > 100) {
+            scrollProgress.style.display = "grid";
+            sidebar_refresh_btn.style.display = 'flex';
+        } else {
+            scrollProgress.style.display = "none";
+            sidebar_refresh_btn.style.display = 'none';
+        }
+        scrollProgress.addEventListener("click", () => {
+            window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+            });
+        });
+        scrollProgress.style.background = `conic-gradient(#03cc65 ${scrollValue}%, #d7d7d7 ${scrollValue}%)`;
+    };
 </div>
