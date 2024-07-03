@@ -46,17 +46,25 @@ toc: true
     This project aims to simplify the process of text annotation, providing a user-friendly platform that enhances the efficiency and accuracy of preparing datasets for machine learning.
 </div>
 
-<h2 id="tools">Tools</h2>
-<div class="codeblock pad fit transparent dream-banana normal no-shadow" lang="Tech stacks used in this project">
-    <div>
-        <strong>Backend: </strong><span class="mention" mention="python"> Python</span> and <span class="mention" mention="sqlite">SQLite</span><br>
-        <strong>Frontend:</strong> <span class="mention" mention="html">HTML</span> and <span class="mention" mention="javascript">JavaScript</span>
-    </div>
+<h2 id="tools">Tools and Libraries</h2>
+<div>
+    <strong>Backend: </strong>
+        <span class="mention" mention="python"> Python</span> | 
+        <span class="mention" mention="flask">Flask</span> | 
+        <span class="mention" mention="sqlite">SQLite</span><br>
+    <strong>Frontend: </strong>
+        <span class="mention" mention="html">HTML</span> | 
+        <span class="mention" mention="javascript">JavaScript</span><br>
+    <strong>Data Manipulation: </strong>
+        <span class="mention" mention="polars">Polars</span> | 
+        <span class="mention" mention="pandas">Pandas</span><br>
+    <strong>Tool: </strong>
+        <span class="mention" mention="vscode">VSCode</span>
 </div>
 
 <h2 id="demo">Demo <span class="blink"><i class="fa-solid fa-bomb fa-lg"></i></span></h2>
 <div style="padding: 10px; border-radius: 15px; border-width: 4px; border-style: dashed; border-color: cornflowerblue;">
-    <div style="overflow: auto;">
+    <div style="overflow: clip; overflow-clip-margin: 50px;">
         {% include /demo/demo_DataFlower.html %}
     </div>
 
@@ -70,3 +78,33 @@ toc: true
 </div>
 
 <h2 id="feature">Features</h2>
+<div class="figure title transparent cornflowerblue-border" style="width: fit-content; margin-bottom: 10px;" title="Add label to specific part" 
+fig="Image of the currently selected parts for a label in yellow highlighted">
+    <img src="/assets/images/DataFlower/select_specific_part.png">
+</div>
+<div class="palette-grid" style="grid-auto-flow: row dense; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));">
+    <div class="figure title transparent greenyellow-border" style="width: 350px;" title="Filter by keywords and labels" 
+    fig="Image of advanced filter window overlay which can filter by multiple keywords or multiple labels">
+        <img src="/assets/images/DataFlower/filter_feature.png">
+    </div>
+
+    <div class="figure title transparent orange-border" style="width: 350px;" title="Sort" 
+    fig="Image of sort window overlay for sort content based on user selected">
+        <img src="/assets/images/DataFlower/sort_by_feature.png">
+    </div>
+
+    <div class="figure title transparent bluepastel-border" style="width: 350px;" title="Add tagging" 
+    fig="Image of add tagging overlay">
+        <img src="/assets/images/DataFlower/add_new_tag_overlay.png">
+    </div>
+
+    <div class="figure title transparent greenpastel-border" style="width: 350px;" title="Edit label" 
+    fig="Image of edit label overlay, which can be used to edit existed label">
+        <img src="/assets/images/DataFlower/edit_label_overlay.png">
+    </div>
+
+    <div class="figure title transparent pink-border" style="width: 350px;" title="Keyword search" 
+    fig="Image of search box for searching input keyword">
+        <img src="/assets/images/DataFlower/search.png">
+    </div>
+</div>

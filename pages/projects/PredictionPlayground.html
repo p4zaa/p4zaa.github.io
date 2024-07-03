@@ -32,7 +32,56 @@ toc: true
     <div class="sticker wave" element="👋" x="75%" y="-60px" size="80px"></div>
 </div>
 
-<h2 id="demo">Demo <i class="fa-solid fa-bomb fa-lg"></i></h2>
+<h2 id="introduction">Introduction</h2>
+<div class="callout blue">
+    <div>
+        <strong class="highlight yellow">PredictionPlayground</strong> is an end-to-end internal tool designed for classification tasks, streamlining the process from raw data file to model prediction output. 
+        <ul>
+            <li>The interface and interactive elements are constructed using <span class="mention no-wrap" mention="jupyter">IPyWidgets</span> components, creating a user-friendly experience that requires no coding skills.</li>
+            <li>This enables teams to utilize the latest models specifically tailored for their respective projects.</li>
+            <li>PredictionPlayground is versatile, running seamlessly on both <span class="mention no-wrap" mention="colab">Google Colab</span> and local <span class="mention no-wrap" mention="jupyter">Jupyter Notebook</span> environments.</li>
+        </ul>
+    </div>
+</div>
+
+<h2 id="tools">Tools and Libraries</h2>
+<div>
+    <strong>Language: </strong><span class="mention" mention="python"> Python</span><br>
+    <strong>Libraries: </strong>
+        <a href="https://pola.rs/" target="_blank" rel="noopener noreferrer" class="mention" mention="polars">Polars</a> | 
+        <a href="https://ipywidgets.readthedocs.io/en/stable/" target="_blank" rel="noopener noreferrer" class="mention" mention="jupyter">IPyWidgets</a> | 
+        <a href="https://huggingface.co/docs/transformers/en/index" target="_blank" rel="noopener noreferrer" class="mention" mention="huggingface">Transformers</a> | 
+        <a href="https://github.com/PyThaiNLP/pythainlp" target="_blank" rel="noopener noreferrer" class="mention" mention="pythainlp">PyThaiNLP</a> | 
+        <a href="https://github.com/p4zaa/DataPrepKit" target="_blank" rel="noopener noreferrer" class="mention" mention="github">DataPrepKit</a><br>
+    <strong>Tool: </strong><span class="mention no-underline" mention="jupyter">Jupyter Notebook</span> | <span class="mention" mention="vscode">VSCode</span>
+</div>
+
+<h2 id="demo">Demo <span class="blink"><i class="fa-solid fa-bomb fa-lg"></i></span></h2>
 {% include /demo/demo_PredictionPlayground.html %}
 
-<h2 id="introduction">Introduction</h2>
+<h2 id="features">Features</h2>
+    <div class="quote">
+        <h3>Import Data</h3>
+        <ul>
+            <li>Accept both Excel Workbook and CSV file formats!</li>
+        </ul>
+        <h3>Data Preprocessing</h3>
+        <ul>
+            <li>Drop duplicate samples based on specific key columns</li>
+            <li>Concatenate multiple columns into a single column</li>
+            <li>Performs Thai text preprocessing using DataPrepKit and PyThaiNLP</li>
+        </ul>
+        <h3>Pretrained Models Selection</h3>
+        <ul>
+            <li>Allows selection of pretrained models for prediction</li>
+        </ul>
+        <h3>Model Prediction</h3>
+        <ul>
+            <li>Executes model prediction (CPU-GPU runtime required)</li>
+        </ul>
+        <h3>Data Postprocessing</h3>
+        <ul>
+            <li>Modifies prediction thresholds for each project's optimal value</li>
+            <li>Processes data into various formats for compatibility with downstream applications</li>
+        </ul>
+    </div>

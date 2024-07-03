@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="{{ site.baseurl }}/css/menu_bar_style.css">
     <link rel="stylesheet" href="{{ site.baseurl }}/css/page_style.css">
     <link rel="stylesheet" href="{{ site.baseurl }}/css/block_style.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/themes.css">
     <link rel="stylesheet" href="{{ site.baseurl }}/css/pattern_style.css">
     <link rel="stylesheet" href="{{ site.baseurl }}/css/animation_style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -33,10 +34,14 @@
        
         <div class="right-side-container">
             <div class="sticky-container">
-                <button id="toggle-toc-button" onclick="toggleTOC()" style="position: sticky;">hide</button>
+                <div style="margin-bottom: 5px;">
+                    <button id="toggle-toc-button" onclick="toggleTOC()">
+                       Table of Contents
+                    </button>
+                </div>
                 <div class="toc-content">
-                    <h2>Table of Contents</h2>
-                    {% include toc.html html=content %}
+                    <!--strong>Table of Contents</strong-->
+                    {% include toc.html html=content class="side-toc" %}
                 </div>
             </div>
         </div>

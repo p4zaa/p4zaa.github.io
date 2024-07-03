@@ -4,7 +4,7 @@ function toggleTOC() {
     if (tocContent) {
         if (tocContent.classList.contains('hidden')) {
             tocContent.classList.remove('hidden');
-            button.textContent = 'hide';
+            button.textContent = 'Table of Contents';
         } else {
             tocContent.classList.add('hidden');
             button.textContent = 'toc';

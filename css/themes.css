@@ -1,0 +1,34 @@
+.transparent {
+    background-color: rgba(0,0,0,0.0);
+    --color: rgba(0,0,0,0.0);    
+}
+
+/* Banana Themes */
+
+.banana {
+    background-color: #FFE135;
+    --color: #FFE135;
+}
+
+.codeblock.dream-banana,
+.dream-banana {
+    color: rgb(0, 0, 0);
+    background-color: #faf44e;
+    border-color: #fbb9ff;
+    --color: #faf44e;
+}
+
+.figure.dream-banana::after,
+.codeblock.dream-banana::before {
+    background-color: #fbb9ff;
+}
+
+.warn-banana {
+    color: rgb(0, 0, 0);
+    background-color: yellow;
+    border-color: black;
+    --color: yellow;
+}
+
+
+

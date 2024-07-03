@@ -69,7 +69,20 @@
         <thead>
             <tr>
                 <th style="width: 50px;">#</th>
-                <th>Text</th>
+                <th style="display: grid; grid-template-columns: 3fr 1fr; text-align: center; align-items: center;">
+                    Text
+                    <div class="radio-inputs">
+                        <label class="radio">
+                            <input type="radio" name="radio" checked="">
+                            <span class="name">Label ID</span>
+                        </label>
+                        
+                        <label class="radio">
+                            <input type="radio" name="radio">
+                            <span class="name">Description</span>
+                        </label>
+                    </div>
+                </th>
             </tr>
         </thead>
         <tbody>
@@ -81,7 +94,9 @@
                             I felt good and feel fine today too!
                         </div>
                         <div class="grid-container">
-                            <div class="label-container">
+                            <div class="label-container"
+                                data-label-id="positive" 
+                                data-description="อารมณ์เชิงบวก">
                                 positive
                             </div>
                             <div class="quick-add-btn" title="+ New Tag">+</div>
@@ -96,7 +111,9 @@
                                 I take a long sip and feel the cold sensation of the iced capp.
                             </div>
                             <div class="grid-container">
-                                <div class="label-container">
+                                <div class="label-container"
+                                    data-label-id="neutral" 
+                                    data-description="เป็นกลางทางอารมณ์">
                                     neutral
                                 </div>
                                 <div class="quick-add-btn" title="+ New Tag">+</div>
@@ -112,10 +129,14 @@
                                 Although the new product is innovative and user-friendly, its high price and frequent technical issues make it difficult to recommend.
                             </div>
                             <div class="grid-container">
-                                <div class="label-container">
+                                <div class="label-container"
+                                    data-label-id="positive" 
+                                    data-description="อารมณ์เชิงบวก">
                                     positive
                                 </div>
-                                <div class="label-container">
+                                <div class="label-container"
+                                    data-label-id="negative" 
+                                    data-description="อารมณ์เชิงลบ">
                                     negative
                                 </div>
                                 <div class="quick-add-btn" title="+ New Tag">+</div>
@@ -230,6 +251,40 @@
             targetTable.style.display = 'block';
         }
     }
+
+    function handleRadioChange() {
+            const radios = document.getElementsByName('radio');
+            let selectedValue;
+            for (const radio of radios) {
+                if (radio.checked) {
+                    selectedValue = radio.nextElementSibling.textContent.trim();
+                    // Save the selected value to localStorage
+                    localStorage.setItem('selectedRadio', selectedValue);
+                    break;
+                }
+            }
+
+            const labelContainers = document.querySelectorAll('.label-container');
+            labelContainers.forEach(container => {
+                if (selectedValue === 'Label ID') {
+                    container.textContent = container.getAttribute('data-label-id');
+                    container.setAttribute('title', container.getAttribute('data-description'));
+                } else if (selectedValue === 'Description') {
+                    container.textContent = container.getAttribute('data-description');
+                    container.setAttribute('title', container.getAttribute('data-label-id'));
+                }
+            });
+        }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        // Initialize the display based on the selected or default radio button
+        handleRadioChange();
+
+        const radios = document.getElementsByName('radio');
+        radios.forEach(radio => {
+            radio.addEventListener('change', handleRadioChange);
+        });
+    });
 </script>
 
 <style>
@@ -482,5 +537,48 @@ select {
     border-style: solid;
     transform: scale(1);
     cursor: pointer;
+}
+
+.radio-inputs {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 0.5rem;
+    background-color: #eeeeee;
+    box-sizing: border-box;
+    box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+    padding: 0.01rem;
+    width: 300px;
+    font-size: 14px;
+    height: fit-content;
+  }
+  
+.radio-inputs .radio {
+    flex: 1 1 auto;
+    text-align: center;
+    margin-bottom: 0px;
+    /*background-color: #007BFF;*/
+}
+
+.radio-inputs .radio input {
+    display: none;
+}
+
+.radio-inputs .radio .name {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    border: none;
+    padding: .5rem 0;
+    color: darkgray;
+    transition: all .15s ease-in-out;
+}
+
+.radio-inputs .radio input:checked + .name {
+    background-color: #ffffff;
+    font-weight: 600;
+    color: rgba(51, 65, 85, 1);
 }
 </style>
