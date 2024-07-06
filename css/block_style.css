@@ -472,6 +472,13 @@ tbody tr:hover {
     --color: #EC8F6A;
 }
 
+.codeblock.blue-border {
+    border-color: aqua;
+}
+
+.codeblock.blue-border::before {
+    background-color: aqua;
+}
 
 
 /*
