@@ -213,6 +213,14 @@ button.menu {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 }
 
+.palette-grid.auto-fit-300px {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.palette-grid.auto-fill-300px {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
 .color-palette {
     position: relative;
     background-color: rgb(255, 255, 255);
@@ -945,4 +953,100 @@ code:hover {
     background-image: var(--logo-path);
     background-size: contain;
     background-repeat: no-repeat;
+}
+
+/* Card Elements */
+.card-container {
+    /*background-color: #3ad8ff;*/
+    border-radius: 15px;
+    overflow: hidden;
+    width: 300px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    justify-content: end;
+    /*object-fit: cover;*/
+    padding: 0px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: white;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.card-container.square {
+    width: 200px;
+    height: 200px;
+}
+
+.card-container.mini {
+    width: 200px;
+    height: 100px;
+}
+
+.card-container.full-width {
+    width: 100%;
+    min-height: 200px;
+    height: fit-content;
+}
+
+.card-container:hover {
+    box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.card-container img {
+    width: 100%;
+    height: 100%;
+    max-width:100%;
+    max-height:100%;
+    object-fit: cover;
+    border-style: none;
+    position: absolute;
+}
+
+.card-container .card-content {
+    z-index: 1;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.822);
+    width: calc(100% - 15px);
+    text-align: center;
+    align-content: center;
+    min-height: 50px;
+    height: fit-content;
+    /*backdrop-filter: blur(5px);*/
+    border-radius: 10px;
+    margin: 5px 10px 8px 10px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.card-container:hover .card-content {
+    background-color: rgb(255, 255, 255);
+}
+
+.card-container .tag-container {
+    z-index: 1;
+    display: flex;
+    font-size: 14px;
+    /*background-color: rgba(255, 255, 255, 0.616);*/
+    width: calc(100% - 15px);
+    text-align: center;
+    align-content: left;
+    height: fit-content;
+    border-radius: 10px;
+    column-gap: 5px;
+}
+
+.tag-container span {
+    background-color: rgba(255, 255, 255, 0.553);
+    /*backdrop-filter: blur(5px);*/
+    border-radius: 10px;
+    padding: 3px 10px 3px 10px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.tag-container span:hover {
+    background-color: white;
 }
