@@ -5,44 +5,6 @@ toc: true
 ---
 <h1 class="no_toc">Elements Reference Sheet ❤️</h1>
 
-<h2 id="callout">Callout</h2>
-<div class="callout orange">
-    <span>
-        <i class="fa-solid fa-circle-radiation fa-xl"></i>
-    </span>
-    <span style="font-weight: bold;">Behold!</span></br>
-    This is callout with</br>
-    <code>width: fit-content;</code></br>
-    <code>border-color: orangered;</code>
-</div>
-
 <div class="codeblock" lang="GGEZ">bobo
         scrollProgress.style.background = `conic-gradient(#03cc65 ${scrollValue}%, #d7d7d7 ${scrollValue}%)`;
 </div>
-
-<h2 id="features">Features</h2>
-    <div class="quote">
-        <h3>Import Data</h3>
-        <ul>
-            <li>Accept both Excel Workbook and CSV file formats!</li>
-        </ul>
-        <h3>Data Preprocessing</h3>
-        <ul>
-            <li>Drop duplicate samples based on specific key columns</li>
-            <li>Concatenate multiple columns into a single column</li>
-            <li>Performs Thai text preprocessing using DataPrepKit and PyThaiNLP</li>
-        </ul>
-        <h3>Pretrained Models Selection</h3>
-        <ul>
-            <li>Allows selection of pretrained models for prediction</li>
-        </ul>
-        <h3>Model Prediction</h3>
-        <ul>
-            <li>Executes model prediction (CPU-GPU runtime required)</li>
-        </ul>
-        <h3>Data Postprocessing</h3>
-        <ul>
-            <li>Modifies prediction thresholds for each project's optimal value</li>
-            <li>Processes data into various formats for compatibility with downstream applications</li>
-        </ul>
-    </div>
