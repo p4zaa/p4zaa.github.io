@@ -1015,6 +1015,7 @@ code:hover {
     object-fit: cover;
     border-style: none;
     position: absolute;
+    border-radius: 0px;
 }
 
 .card-container .card-content {
