@@ -62,14 +62,14 @@ main {
     background-color: coral;
 }*/
 
-/*
+
 .left-side-container {
     display: block;
     width: auto;
     max-width: 800px;
     text-wrap: pretty;
     overflow-wrap: break-word;
-}*/
+}
 
 .right-side-container {
     display: block;
