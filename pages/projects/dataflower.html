@@ -63,8 +63,8 @@ toc: true
 </div>
 
 <h2 id="demo">Demo <span class="blink"><i class="fa-solid fa-bomb fa-lg"></i></span></h2>
-<div style="padding: 10px; border-radius: 15px; border-width: 4px; border-style: dashed; border-color: cornflowerblue;">
-    <div style="overflow: clip; overflow-clip-margin: 50px;">
+<div style="padding: 10px; border-radius: 15px; border-width: 4px; border-style: dashed; border-color: cornflowerblue; overflow: auto;">
+    <div style="overflow: visible;">
         {% include /demo/demo_DataFlower.html %}
     </div>
 
@@ -78,32 +78,34 @@ toc: true
 </div>
 
 <h2 id="feature">Features</h2>
+
 <div class="figure title transparent cornflowerblue-border" style="width: fit-content; margin-bottom: 10px;" title="Add label to specific part" 
 fig="Image of the currently selected parts for a label in yellow highlighted">
     <img src="/assets/images/DataFlower/select_specific_part.png">
 </div>
-<div class="palette-grid" style="grid-auto-flow: row dense; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));">
-    <div class="figure title transparent greenyellow-border" style="width: 350px;" title="Filter by keywords and labels" 
+
+<div class="palette-grid" style="grid-auto-flow: row dense; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+    <div class="figure title transparent greenyellow-border" style="width: fit-content;" title="Filter by keywords and labels" 
     fig="Image of advanced filter window overlay which can filter by multiple keywords or multiple labels">
         <img src="/assets/images/DataFlower/filter_feature.png">
     </div>
 
-    <div class="figure title transparent orange-border" style="width: 350px;" title="Sort" 
+    <div class="figure title transparent orange-border" style="width: fit-content;" title="Sort" 
     fig="Image of sort window overlay for sort content based on user selected">
         <img src="/assets/images/DataFlower/sort_by_feature.png">
     </div>
 
-    <div class="figure title transparent bluepastel-border" style="width: 350px;" title="Add tagging" 
+    <div class="figure title transparent bluepastel-border" style="width: fit-content;" title="Add tagging" 
     fig="Image of add tagging overlay">
         <img src="/assets/images/DataFlower/add_new_tag_overlay.png">
     </div>
 
-    <div class="figure title transparent greenpastel-border" style="width: 350px;" title="Edit label" 
+    <div class="figure title transparent greenpastel-border" style="width: fit-content;" title="Edit label" 
     fig="Image of edit label overlay, which can be used to edit existed label">
         <img src="/assets/images/DataFlower/edit_label_overlay.png">
     </div>
 
-    <div class="figure title transparent pink-border" style="width: 350px;" title="Keyword search" 
+    <div class="figure title transparent pink-border" style="width: fit-content;" title="Keyword search" 
     fig="Image of search box for searching input keyword">
         <img src="/assets/images/DataFlower/search.png">
     </div>
