@@ -45,8 +45,9 @@ main {
     /*padding-left: 2%;
     padding-right: 2%;*/
     padding: 25px;
-    overflow: clip;
-    overflow-clip-margin: 1px;
+    /*overflow: clip;*/
+    /*overflow-clip-margin: 1px;*/
+    overflow-x: clip;
 
     width: auto;
     max-width: 820px;
