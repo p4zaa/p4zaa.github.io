@@ -988,8 +988,19 @@ code:hover {
 
 .card-container.full-width {
     width: 100%;
-    min-height: 200px;
-    height: fit-content;
+    /*min-height: 200px;
+    height: fit-content;*/
+}
+
+.card-container.full-height {
+    min-height: 100%;
+    /*min-height: 200px;
+    height: fit-content;*/
+}
+
+.card-container.full {
+    width: 100%;
+    min-height: 100%;
 }
 
 .card-container:hover {
@@ -1015,6 +1026,7 @@ code:hover {
     text-align: center;
     align-content: center;
     min-height: 50px;
+    max-height: calc(100% - 50px);
     height: fit-content;
     /*backdrop-filter: blur(5px);*/
     border-radius: 10px;

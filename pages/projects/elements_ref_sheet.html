@@ -642,7 +642,7 @@ defaults
 
 <h2 id="card">Card</h2>
 <div class="codeblock fit" lang="html">&lt;!-- Card Elements --&gt;
-&lt;div class="card-container" onclick="window.location.href='/pages/projects/elements_ref_sheet.html#card'"&gt;
+&lt;div class="card-container" onclick="window.open('/pages/projects/elements_ref_sheet.html#card', '_blank')"&gt;
     &lt;img src="/assets/images/sunflowers.jpeg"&gt;
     &lt;div class="tag-container"&gt;
         &lt;span&gt;Tag1&lt;/span&gt;
@@ -654,9 +654,15 @@ defaults
 &lt;/div&gt;
 </div>
 
+<div class="codeblock pad fit blue" lang="I don't want to open new tab">&lt;!-- Use this for not open new tab --&gt;
+"window.location.href='/pages/projects/elements_ref_sheet.html#card'"
+</div>
+
 <div class="palette-grid auto-fit-300px">
     <!-- Card Elements -->
-    <div class="card-container" onclick="window.location.href='/pages/projects/elements_ref_sheet.html#card'">
+    <div 
+    class="card-container description" 
+    onclick="window.location.href='/pages/projects/elements_ref_sheet.html#card'">
         <img src="/assets/images/sunflowers.jpeg">
         <div class="tag-container">
             <span>Flowers</span>
