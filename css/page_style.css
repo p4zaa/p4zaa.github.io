@@ -45,7 +45,7 @@ main {
     /*padding-left: 2%;
     padding-right: 2%;*/
     padding: 25px;
-    overflow: auto;
+    overflow: hidden;
     /*overflow-clip-margin: 100vw;*/
 
     width: auto;
@@ -54,7 +54,7 @@ main {
     text-wrap: pretty;
     overflow-wrap: break-word;
 
-    background-color: darkgrey;
+    /*background-color: darkgrey;*/
 }
 
 /*.sub-content-block {
