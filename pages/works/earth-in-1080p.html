@@ -1,0 +1,67 @@
+---
+layout: default
+title: 🌍 Resolutions
+toc: true
+---
+<style>
+    .content-container {
+        display: none;
+        width: fit-content;
+        /*background-color: antiquewhite;*/
+        justify-content: center;
+    }
+    .content-container img {
+        border-style: none;
+    }
+</style>
+
+<h1 style="text-align: center;">🌎 Resolutions 🌏</h1>
+
+<div style="display: flex; justify-content: center; align-items: center;">
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5TEH4r5OBFcKZJBjF4qOxL?utm_source=generator" width="40%" height="100" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 10px; justify-content: center; align-items: center;">
+    <div class="content-container" id="144" style="display: flex;">
+        <img width="45%" src="https://images.fineartamerica.com/images/artworkimages/medium/1/pixel-earth-design-martin-capek-transparent.png">
+    </div>
+
+    <div class="content-container" id="240">
+        <img width="30%" src="https://cdn.pixabay.com/photo/2014/03/25/16/26/earth-297125_960_720.png">
+    </div>
+
+    <div class="content-container" id="480">
+        <span style="font-size: 200px; line-height: normal;">🌎</span>
+    </div>
+
+    <div class="content-container" id="720">
+        <img width="45%" src="https://cdn.pixabay.com/photo/2016/06/14/20/38/planet-earth-1457453_640.png">
+    </div>
+
+    <div class="content-container" id="1080">
+        <img width="100%" src="/assets/images/memes/cat-love-meme-gif-loop.gif">
+    </div>
+
+    <div>
+        <select onchange="onResolutionChange(this.value)">
+            <option value="144">144p</option>
+            <option value="240">240p</option>
+            <option value="480">480p</option>
+            <option value="720">720p</option>
+            <option value="1080">1080p</option>
+        </select>
+    </div>
+</div>
+
+<script>
+    function onResolutionChange(value) {
+        const contents = document.querySelectorAll('.content-container');
+        contents.forEach(content => {
+            if (content.id == value) {
+                content.style.display = 'flex';
+            } else {
+                content.style.display = 'none';
+            }
+        });
+    }
+</script>
