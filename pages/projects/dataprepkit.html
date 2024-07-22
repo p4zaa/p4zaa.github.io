@@ -1,0 +1,72 @@
+---
+layout: default
+title: DataPrepKit
+toc: true
+---
+<h1 class="no_toc">DataPrepKit 🍡</h1>
+
+<div class="callout blue">
+    <strong class="highlight"><span class="mention" mention="github">DataPrepKit</span></strong> is a comprehensive toolkit designed to simplify data preprocessing tasks for tabular data using <span class="mention" mention="polars">Polars</span> DataFrame library. 
+    It includes functionalities for handling duplicates, one-hot encoding, decoding, and text preprocessing specifically for Thai language data.
+</div>
+
+<!-- Card Elements -->
+<div class="card-container mini" onclick="window.open('https://github.com/p4zaa/DataPrepKit', '_blank')">
+    <img src="https://miro.medium.com/v2/resize:fit:1358/1*d8qjKITXNdQ5reRbo3_q8g.gif">
+    <div class="tag-container">
+        <span>GitHub</span>
+    </div>
+    <div class="card-content">
+        <span class="mention" mention="github">p4zaa/DataPrepKit</span>
+    </div>
+</div>
+
+<h2 id="tabularprepkit">TabularPrepKit</h2>
+<div class="quote">
+    <ul>
+        <li><strong>Duplicate Label Handling:</strong><br>
+        Combine labels for each row to handle duplicates efficiently.
+        </li>
+        <li><strong>One-Hot Encoding:</strong><br>
+        Encode specified columns using one-hot encoding with flexible options.
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+                <div class="figure" fig="Example table before encoding">
+                    <img src="/assets/images/DataPrepKit/table-before-encoding.png">
+                </div>
+                <div class="figure" fig="Example table after encoding">
+                    <img src="/assets/images/DataPrepKit/table-after-encoding.png">
+                </div>
+            </div>
+        </li>
+        <li><strong>One-Hot Decoding:</strong><br>
+        Decode one-hot encoded columns back to their original labels seamlessly.
+        </li>
+    </ul>
+</div>
+
+<h2 id="thaitextprepkit">ThaiTextPrepKit</h2>
+<div class="quote green">
+    <ul>
+        <li><strong>Thai Text Normalization:</strong><br>
+        Normalize Thai text using pythainlp utilities.
+        </li>
+        <li><strong>Custom Dictionary Integration:</strong><br>
+        Extend Thai word dictionary with custom words for more accurate tokenization.
+        </li>
+        <li><strong>Named Entity Recognition (NER) Tagging:</strong><br>
+        Tag and process Thai text using NER models.
+        </li>
+        <li><strong>Common Word Fixing:</strong><br>
+        Correct common typos and variations in Thai text.
+        </li>
+        <li><strong>Text Preprocessing:</strong><br>
+        Comprehensive preprocessing for Thai text, including tokenization, stopword removal, and format retention options.
+        </li>
+    </ul>
+</div>
+
+<h2 id="installation">Installation</h2>
+<div class="codeblock fit" lang="Python">pip install --upgrade git+'https://github.com/p4zaa/DataPrepKit.git'
+from ThaiTextPrepKit import pretextkit
+from TabularPrepKit import tablekit
+</div>
