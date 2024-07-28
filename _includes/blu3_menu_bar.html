@@ -1,0 +1,76 @@
+<!-- _includes/menu_bar.html -->
+<div class="nav-pane">
+    <div class="menu-bar-container pastel">
+        <div class="flex-space-between">
+            <span style="cursor: pointer;">
+                <span class="menu-bar-text" id="logoIcon">
+                    ᕱ ⑅ ᕱ
+                </span>
+                <span class="pixeled-text menu-bar-text" id="logoName">
+                    @dustyblu3 | blu:3
+                </span>
+                <span class="pixeled-text menu-bar-text" id="largeLogoName">
+                    @dustyblu3
+                </span>
+                <span class="pixeled-text menu-bar-text" id="mediumLogoName">
+                    @dustyblu3
+                </span>
+                <span class="pixeled-text menu-bar-text" id="miniLogoName">
+                    blu:3
+                </span>
+            </span>
+
+            <!--div style="display: flex; gap: 10px; align-items: top;">
+                <a href="/index" class="menu-link pixeled-text menu-bar-text" style="font-size: 12px;" id="home-menu-bar">Home</a>
+                <span class="pixeled-text menu-bar-text" id="menu-separator1"> | </span>
+                <a href="/pages/projects" class="menu-link pixeled-text menu-bar-text" style="font-size: 12px;" id="project-menu-bar">Projects</a>
+
+                <div class="hamburger-menu" onclick="showHamburgerMenu()">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div-->
+        </div> 
+    </div>
+    
+    <div class="ham-menu-container" id="ham-menu-container">
+        <div class="menu-content ul-menu">
+            <ul style="list-style-type:none; margin-top: 0px; margin-bottom: 0px; padding-top: 0px; row-gap: 10px;">
+                <li class="menu" onclick="location.href='/index';" style="cursor: pointer;">Home</li>
+                <li class="menu" onclick="location.href='/pages/projects';" style="cursor: pointer;">Projects</li>
+                <li class="menu" onclick="location.href='/pages/about';" style="cursor: pointer;">About</li>
+            </ul>
+        </div>
+    </div>    
+</div>
+
+
+<script>
+function showHamburgerMenu() {
+    var ham_menu = document.getElementById('ham-menu-container');
+    if (ham_menu.classList.contains('show')) {
+        ham_menu.classList.remove('show');
+        // Wait for the animation to finish before hiding the element
+        setTimeout(function() {
+            ham_menu.style.display = 'none';
+        }, 300); // Match the duration of the CSS transition
+    } else {
+        ham_menu.style.display = 'flex';
+        setTimeout(function() {
+            ham_menu.classList.add('show');
+        }, 10); // Small timeout to allow the display to apply before adding the class
+    }
+}
+
+document.addEventListener('click', function(event) {
+    var ham_menu = document.getElementById('ham-menu-container');
+    //var button = document.querySelector('hamburger-menu'); // Assuming the toggle button is a direct child
+
+    // Check if the click was outside the menu
+    if (!ham_menu.contains(event.target)) {
+        ham_menu.classList.remove('show');
+    }
+});
+
+</script>

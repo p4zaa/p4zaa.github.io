@@ -1,0 +1,65 @@
+---
+layout: default
+title: Social Recommendation Based on Weighted Graph
+toc: true
+---
+<h1 class="no_toc">Social Recommendation Based on Weighted Graph 🕸</h1>
+
+<!-- Card Elements -->
+<div class="card-container mini" onclick="window.open('https://github.com/p4zaa/Social-Recommendation-Based-on-Weighted-Graph', '_blank')">
+    <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c87d20d4-1cbe-42ae-b191-cc629a5b5a73/dboq3yo-39e2d1f9-502e-489f-94ba-3f12cee5ffa1.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2M4N2QyMGQ0LTFjYmUtNDJhZS1iMTkxLWNjNjI5YTViNWE3M1wvZGJvcTN5by0zOWUyZDFmOS01MDJlLTQ4OWYtOTRiYS0zZjEyY2VlNWZmYTEuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.1CSMTsa2L6Vqw4-WKZAWyCtv5GScUlXPeDJuDAjHsGg">
+    <div class="tag-container">
+        <!--span>GitHub</span-->
+    </div>
+    <div class="card-content">
+        <span class="mention" mention="github">GitHub</span>
+    </div>
+</div>
+
+<div class="quote">
+    December 2020 - May 2022
+</div>
+
+<div class="callout blue">
+    <strong>Keywords:</strong> 
+    <code>Recommender System</code> |
+    <code>Graph Neural Network</code> |
+    <code>Social Recommendation</code>
+    <br>
+    <strong>Tools/Frameworks:</strong> 
+    <span class="mention" mention="python">Python</span> |
+    <span class="mention" mention="pandas">Pandas</span> |
+    <span class="mention" mention="tensorflow">TensorFlow</span>
+    <br>
+    <strong>Dataset:</strong>
+    <a href="https://www.yelp.com/dataset">Dataset: Yelp Open Dataset</a>
+</div>
+
+<h2 id="objective">Objective</h2>
+The project “Social Recommendation Based on Weighted Graph” was conducted with the aim of developing a social recommendation method by using the weighted graph from two data sources:
+<ol>
+    <li>
+        <strong>Data source from user influence graph</strong><br>
+        which contains the relationship between each user by replacing the weight on the user-user relationship with the value that represents the level of influence affecting one user to another which calculated by comparing the user’s weight values between two users. The user’s weight is calculated by comparing the ratio between the total number of connections of the user and the total number of connections of every user’s neighbors.
+    </li>
+    <li>
+        <strong>Data source from user interest graph</strong><br>
+        which contains the relationship between user and item by replacing the weight on the user-item relationship with the value that represents the level of interest the item has to the user, which is calculated by comparing the ratios between the rating that user given to particular item and the sum of all ratings that user has given to every interacted item.
+    </li>
+</ol>
+
+<h2 id="scope">Scope</h2>
+The scope of the project is to compare the experimental evaluation with the <strong class="highlight">“A Neural Influence and Interest Diffusion Network for Social Recommendation”</strong> or <a href="https://arxiv.org/abs/2002.00844">DiffNet++</a> method on the Yelp dataset only, with a minimum of 5,000 users and a minimum of 40,000 items. 
+The experimental evaluation method was measured using the Hit Ratio and Normalized Discounted Cumulative Gain method. The experimental results on a real-world dataset show that the social recommendation based on weighted graph can improve the effectiveness.
+
+<div class="figure bluepastel-border"
+fig="The diagram of DiffNet++ Model Architecture by @p4zaa">
+    <img src="https://github.com/p4zaa/Social-Recommendation-Based-on-Weighted-Graph/blob/9d926196208ca28cc4691f26852f90acff391dd0/resources/diffnet++-Overall.png?raw=true">
+</div>
+
+<div style="border-style: solid; border-width: 2px; margin-top: 10px; margin-bottom: 10px; border-color: skyblue;"></div>
+
+<div class="quote" style="font-size: 16px;">
+    DiffNet++: A Neural Influence and Interest Diffusion Network for Social Recommendation <br>
+    Wu, L., Li, J., Sun, P., Hong, R., Ge, Y., & Wang, M. (2020). DiffNet++: A Neural Influence and Interest Diffusion Network for Social Recommendation. ArXiv. <a href="https://doi.org/10.48550/arXiv.2002.00844">https://doi.org/10.48550/arXiv.2002.00844</a>
+</div>

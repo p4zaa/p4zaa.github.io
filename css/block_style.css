@@ -205,6 +205,21 @@ button.menu {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 
+.palette-grid.main-style {
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.palette-grid.main-style-fill {
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.palette-grid.artwork-style {
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
 .palette-grid.auto-fit {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
@@ -976,6 +991,11 @@ code:hover {
     transition: box-shadow 0.3s ease-in-out;
 }
 
+.card-container.dummy {
+    border-style: none;
+    cursor: default;
+}
+
 .card-container.square {
     width: 200px;
     height: 200px;
@@ -1005,6 +1025,10 @@ code:hover {
 
 .card-container:hover {
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-container.dummy:hover {
+    box-shadow: none;
 }
 
 .card-container img {
@@ -1062,4 +1086,17 @@ code:hover {
 
 .tag-container span:hover {
     background-color: white;
+}
+
+.hashtag {
+    font-weight: bolder;
+    font-size: 16px;
+    background-color: #feccee;
+    padding: 5px 10px 5px 10px;
+    border-radius: 50px;
+    cursor: default;
+}
+
+.hashtag:hover {
+    background-color: #feb4e7;
 }

@@ -45,6 +45,11 @@ a.menu-link {
     padding-right: 0px;
 }
 
+.menu-bar-container.pastel {
+    background-color: #22c9fc; /* Example background color */
+    color: #fff; /* Example text color */
+}
+
 .menu-bar-text {
     display: inline-block;
     font-size: 14px; /* Example font size for the text within the menu bar */
