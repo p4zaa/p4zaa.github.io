@@ -1,0 +1,171 @@
+---
+layout: default
+title: ⏳ Egg Timer
+toc: true
+---
+
+<style>
+  .timer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    font-family: 'Comic Sans MS', 'Segoe UI', sans-serif;
+    color: #6c4b7e;
+  }
+
+  .timer-container h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+
+  .doneness-select {
+    margin-bottom: 20px;
+  }
+
+  .doneness-select label {
+    font-size: 1.2em;
+    margin-right: 10px;
+  }
+
+  .doneness-select select {
+    padding: 5px 10px;
+    font-size: 1em;
+    border-radius: 8px;
+    border: 1px solid #d7b8e1;
+    background-color: #fff6fa;
+    color: #6c4b7e;
+  }
+
+  .timer-circle {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #fef6e4, #ffe6f0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+
+  .controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+
+  .controls button {
+    padding: 10px 20px;
+    background-color: #ffd6e8;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+  }
+
+  .controls button:hover {
+    background-color: #fcb5d8;
+  }
+
+  .instructions {
+    max-width: 600px;
+    text-align: center;
+    font-size: 1.1em;
+    background-color: #fff0f6;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(255, 192, 203, 0.2);
+    color: #5c476b;
+  }
+
+  .instructions h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #c96db0;
+  }
+</style>
+
+<div class="timer-container">
+  <h1>🍳 Egg Timer</h1>
+
+  <div class="doneness-select">
+    <label for="doneness">How do you like your egg?</label>
+    <select id="doneness" onchange="setDoneness()">
+      <option value="300">🥚 Soft (5 min)</option>
+      <option value="420">🍮 Medium (7 min)</option>
+      <option value="600">🍳 Hard (10 min)</option>
+    </select>
+  </div>
+
+  <div class="timer-circle" id="display">05:00</div>
+
+  <div class="controls">
+    <button onclick="startTimer()">▶️ Start</button>
+    <button onclick="pauseTimer()">⏸️ Pause</button>
+    <button onclick="resetTimer()">🔄 Reset</button>
+  </div>
+
+  <div class="instructions">
+    <h2 class="no_toc">How to Boil the Perfect Egg 💖</h2>
+    <ul style="text-align: left; padding-left: 20px;">
+      <li>💦 Bring water to a gentle boil in a small pot.</li>
+      <li>🥚 Carefully place your egg(s) in with a spoon.</li>
+      <li>⏱️ Select how you like your egg — soft, medium, or hard.</li>
+      <li>✨ Press "Start" and let the timer run while eggs are cooking.</li>
+      <li>❄️ When it’s done, move eggs into cool water to stop cooking.</li>
+      <li>🌸 Enjoy your perfect egg with a smile!</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  let time = 300; // default soft boil
+  let defaultTime = 300;
+  let timer;
+  let isRunning = false;
+
+  function updateDisplay() {
+    const minutes = String(Math.floor(time / 60)).padStart(2, '0');
+    const seconds = String(time % 60).padStart(2, '0');
+    document.getElementById("display").innerText = `${minutes}:${seconds}`;
+  }
+
+  function setDoneness() {
+    pauseTimer();
+    const selected = document.getElementById("doneness").value;
+    time = defaultTime = parseInt(selected);
+    updateDisplay();
+  }
+
+  function startTimer() {
+    if (isRunning) return;
+    isRunning = true;
+    timer = setInterval(() => {
+      if (time > 0) {
+        time--;
+        updateDisplay();
+      } else {
+        clearInterval(timer);
+        isRunning = false;
+        alert("🎉 Ding! Your egg is ready to enjoy!");
+      }
+    }, 1000);
+  }
+
+  function pauseTimer() {
+    clearInterval(timer);
+    isRunning = false;
+  }
+
+  function resetTimer() {
+    clearInterval(timer);
+    time = defaultTime;
+    isRunning = false;
+    updateDisplay();
+  }
+
+  updateDisplay(); // Initial setup
+</script>
