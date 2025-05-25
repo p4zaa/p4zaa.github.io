@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopee Affiliate Link Generator</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #ee4d2d;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+        }
+        .input-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+        input[type="text"], input[type="url"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+        input[type="text"]:focus, input[type="url"]:focus {
+            outline: none;
+            border-color: #ee4d2d;
+        }
+        button {
+            background: linear-gradient(135deg, #ee4d2d, #ff6b35);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            width: 100%;
+        }
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(238, 77, 45, 0.3);
+        }
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #ee4d2d;
+        }
+        .result h3 {
+            margin: 0 0 10px 0;
+            color: #ee4d2d;
+        }
+        .url-display {
+            background: white;
+            padding: 10px;
+            border-radius: 6px;
+            word-break: break-all;
+            font-family: monospace;
+            border: 1px solid #ddd;
+            margin: 10px 0;
+        }
+        .copy-btn {
+            background: #28a745;
+            padding: 8px 16px;
+            font-size: 14px;
+            width: auto;
+            margin-top: 10px;
+        }
+        .copy-btn:hover {
+            background: #218838;
+        }
+        .status {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+        .status.loading {
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeaa7;
+        }
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .expanded-url {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🛍️ Shopee Affiliate Link Generator</h1>
+        
+        <div class="input-group">
+            <label for="shopeeUrl">Paste any Shopee URL (short or full):</label>
+            <input type="url" id="shopeeUrl" placeholder="https://shopee.co.th/... or https://s.shopee.co.th/... or https://th.shp.ee/..." />
+        </div>
+
+        <div class="input-group">
+            <label for="affiliateId">Your Affiliate ID:</label>
+            <input type="text" id="affiliateId" placeholder="Enter your affiliate ID" />
+        </div>
+
+        <button onclick="generateAffiliateLink()" id="generateBtn">Generate Affiliate Link</button>
+
+        <div id="status"></div>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        let expandedUrl = '';
+
+        function isShortUrl(url) {
+            const shortUrlPatterns = [
+                /shope\.ee/i,
+                /s\.shopee\./i,
+                /\.shp\.ee/i,
+                /shopee\.link/i
+            ];
+            return shortUrlPatterns.some(pattern => pattern.test(url));
+        }
+
+        async function expandShortUrl(shortUrl) {
+            try {
+                // Check if it's a short URL that needs expansion
+                if (!isShortUrl(shortUrl)) {
+                    return shortUrl;
+                }
+
+                // Method 1: Try using a CORS-enabled redirect follower
+                try {
+                    const response = await fetch(shortUrl, {
+                        method: 'HEAD',
+                        redirect: 'follow'
+                    });
+                    if (response.url && response.url !== shortUrl) {
+                        return response.url;
+                    }
+                } catch (e) {
+                    console.log('Direct fetch failed, trying alternatives...');
+                }
+
+                // Method 2: Try unshorten.me service
+                try {
+                    const unshortUrl = `https://unshorten.me/json/${encodeURIComponent(shortUrl)}`;
+                    const response = await fetch(unshortUrl);
+                    if (response.ok) {
+                        const data = await response.json();
+                        if (data.resolved_url && data.resolved_url !== shortUrl) {
+                            return data.resolved_url;
+                        }
+                    }
+                } catch (e) {
+                    console.log('Unshorten.me failed, trying next method...');
+                }
+
+                // Method 3: Try longurl.me service
+                try {
+                    const longUrlApi = `https://api.longurl.me/expand?url=${encodeURIComponent(shortUrl)}`;
+                    const response = await fetch(longUrlApi);
+                    if (response.ok) {
+                        const data = await response.json();
+                        if (data.long_url && data.long_url !== shortUrl) {
+                            return data.long_url;
+                        }
+                    }
+                } catch (e) {
+                    console.log('LongURL.me failed, trying next method...');
+                }
+
+                // Method 4: Try using AllOrigins as a proxy
+                try {
+                    const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(shortUrl)}`;
+                    const response = await fetch(proxyUrl);
+                    if (response.ok) {
+                        const data = await response.json();
+                        // Try to extract the final URL from the response
+                        if (data.contents) {
+                            // Look for canonical URL or og:url in the HTML
+                            const canonicalMatch = data.contents.match(/<link[^>]*rel="canonical"[^>]*href="([^"]*)"[^>]*>/i);
+                            if (canonicalMatch) {
+                                return canonicalMatch[1];
+                            }
+                            
+                            const ogUrlMatch = data.contents.match(/<meta[^>]*property="og:url"[^>]*content="([^"]*)"[^>]*>/i);
+                            if (ogUrlMatch) {
+                                return ogUrlMatch[1];
+                            }
+                        }
+                    }
+                } catch (e) {
+                    console.log('AllOrigins proxy failed...');
+                }
+
+                // Method 5: Manual pattern matching for known Shopee short URL structures
+                if (shortUrl.includes('s.shopee.co.th') || shortUrl.includes('th.shp.ee')) {
+                    // For Thai Shopee short URLs, we can try to construct the full URL
+                    // This is a fallback when expansion services fail
+                    console.log('Attempting manual expansion for Thai Shopee URL...');
+                    
+                    // Try to make a request and see if we can get location header
+                    try {
+                        const response = await fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(shortUrl)}`);
+                        const text = await response.text();
+                        
+                        // Look for product URLs in the response
+                        const productMatch = text.match(/shopee\.co\.th\/[^"'\s]+\.i\.\d+\.\d+/);
+                        if (productMatch) {
+                            return `https://${productMatch[0]}`;
+                        }
+                    } catch (e) {
+                        console.log('Manual expansion failed');
+                    }
+                }
+                
+                // If all methods fail, return the original URL
+                console.log('All expansion methods failed, using original URL');
+                return shortUrl;
+                
+            } catch (error) {
+                console.error('Error expanding URL:', error);
+                return shortUrl;
+            }
+        }
+
+        function extractProductInfo(url) {
+            // Handle different Shopee URL formats
+            const patterns = [
+                /shopee\.co\.id\/.*?\.i\.(\d+)\.(\d+)/,  // Indonesia format
+                /shopee\.com\.my\/.*?\.i\.(\d+)\.(\d+)/, // Malaysia format
+                /shopee\.sg\/.*?\.i\.(\d+)\.(\d+)/,     // Singapore format
+                /shopee\.ph\/.*?\.i\.(\d+)\.(\d+)/,     // Philippines format
+                /shopee\.co\.th\/.*?\.i\.(\d+)\.(\d+)/, // Thailand format
+                /shopee\.vn\/.*?\.i\.(\d+)\.(\d+)/,     // Vietnam format
+                /shopee\.com\.br\/.*?\.i\.(\d+)\.(\d+)/, // Brazil format
+                /shopee\.tw\/.*?\.i\.(\d+)\.(\d+)/,     // Taiwan format
+                /shopee\.com\/.*?\.i\.(\d+)\.(\d+)/,    // Generic format
+            ];
+
+            for (const pattern of patterns) {
+                const match = url.match(pattern);
+                if (match) {
+                    return {
+                        shopId: match[1],
+                        itemId: match[2],
+                        domain: url.match(/https?:\/\/([^\/]+)/)[1]
+                    };
+                }
+            }
+            
+            // If no pattern matches, try to extract from short URL patterns
+            // Sometimes short URLs contain encoded product info
+            const shortUrlMatch = url.match(/[?&](?:product|item|shop)=(\d+)[&.]?(\d+)?/i);
+            if (shortUrlMatch) {
+                return {
+                    shopId: shortUrlMatch[1],
+                    itemId: shortUrlMatch[2] || shortUrlMatch[1],
+                    domain: 'shopee.co.th' // Default to Thailand for th.shp.ee links
+                };
+            }
+            
+            return null;
+        }
+
+        function showStatus(message, type) {
+            const statusDiv = document.getElementById('status');
+            statusDiv.innerHTML = `<div class="status ${type}">${message}</div>`;
+        }
+
+        function clearStatus() {
+            document.getElementById('status').innerHTML = '';
+        }
+
+        async function generateAffiliateLink() {
+            const urlInput = document.getElementById('shopeeUrl').value.trim();
+            const affiliateId = document.getElementById('affiliateId').value.trim();
+            const generateBtn = document.getElementById('generateBtn');
+            const resultDiv = document.getElementById('result');
+
+            // Clear previous results
+            resultDiv.innerHTML = '';
+            clearStatus();
+
+            // Validate inputs
+            if (!urlInput) {
+                showStatus('Please enter a Shopee URL', 'error');
+                return;
+            }
+
+            if (!affiliateId) {
+                showStatus('Please enter your affiliate ID', 'error');
+                return;
+            }
+
+            // Disable button and show loading status
+            generateBtn.disabled = true;
+            generateBtn.textContent = 'Processing...';
+            showStatus('Expanding URL and generating affiliate link...', 'loading');
+
+            try {
+                // Step 1: Expand short URL if needed
+                showStatus('Expanding short URL...', 'loading');
+                expandedUrl = await expandShortUrl(urlInput);
+                
+                // Step 2: Extract product information
+                const productInfo = extractProductInfo(expandedUrl);
+                
+                if (!productInfo) {
+                    showStatus('Could not extract product information from the URL. Please check if it\'s a valid Shopee product URL.', 'error');
+                    return;
+                }
+
+                // Step 3: Generate affiliate link
+                const affiliateLink = `https://${productInfo.domain}/affiliate/${affiliateId}/product/${productInfo.shopId}/${productInfo.itemId}`;
+                
+                // Display results
+                showStatus('Affiliate link generated successfully!', 'success');
+                
+                resultDiv.innerHTML = `
+                    ${expandedUrl !== urlInput ? `
+                        <div class="expanded-url">
+                            <h3>📎 Expanded URL:</h3>
+                            <div class="url-display">${expandedUrl}</div>
+                        </div>
+                    ` : ''}
+                    
+                    <div class="result">
+                        <h3>🔗 Affiliate Link:</h3>
+                        <div class="url-display" id="affiliateUrl">${affiliateLink}</div>
+                        <button class="copy-btn" onclick="copyToClipboard('${affiliateLink}')">📋 Copy Link</button>
+                    </div>
+                    
+                    <div style="margin-top: 15px; padding: 15px; background: #e3f2fd; border-radius: 8px; border-left: 4px solid #2196f3;">
+                        <h4 style="margin: 0 0 10px 0; color: #1976d2;">📊 Product Details:</h4>
+                        <p style="margin: 5px 0;"><strong>Shop ID:</strong> ${productInfo.shopId}</p>
+                        <p style="margin: 5px 0;"><strong>Item ID:</strong> ${productInfo.itemId}</p>
+                        <p style="margin: 5px 0;"><strong>Domain:</strong> ${productInfo.domain}</p>
+                        <p style="margin: 5px 0;"><strong>Affiliate ID:</strong> ${affiliateId}</p>
+                    </div>
+                `;
+
+            } catch (error) {
+                console.error('Error:', error);
+                showStatus('An error occurred while processing the URL. Please try again.', 'error');
+            } finally {
+                // Re-enable button
+                generateBtn.disabled = false;
+                generateBtn.textContent = 'Generate Affiliate Link';
+            }
+        }
+
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                showStatus('Affiliate link copied to clipboard!', 'success');
+                setTimeout(clearStatus, 3000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+                showStatus('Failed to copy to clipboard. Please copy manually.', 'error');
+            });
+        }
+
+        // Allow Enter key to trigger generation
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('shopeeUrl').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    generateAffiliateLink();
+                }
+            });
+            
+            document.getElementById('affiliateId').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    generateAffiliateLink();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
