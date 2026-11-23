@@ -1,0 +1,163 @@
+:root {
+  --bg: #fff;
+  --ink: #171717;
+  --muted: #737373;
+  --accent: #ef476f;
+  --accent-hover: #d93a60;
+  --surface: #f4f4f5;
+  --focus: #2563eb;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg);
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "IBM Plex Sans Thai", system-ui, sans-serif;
+  font-weight: 400;
+}
+
+.logo-slot {
+  position: fixed;
+  top: max(0.85rem, env(safe-area-inset-top));
+  left: max(0.85rem, env(safe-area-inset-left));
+  z-index: 10;
+  display: block;
+  line-height: 0;
+  border-radius: 14px;
+}
+
+.logo-slot img {
+  display: block;
+  width: 56px;
+  height: 56px;
+}
+
+.music-toggle {
+  position: fixed;
+  top: max(0.85rem, env(safe-area-inset-top));
+  right: max(0.85rem, env(safe-area-inset-right));
+  z-index: 10;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0.5rem 0.9rem;
+  border: none;
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.music-toggle .music-icon {
+  display: block;
+  width: 1.1rem;
+  height: 1.1rem;
+  flex-shrink: 0;
+}
+
+.music-toggle .mute-slash {
+  stroke: currentColor;
+}
+
+.music-toggle.is-on {
+  color: var(--accent);
+}
+
+.music-toggle.is-on .mute-slash {
+  display: none;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+  padding: 6rem 1.5rem 3rem;
+  text-align: center;
+}
+
+.character-slot {
+  width: min(17.5rem, 72vw);
+}
+
+.character-slot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+h1 {
+  margin: 1.35rem 0 0.35rem;
+  color: var(--accent);
+  font-size: clamp(2.25rem, 10vw, 3.75rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  text-shadow: none;
+  filter: none;
+  outline: none;
+}
+
+.caption {
+  margin: 0 0 1.75rem;
+  color: var(--muted);
+  font-size: 0.98rem;
+  font-weight: 400;
+}
+
+.enter {
+  display: inline-block;
+  padding: 0.8rem 1.55rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  box-shadow: 0 10px 22px rgba(239, 71, 111, 0.28);
+}
+
+.enter:hover {
+  background: var(--accent-hover);
+}
+
+.logo-slot:focus-visible,
+.music-toggle:focus-visible,
+.enter:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+
+@media (min-width: 700px) {
+  .character-slot {
+    width: min(18.5rem, 72vw);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

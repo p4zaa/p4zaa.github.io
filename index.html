@@ -1,329 +1,173 @@
----
-layout: default
-title: Pa's Portfolio
-toc: false
----
-<h1 class="no_toc"><span style="font-size: 50px;">Pa's <span class="no-wrap"><span class="highlight blue">Portfolio</span> 🥳</span></span></h1>
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="เว็บของป๊ะ — ดูแลโดย AI agent">
+  <meta name="theme-color" content="#ffffff">
+  <title>เว็บของป๊ะ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/landing/styles.css">
+</head>
+<body>
+  <!-- เพิ่มงานศิลป์ของคุณ: แทนที่ /assets/landing/logo.svg และ /assets/landing/character.svg (ใช้ชื่อไฟล์เดิม หรือแก้ src ของรูปก็ได้ — ใช้ PNG/GIF/APNG ได้)
+       To add your art, replace /assets/landing/logo.svg and /assets/landing/character.svg (keep same filenames, or edit the img src; PNG/GIF/APNG also fine). -->
 
-<!-- Slideshow container -->
-<div class="slideshow-container">
+  <a class="logo-slot" href="/">
+    <img src="/assets/landing/logo.svg" width="56" height="56" alt="โลโก้เว็บของป๊ะ">
+  </a>
 
-  <!-- Full-width images with number and caption text -->
-  <div class="mySlides fade">
-    <div class="palette-grid auto-fit" style="gap: 5px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
-        <!-- Card Elements -->
-        <div class="card-container full-width" onclick="window.location.href='/pages/projects/otto-multi-objective-recommender-system.html'">
-            <img src="https://play-lh.googleusercontent.com/Eloc_w2im-kncKoE8r-7NkKshOxTWLrL8DhzklATUf8TGQpumJiDjwPUKoylqHp9uQ">
-            <div class="tag-container">
-                <span>Kaggle</span>
-            </div>
-            <div class="card-content">
-                OTTO Multi-Objective Recommender System<br>
-                <span style="font-weight: normal;">Link Prediction RecSys</span>
-            </div>
-        </div>
+  <button class="music-toggle" type="button" aria-pressed="false" aria-label="เปิดเพลงประกอบ">
+    <svg class="music-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none">
+      <path class="note" d="M10 18V6.4l9-1.7V14.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle class="note" cx="8.2" cy="18" r="2.6" fill="currentColor"/>
+      <circle class="note" cx="17.2" cy="14.4" r="2.6" fill="currentColor"/>
+      <line class="mute-slash" x1="4.2" y1="19.8" x2="19.8" y2="4.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    </svg>
+    <span>เพลง</span>
+  </button>
 
-        <div style="max-height: 200px; overflow: auto;">
-            A Kaggle competition that focuses on building a recommender system for the OTTO dataset.
-            The goal is to predict the next item a user will interact with based on their past behavior.
-            <br>
-            <span class="mention" mention="python">Python</span> 
-            <span class="mention" mention="pandas">Pandas</span> 
-            <span class="mention" mention="polars">Polars</span> 
-            <span class="mention" mention="pytorch">PyTorch</span> 
-            <span class="mention" mention="pyg">PyTorch Geometric</span>
-            <br>
-            <code># Recommender System</code><br>
-            <code># Graph Neural Network</code><br>
-            <code># Heterogeneous Graph</code>
-            <br>
-            <br>
-        </div>
+  <main>
+    <div class="character-slot">
+      <img src="/assets/landing/character.svg" width="280" height="320" alt="ตัวการ์ตูนทักทาย">
     </div>
-  </div>
+    <h1>เว็บของป๊ะ</h1>
+    <p class="caption">ดูแลโดย AI agent 🤖</p>
+    <a class="enter" href="/classic/">ไปเว็บไซต์เดิม</a>
+  </main>
 
-  <!-- Full-width images with number and caption text -->
-  <div class="mySlides fade">
-    <div class="palette-grid auto-fit" style="gap: 5px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
-        <!-- Card Elements -->
-        <div class="card-container full-width" onclick="window.location.href='/pages/projects/dataflower.html'">
-            <img src="/assets/images/card-covers/cute-art-cover4.jpeg">
-            <div class="tag-container">
-                <span>Tool</span>
-            </div>
-            <div class="card-content">
-                DataFlower<br>
-                <span style="font-weight: normal;">Text annotation platform</span>
-            </div>
-        </div>
+  <script>
+    (function () {
+      const toggle = document.querySelector(".music-toggle");
+      if (!toggle) return;
 
-        <div style="max-height: 200px; overflow: auto;">
-            A user-friendly platform that enhances the efficiency and accuracy of preparing datasets for machine learning.
-            <br>
-            <span class="mention" mention="python"> Python</span> 
-            <span class="mention" mention="flask">Flask</span> 
-            <span class="mention" mention="sqlite">SQLite</span> 
-            <span class="mention" mention="html">HTML</span> 
-            <span class="mention" mention="javascript">JavaScript</span> 
-            <span class="mention" mention="polars">Polars</span> 
-            <span class="mention" mention="pandas">Pandas</span>
-            <br>
-            <br>
-        </div>
-    </div>
-    </div>
+      const BPM = 100;
+      const STEPS_PER_BAR = 8;
+      const BARS = 8;
+      const LOOP_STEPS = STEPS_PER_BAR * BARS;
+      const STEP = 60 / BPM / 2;
+      const LOOKAHEAD_MS = 25;
+      const SCHEDULE_AHEAD = 0.12;
 
-  <!-- Full-width images with number and caption text -->
-  <div class="mySlides fade">
-    <div class="palette-grid auto-fit" style="gap: 5px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
-        <!-- Card Elements -->
-        <div class="card-container full-width" onclick="window.location.href='/pages/projects/graph-book-finder.html'">
-            <img src="https://www.lytics.com/wp-content/uploads/2022/04/article-What-is-a-graph-database.jpg">
-            <div class="tag-container">
-                <span>Database</span>
-                <span>Site</span>
-            </div>
-            <div class="card-content">
-                GraphBook Finder<br>
-                <span style="font-weight: normal;">Book Finder Website Connected with Graph Database</span>
-            </div>
-        </div>
+      const E4 = 329.63, G4 = 392.00, A4 = 440.00, B4 = 493.88;
+      const C5 = 523.25, D5 = 587.33, E5 = 659.25, F5 = 698.46, G5 = 783.99, A5 = 880.00;
+      const C6 = 1046.50, E6 = 1318.51;
 
-        <div style="max-height: 200px; overflow: auto;">
-            A web application designed to help users discover books available at the Chaloklum Bookstore using a graph database (<span class="mention" mention="neo4j">Neo4j</span>).
-            <br>
-            <span class="mention" mention="html">HTML</span> 
-            <span class="mention" mention="nodejs">Node.js</span> 
-            <span class="mention" mention="glitch">glitch.com</span> 
-            <span class="mention" mention="neo4j">Neo4j</span> 
-            <span class="mention" mention="neo4j">Neo4j AuraDB Cloud Service</span>
-            <br>
-            <br>
-        </div>
-    </div>
+      const melody = [
+        C5, E5, G5, E5, C5, D5, E5, G5,
+        A4, C5, E5, C5, A4, B4, C5, E5,
+        G4, B4, D5, B4, G4, A4, B4, D5,
+        C5, E5, G5, C5, B4, D5, G5, 0,
+        E5, G5, C5, G5, E5, F5, G5, 0,
+        F5, A5, D5, A5, F5, E5, D5, 0,
+        E5, G5, C5, E5, D5, F5, B4, D5,
+        C5, G4, E4, G4, C5, 0, C5, 0
+      ];
 
-  </div>
+      const sparkle = [
+        0, 0, G5, 0, 0, C6, 0, E6,
+        0, G5, 0, 0, C6, 0, 0, 0,
+        0, 0, E6, 0, 0, G5, 0, C6,
+        0, 0, 0, G5, 0, 0, E6, 0,
+        0, C6, 0, 0, 0, E6, 0, G5,
+        0, 0, C6, 0, G5, 0, 0, 0,
+        0, E6, 0, 0, C6, 0, G5, 0,
+        0, 0, G5, 0, 0, C6, 0, 0
+      ];
 
-    <!-- Full-width images with number and caption text -->
-  <div class="mySlides fade">
-    <div class="palette-grid auto-fit" style="gap: 5px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
-        <!-- Card Elements -->
-        <div class="card-container full-width" onclick="window.location.href='/pages/projects/littleconfig.html'">
-            <img src="/assets/images/card-covers/cute-art-cover2.jpeg">
-            <div class="tag-container">
-                <span>Library</span>
-            </div>
-            <div class="card-content">
-                LittleConfig<br>
-                <span style="font-weight: normal;">Config-oriented ML development</span>
-            </div>
-        </div>
+      let ctx = null;
+      let master = null;
+      let filter = null;
+      let playing = false;
+      let timerId = null;
+      let nextNoteTime = 0;
+      let currentStep = 0;
 
-        <div style="max-height: 200px; overflow: auto;">
-            Simple config for machine learning pipeline configuration.
-            A powerful tool designed to make your ML projects more efficient and flexible.
-            <br>
-            <span class="mention" mention="python"> Python</span> 
-            </br>
-            </br>
-        </div>
-    </div>
-  </div>
+      function ensureAudio() {
+        if (ctx) return;
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        ctx = new AudioCtx();
+        master = ctx.createGain();
+        master.gain.value = 0.18;
+        filter = ctx.createBiquadFilter();
+        filter.type = "lowpass";
+        filter.frequency.value = 1600;
+        filter.Q.value = 0.7;
+        filter.connect(master);
+        master.connect(ctx.destination);
+      }
 
-  <!-- Next and previous buttons -->
-  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-  
-</div>
+      function envelope(gainNode, time, peak, duration) {
+        gainNode.gain.setValueAtTime(0.0001, time);
+        gainNode.gain.exponentialRampToValueAtTime(peak, time + 0.012);
+        gainNode.gain.exponentialRampToValueAtTime(0.0001, time + duration);
+      }
 
-<!-- The dots/circles -->
-<div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span>
-  <span class="dot" onclick="currentSlide(2)"></span>
-  <span class="dot" onclick="currentSlide(3)"></span>
-  <span class="dot" onclick="currentSlide(4)"></span>
-</div>
+      function playVoice(type, freq, time, duration, peak, destination) {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, time);
+        envelope(gain, time, peak, duration);
+        osc.connect(gain);
+        gain.connect(destination);
+        osc.start(time);
+        osc.stop(time + duration + 0.02);
+      }
 
-<!--span style="font-size: 30px; color: rgb(143, 189, 112);">Home Page 🏡</span-->
+      function scheduleStep(step, time) {
+        const mel = melody[step];
+        if (mel) {
+          playVoice("triangle", mel, time, STEP * 0.92, 0.22, filter);
+        }
+        const spk = sparkle[step];
+        if (spk) {
+          playVoice("square", spk, time, STEP * 0.18, 0.018, filter);
+        }
+      }
 
-<h2 id="about">About</h2>
-<div style="display: flex; gap: 10px;">
-    <span class="hashtag"># Data Scientist</span>
-    <span class="hashtag"># Machine Learning</span>
-</div>
-<div class="callout blue dotpad-pattern" style="display: flex; gap: 10px; overflow: auto; max-height: 200px;">
-    <div style="line-height: 2rem; text-align: left; text-wrap: pretty;">
-        <img src="/assets/images/pa/Pa - Resized.jpeg" width="18%" style="float: left; margin-right: 10px; min-width: 100px;">
-        Passionate about machine learning with a focus on graph neural networks.
-        Developed NLP models; optimized resource usage, and created internal tools for ML pipelines.
-        Seeking to contribute my expertise to advance data-driven initiatives.
-    </div>
-</div>
+      function scheduler() {
+        if (!playing || !ctx) return;
+        const horizon = ctx.currentTime + SCHEDULE_AHEAD;
+        while (nextNoteTime < horizon) {
+          scheduleStep(currentStep, nextNoteTime);
+          nextNoteTime += STEP;
+          currentStep = (currentStep + 1) % LOOP_STEPS;
+        }
+        timerId = window.setTimeout(scheduler, LOOKAHEAD_MS);
+      }
 
-<h2 id="get-in-touch">Get in Touch</h2>
-<span class="mention" mention="linkedin" onclick="window.open('https://www.linkedin.com/in/pathompong-muangthong-059537200', '_blank')">LinkedIn</span>
-<span> | </span>
-<span class="mention" mention="github" onclick="window.open('https://github.com/p4zaa', '_blank')">GitHub</span>
+      function start() {
+        ensureAudio();
+        if (ctx.state === "suspended") ctx.resume();
+        playing = true;
+        currentStep = 0;
+        nextNoteTime = ctx.currentTime + 0.05;
+        scheduler();
+        toggle.classList.add("is-on");
+        toggle.setAttribute("aria-pressed", "true");
+        toggle.setAttribute("aria-label", "ปิดเพลงประกอบ");
+      }
 
-<div class="codeblock pad fit blue pool-pattern pre-line no-shadow" 
-    lang="Work contact email">pathompong.mua@gmail.com
-</div>
+      function stop() {
+        playing = false;
+        if (timerId) {
+          window.clearTimeout(timerId);
+          timerId = null;
+        }
+        if (ctx && ctx.state === "running") ctx.suspend();
+        toggle.classList.remove("is-on");
+        toggle.setAttribute("aria-pressed", "false");
+        toggle.setAttribute("aria-label", "เปิดเพลงประกอบ");
+      }
 
-<h2 id="menu">Works Gallary & Profile</h2>
-<div class="palette-grid" style="gap: 15px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
-    <div class="palette-grid" style="column-gap: 20px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
-        <!-- Card Elements -->
-        <div class="card-container full" onclick="window.location.href='/pages/projects.html'">
-            <img src="/assets/images/card-covers/projects-title-cover1.png">
-            <div class="tag-container">
-            </div>
-            <div class="card-content">
-                Works and Activities
-            </div>
-        </div>
-    </div>
-
-    <div class="palette-grid" style="gap: 15px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));">
-        <!-- Card Elements -->
-        <div class="card-container mini full" onclick="window.open('https://github.com/p4zaa', '_blank')">
-            <img src="/assets/images/card-covers/coding-img1.avif">
-            <div class="tag-container">
-            </div>
-            <div class="card-content">
-                <span class="mention" mention="github">GitHub</span>
-            </div>
-        </div>
-
-        <!-- Card Elements -->
-        <div class="card-container mini full" onclick="window.open('https://www.linkedin.com/in/pathompong-muangthong-059537200', '_blank')">
-            <img src="/assets/images/card-covers/working-table-img2.avif">
-            <div class="tag-container">
-            </div>
-            <div class="card-content">
-                <span class="mention" mention="linkedin">LinkedIn</span>
-            </div>
-        </div>
-
-        <!-- Card Elements -->
-        <div class="card-container mini full" onclick="window.open('https://www.kaggle.com/pathompongmuangthong', '_blank')">
-            <img src="/assets/images/card-covers/cover-img1.jpeg">
-            <div class="tag-container">
-            </div>
-            <div class="card-content">
-                <i class="fa-solid fa-square-poll-vertical"></i> Kaggle
-            </div>
-        </div>
-
-        <!-- Card Elements -->
-        <div class="card-container mini full" onclick="window.open('https://www.canva.com/design/DAGIlZrQXig/n3r9RQjQn-bLm56XHlCL2Q/view?utm_content=DAGIlZrQXig&utm_campaign=designshare&utm_medium=link&utm_source=editor', '_blank')">
-            <img src="https://i.pinimg.com/564x/48/bd/9e/48bd9e63a724999cd5155abd8b192f3e.jpg">
-            <div class="tag-container">
-            </div>
-            <div class="card-content">
-                <i class="fa-solid fa-file"></i> Resume
-            </div>
-        </div>
-    </div>
-</div>
-
-<h2 id="hobbies">Hobbies</h2>
-<div class="palette-grid main-style">
-    <!-- Card Elements -->
-    <div class="card-container full-width" onclick="window.open('/pages/blu3/gallary.html', '_blank')">
-        <img src="/assets/artworks/lulu.PNG">
-        <!--div class="tag-container">
-            <span>Hobby</span>
-        </div-->
-        <div class="card-content">
-            My Artworks Gallary 🎨<br>
-            <span style="font-weight: normal;">@dustyblu3</span>
-        </div>
-    </div>
-
-    <!-- Dummy Card Elements -->
-    <div class="card-container full-width dummy">
-        <img src="/assets/artworks/silly-face-blu3.png">
-    </div>
-</div>
-
-
-<script>
-let slideIndex = 1;
-let isHovered = false;
-let autoSlideInterval;
-
-document.addEventListener("DOMContentLoaded", function () {
-  const slides = document.getElementsByClassName("mySlides");
-  const dots = document.getElementsByClassName("dot");
-  const container = document.querySelector(".slideshow-container");
-
-  function showSlides(n) {
-    if (n > slides.length) slideIndex = 1;
-    if (n < 1) slideIndex = slides.length;
-
-    for (let i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
-    for (let i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-    }
-
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";
-  }
-
-  function plusSlides(n) {
-    showSlides(slideIndex += n);
-  }
-
-  function currentSlide(n) {
-    showSlides(slideIndex = n);
-  }
-
-  // Start auto slide
-  function startAutoSlide() {
-    autoSlideInterval = setInterval(() => {
-      if (!isHovered) plusSlides(1);
-    }, 8000);
-  }
-
-  function stopAutoSlide() {
-    clearInterval(autoSlideInterval);
-  }
-
-  // Hover pause logic
-  container.addEventListener("mouseenter", () => {
-    isHovered = true;
-  });
-  container.addEventListener("mouseleave", () => {
-    isHovered = false;
-  });
-
-  // Swipe support
-  let startX = 0;
-  container.addEventListener("touchstart", (e) => {
-    startX = e.touches[0].clientX;
-  });
-
-  container.addEventListener("touchend", (e) => {
-    let endX = e.changedTouches[0].clientX;
-    if (startX - endX > 50) {
-      plusSlides(1); // swipe left
-    } else if (endX - startX > 50) {
-      plusSlides(-1); // swipe right
-    }
-  });
-
-  // Add dot click event
-  for (let i = 0; i < dots.length; i++) {
-    dots[i].addEventListener("click", () => currentSlide(i + 1));
-  }
-
-  // Add prev/next click
-  document.querySelector(".prev").addEventListener("click", () => plusSlides(-1));
-  document.querySelector(".next").addEventListener("click", () => plusSlides(1));
-
-  showSlides(slideIndex);
-  startAutoSlide();
-});
-</script>
+      toggle.addEventListener("click", function () {
+        if (playing) stop();
+        else start();
+      });
+    })();
+  </script>
+</body>
+</html>
